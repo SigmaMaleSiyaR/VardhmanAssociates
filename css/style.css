@@ -133,6 +133,42 @@ h6,
     .navbar .navbar-nav .nav-link {
         padding: 10px 0;
     }
+
+    .navbar-brand h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .navbar-brand img {
+        height: 40px !important;
+    }
+    
+    .service-item .nav-link {
+        padding: 1rem !important;
+    }
+    
+    .service-item .nav-link h5 {
+        font-size: 1rem !important;
+    }
+    
+    .tab-content .col-md-6 {
+        min-height: 250px !important;
+    }
+    
+    .display-5 {
+        font-size: 2rem !important;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem !important;
+    }
+    
+    .footer .btn-link {
+        padding: 0.25rem 0 !important;
+    }
+    
+    .footer p {
+        font-size: 0.9rem !important;
+    }
 }
 
 @media (min-width: 992px) {
@@ -189,18 +225,122 @@ h6,
     border-radius: 3rem 0 0 3rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
     #header-carousel .carousel-item {
-        position: relative;
-        min-height: 450px;
+        height: 500px;
     }
-    
-    #header-carousel .carousel-item img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+
+    #header-carousel .carousel-caption {
+        padding: 0 15px;
     }
+
+    #header-carousel .carousel-caption h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem;
+    }
+
+    #header-carousel .carousel-caption p {
+        font-size: 1rem !important;
+        margin-bottom: 1rem;
+    }
+
+    #header-carousel .carousel-caption .btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 2.5rem;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #header-carousel .carousel-item {
+        height: 400px;
+    }
+
+    #header-carousel .carousel-caption {
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    #header-carousel .carousel-caption h1 {
+        font-size: 1.75rem !important;
+        margin-bottom: 0.75rem;
+    }
+
+    #header-carousel .carousel-caption p {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.75rem;
+    }
+
+    #header-carousel .carousel-caption .btn {
+        padding: 0.4rem 1.25rem;
+        font-size: 0.85rem;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 2rem;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .carousel-control-prev {
+        left: 5px;
+    }
+
+    .carousel-control-next {
+        right: 5px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #header-carousel .carousel-item {
+        height: 350px;
+    }
+
+    #header-carousel .carousel-caption h1 {
+        font-size: 1.5rem !important;
+    }
+
+    #header-carousel .carousel-caption p {
+        font-size: 0.85rem !important;
+    }
+
+    #header-carousel .carousel-caption .btn {
+        padding: 0.35rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+#header-carousel .carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+#header-carousel .carousel-caption {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .page-header {
@@ -691,4 +831,39 @@ h6,
 .service-item .fa-check:hover {
     transform: scale(1.2);
     color: var(--primary) !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 767.98px) {
+    .navbar-brand h1 {
+        font-size: 1.25rem !important;
+    }
+    
+    .navbar-brand img {
+        height: 35px !important;
+    }
+    
+    .service-item .nav-link {
+        padding: 0.75rem !important;
+    }
+    
+    .tab-content .col-md-6 {
+        min-height: 200px !important;
+    }
+    
+    .display-5 {
+        font-size: 1.75rem !important;
+    }
+    
+    .display-3 {
+        font-size: 2rem !important;
+    }
+    
+    .footer {
+        text-align: center;
+    }
+    
+    .footer .col-md-6 {
+        margin-bottom: 1.5rem;
+    }
 }
