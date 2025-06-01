@@ -31,6 +31,10 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Additional Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -58,6 +62,9 @@
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Services</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="faq.html" class="nav-item nav-link">FAQ</a>
+                    <a href="refund-policy.html" class="nav-item nav-link">Refund Policy</a>
+                    <a href="disclaimer.html" class="nav-item nav-link">Disclaimer</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
@@ -173,11 +180,11 @@
                         <div class="h-100">
                             <div class="d-flex">
                                 <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-times text-white"></i>
+                                    <i class="fa fa-shield-alt text-white"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h4>No Hidden Cost</h4>
-                                    <span>Clita erat ipsum lorem sit sed stet duo justo</span>
+                                    <h4>Compliance Assurance</h4>
+                                    <span>Expert guidance to ensure your business stays compliant with all regulatory requirements</span>
                                 </div>
                                 <div class="border-end d-none d-lg-block"></div>
                             </div>
@@ -188,11 +195,11 @@
                         <div class="h-100">
                             <div class="d-flex">
                                 <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-users text-white"></i>
+                                    <i class="fa fa-chart-line text-white"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h4>Dedicated Team</h4>
-                                    <span>Clita erat ipsum lorem sit sed stet duo justo</span>
+                                    <h4>Strategic Planning</h4>
+                                    <span>Comprehensive financial and legal strategies to help your business grow</span>
                                 </div>
                                 <div class="border-end d-none d-lg-block"></div>
                             </div>
@@ -203,11 +210,11 @@
                         <div class="h-100">
                             <div class="d-flex">
                                 <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-phone text-white"></i>
+                                    <i class="fa fa-handshake text-white"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h4>24/7 Available</h4>
-                                    <span>Clita erat ipsum lorem sit sed stet duo justo</span>
+                                    <h4>Trusted Partnership</h4>
+                                    <span>Long-term relationship building with personalized attention to your needs</span>
                                 </div>
                             </div>
                         </div>
@@ -217,6 +224,54 @@
         </div>
     </div>
     <!-- About End -->
+
+    <!-- WhatsApp Chat Bubble -->
+    <a href="https://wa.me/919928857684" class="whatsapp-bubble" target="_blank" rel="noopener noreferrer" style="display: none;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <style>
+        .whatsapp-bubble {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-bubble:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+            color: white;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutSection = document.querySelector('.container-xxl.py-5');
+            const whatsappBubble = document.querySelector('.whatsapp-bubble');
+            
+            window.addEventListener('scroll', function() {
+                const aboutSectionBottom = aboutSection.getBoundingClientRect().bottom;
+                
+                if (aboutSectionBottom < 0) {
+                    whatsappBubble.style.display = 'flex';
+                } else {
+                    whatsappBubble.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
     <!-- Locations Start -->
     <div class="container-xxl py-5">
@@ -255,27 +310,26 @@
     <div class="container-fluid facts my-5 py-5">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-users fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
+                    <br>
+                    <span class="fs-6 text-white">more than</span>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">500</h1>
                     <span class="fs-5 text-white">Happy Clients</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-delay="0.3s">
                     <i class="fa fa-check fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
+                    <br>
+                    <span class="fs-6 text-white">more than</span>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">700</h1>
                     <span class="fs-5 text-white">Projects Completed</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 text-white">Dedicated Staff</span>
-                    <hr class="bg-white w-25 mx-auto mb-0">
-                </div>
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+             
+                <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-delay="0.7s">
                     <i class="fa fa-award fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">10</h1>
                     <span class="fs-5 text-white">Awards Achieved</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
@@ -342,22 +396,22 @@
             </div>
             <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="col-lg-4">
-                    <div class="nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
+                    <div class="service-item nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4 active"
                             data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Financial Planning</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Business Registration & Licensing</h5>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4"
                             data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Cash Investment</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Tax & Compliance Services</h5>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4"
                             data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Financial Consultancy</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Legal & Corporate Advisory</h5>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-0"
                             data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Business Loans</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Accounting & Auditing</h5>
                         </button>
                     </div>
                 </div>
@@ -372,14 +426,11 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                                        clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    <h3 class="mb-4">Business Registration & Licensing</h3>
+                                    <p class="mb-4">Comprehensive business registration and licensing services to help you start and grow your business.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Private Limited, LLP, OPC, Nidhi Company, Section 8 Company</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>FSSAI, MSME, Shop Act Licenses</p>
+                                    <a href="service.html" class="btn btn-primary py-3 px-5 mt-3">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -392,14 +443,13 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                                        clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    <h3 class="mb-4">Tax & Compliance Services</h3>
+                                    <p class="mb-4">Expert tax and compliance services to ensure your business meets all regulatory requirements.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>GST Registration, Return Filing, LUT Filing, E-Way Bills</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Income Tax Return Filing (ITR 1-7)</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>15CA/15CB Certifications</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>TDS & TAN Filings</p>
+                                    <a href="service.html" class="btn btn-primary py-3 px-5 mt-3">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -412,14 +462,13 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                                        clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    <h3 class="mb-4">Legal & Corporate Advisory</h3>
+                                    <p class="mb-4">Professional legal and corporate advisory services to protect your business interests.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Contract Drafting</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Legal Notices, Arbitration</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>ROC Compliance & Annual Filings</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Secretarial Audits & DIR Reporting</p>
+                                    <a href="service.html" class="btn btn-primary py-3 px-5 mt-3">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -432,14 +481,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                                        clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    <h3 class="mb-4">Accounting & Auditing</h3>
+                                    <p class="mb-4">Comprehensive accounting and auditing services to maintain your business's financial health.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Statutory & Internal Audits</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Tally Configuration</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Excel Dashboards & MIS Reports</p>
+                                    <a href="service.html" class="btn btn-primary py-3 px-5 mt-3">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -566,7 +613,7 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
-                        <img class="img-fluid rounded" src="img/team-1.jpg" alt="">
+                        <img class="img-fluid rounded" src="img/manish.png" alt="">
                         <div class="team-text">
                             <h4 class="mb-0">Kate Winslet</h4>
                             <div class="team-social d-flex">
@@ -581,7 +628,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
-                        <img class="img-fluid rounded" src="img/team-2.jpg" alt="">
+                        <img class="img-fluid rounded" src="img/taruna.png" alt="">
                         <div class="team-text">
                             <h4 class="mb-0">Jac Jacson</h4>
                             <div class="team-social d-flex">
@@ -596,7 +643,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item">
-                        <img class="img-fluid rounded" src="img/team-3.jpg" alt="">
+                        <img class="img-fluid rounded" src="img/manu.png" alt="">
                         <div class="team-text">
                             <h4 class="mb-0">Doris Jordan</h4>
                             <div class="team-social d-flex">
@@ -728,13 +775,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="https://vardhmanassociates.com">Vardhman Associates</a>,©2025 All Right Reserved.
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
-                    href="https://themewagon.com">ThemeWagon</a>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -755,8 +798,20 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
 
+    <!-- Additional JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/js/hover.min.js"></script>
+
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 
 </html>

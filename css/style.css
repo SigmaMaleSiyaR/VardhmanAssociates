@@ -539,3 +539,156 @@ h6,
 .copyright a:hover {
     color: var(--primary);
 }
+
+/* Enhanced Service Section Animations */
+.service-item {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary), #4a6cf7);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 0;
+}
+
+.service-item:hover::before {
+    opacity: 0.05;
+}
+
+.service-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-item .nav-link {
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.service-item .nav-link:hover {
+    background: var(--primary);
+    transform: translateX(10px);
+}
+
+.service-item .nav-link.active {
+    background: var(--primary);
+    transform: translateX(10px);
+}
+
+.service-item .nav-link h5 {
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 15px;
+}
+
+.service-item .nav-link h5::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.service-item .nav-link:hover h5::before,
+.service-item .nav-link.active h5::before {
+    height: 100%;
+}
+
+.service-item .tab-content {
+    position: relative;
+    z-index: 1;
+}
+
+.service-item .tab-content img {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.95);
+}
+
+.service-item .tab-content:hover img {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+.service-item .btn-primary {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-item .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.service-item .btn-primary:hover::before {
+    left: 100%;
+}
+
+.service-item .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(53, 94, 252, 0.3);
+}
+
+/* Service Icons Enhanced Animation */
+.service-item i {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.service-item:hover i {
+    transform: rotate(360deg) scale(1.2);
+}
+
+/* Service Content Enhanced Animation */
+.service-item .tab-pane {
+    animation: enhancedFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes enhancedFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Service Check Icons Animation */
+.service-item .fa-check {
+    transition: all 0.3s ease;
+    transform: scale(0.8);
+}
+
+.service-item .fa-check:hover {
+    transform: scale(1.2);
+    color: var(--primary) !important;
+}
