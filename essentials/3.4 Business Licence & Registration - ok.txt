@@ -1,0 +1,77 @@
+﻿
+Import & Export Code
+
+The Importer -Exporter Code (IEC) is a key business identification number which is mandatory for Exports or Imports. IEC Number is granted by the Directorate General of Foreign Trade (DGFT), Ministry of Commerce. An import export code is a unique 10-digit code that is required for every import/export business owner in India. IEC is required by importers to clear customs and shipment, and to transfer money to foreign banks. Exporters require their IEC to send shipments and receive money from foreign banks. In short, no importer/exporter can operate in India without getting the IEC.
+Factory Licence
+
+Factory owners had to compulsorily register their premises with local authorities before the Factories Act, 1948 came into force. The local authorities gave a license to run their factories and carry out manufacturing activities. The Factories Act, 1948 ('Act') provides that certain factories that fulfil the conditions given in the Act must register and obtain a factory license under the Act to ensure the safety of the workers. The factory owners can renew the factory license upon its expiry by applying to the respective state labour department or department of factories.
+Labour Licence
+
+The importance of labour licence for contractors can be seen in the The Contract Labour (Regulation and Abolition) 1970 Act, It applies to any establishment in which twenty or more workmen are employed on any day of the accounting year as contract labour.
+It applies to any contractor who employs or who employs twenty or more workers on any day of the accounting year. Or in simpler words any contractor having 20 or more than 20 labourers working under him, has to apply for "Labour Licence". Recently in Bihar the limit of the working labourers has been increased from 20 to 50.APPLY NOWAPPLY NOWAPPLY NOW
+
+
+
+Pollution Licence
+
+A Pollution License, also known as an environmental permit or pollution control license, is a legal document issued by a government authority or regulatory agency to regulate and control pollution from industrial or commercial activities. It is a requirement for businesses and organizations that have the potential to release pollutants into the environment, such as air, water, or land. 
+Type of Pollution Licenses, Air Pollution License, Water Pollution License, Hazardous Waste License, Noise Pollution License, Solid Waste Management License
+
+EPF  Registration
+
+EPF is a scheme under the Miscellaneous Provision Act, 1952. According to this Act, any organisation under which more than 20 people are employed is required to register for the EPF scheme. Any employee with a salary under 15,000 Rs has to be mandatorily assigned an EPF account and get a monthly contribution credited to that account. If a person's salary is more than 15,000 Rs, he is not eligible for PF registration. But with the consent of your employer and permission of the Assistant PF Commissioner, you can register into the EPF scheme. EPF scheme is managed and maintained by EPFO (Employees' Provident Funds Organisation). 
+
+
+ESI  Registration
+
+The ESI scheme is applicable to all factories and other establishments as defined in the ESI Act with 10 or more persons (20 or more in some states) employed in such establishments. However, only those employees are covered under the ESI scheme whose monthly wages do not exceed Rs.21,000 (Rs.25,000 in the case of a person with a disability).
+Entities Covered Under ESI Registration are Shops, Restaurants or hotels, Road Motor Transport, Establishments, Newspaper establishments, Private Educational Institutions and  Cinemas etc.APPLY NOWAPPLY NOWAPPLY NOW
+
+Shop & Establishment Act Registration
+
+All commercial or trading or banking or insurance
+establishment, an establishment or administrate service in which the persons
+employed are mainly engaged in office work, a hotel, a restaurant, boarding or eating
+houses, cafe or any other refreshment house, a theatre or any other place of public
+amusement or entertainment and includes the commercial establishments are liable to get registered under the Rajasthan Shops and Commercial Establishments Act, 1958 GST Registration
+
+
+A 'taxable person' under the GST Act is someone who conducts business in India and is registered or needs to be registered under the GST Act. A taxable person can be an individual, HUF, company, firm, LLP, an AOP/ BOI, any corporation or Government company, body corporate incorporated under the laws of a foreign country, co-operative societies, local authorities, governments, trusts, or artificial juridical persons.
+Types of GST registration - Normal / Regular Taxpayer, Composition Taxpayer, Casual Taxable Person, Non - Resident Taxable Person.MSME (Udyam) Registration
+
+Udyam registration is now mandatory for all MSMEs. It provides multiple benefits to help MSMEs succeed, some of which are: Collateral-free loans from banks and financial institutions and subsidised interest rates, Simplified process of obtaining licences, permits, registrations, and approvals, Tax Exemption, Concessions on water and electricity bills and Protect against delayed payment against provided goods and services etc.
+MSMEs are classified under two criteria of investment in plant and machinery and turnoverAPPLY NOWAPPLY NOWAPPLY NOW
+
+
+Trademark Registration
+
+Trademark registration is essential for almost all companies or entrepreneurs to pursue. It gives special and legally recognized rights as a company, protects the trademark for unauthorized copycats, prevents others from using it whether knowingly or unknowingly, allows the trademark owner to sue or recover damages in the case of infringement and for other such similar reasons is today more and more in the industry becoming something ubiquitous and universal.
+Type of Trademark - Word Marks, Device Mark, Service Mark, Product Mark, Collective Mark, Certification  Mark, Shape Mark, Pattern Mark and Sound Mark etc.
+ISO Certifcation
+
+An International Organisation for Standardisation (ISO) certification is the internationally recognised standard for quality assurance and conformity assessment. ISO certification is especially important for businesses operating in international markets where consumers are familiar with different countries' quality and safety standards. ISO certification assures customers that products and services provided by a business meet the required international quality and safety standards.
+Types of ISO : ISO 27001 : 2005 Information Security Management Systems, ISO 9000 : 2008 Quality Management Systems,  
+ISO 14001 : 2004 Environmental Management Systems , 
+ISO/TS 16949 : 2009 Electronic Product Code (EPC)
+BIS Certification
+
+BIS is an acronym for Bureau of Indian Standards. BIS is a national standard-setting body responsible for developing standardization, marking and quality certification of goods.
+
+Bureau of Indian standards run various certification programs to issue BIS licenses to Indian and foreign manufacturers to use the standard mark on the product. These programmes ensure product quality, safety and reliability. The BIS certification scheme ensures that the public receives high-quality, reliable, safe, and risk-free productsAPPLY NOWAPPLY NOWAPPLY NOW
+
+
+
+Food (FSSAI) License
+
+The FSSAI has been established under the Food Safety and Standards Act, 2006 (FSS Act) which is a consolidating statute related to food safety and regulation in India.
+FSSAI Registration is different from the FSSAI License depending on the size and nature of the business. FBOs should obtain the necessary registration or license depending on the size of their businesses.
+Types of FSSAI Registration - Central Licence for Larger Food Business, State Licence for Medium Food Business and Registration for Small Food Business.
+PAN No.
+
+PAN, or permanent account number, is a unique 10-digit alphanumeric identity allotted to each taxpayer by the Income Tax Department under the supervision of the Central Board of Direct Taxes. It also serves as an identity proof. PAN is mandatory for financial transactions such as receiving taxable salary or professional fees, sale or purchase of assets above specified limits, buy mutual funds and more.
+The primary objective of PAN is to use a universal identification key to track financial transactions that might have a taxable component to prevent tax evasion.
+TAN No.
+
+TAN i.e. Tax Deduction and Collection Account Number is a 10 digit alpha numeric number required to be obtained by all persons who are responsible for deducting tax at source or collecting tax at source. It is compulsory to quote TAN in TDS/TCS return (including any e-TDS/TCS return), any TDS/TCS payment challan, TDS/TCS certificates, Annual Information Return and other documents as may be prescribed.APPLY NOWAPPLY NOWAPPLY NOW
+BUSINESS LICENCE
+
