@@ -1,10 +1,15 @@
 /********** Template CSS **********/
 :root {
-    --primary: #1B365D; /* Deep Navy Blue */
-    --secondary: #71797E; /* Steel Grey */
-    --tertiary: #333333; /* Almost Black */
-    --light: #F5F5F5; /* Light Grey */
-    --accent: #DAA520; /* Goldenrod */
+    --primary: #1B365D;
+    /* Deep Navy Blue – now used heavily (buttons, headers, etc.) */
+    --secondary: #C0C6CC;
+    /* Soft Steel Grey – lighter, more usable for borders/cards */
+    --tertiary: #1A1A1A;
+    /* Dark Grey – text and base elements (slightly lighter than black) */
+    --light: #F5F5F5;
+    /* Light Grey – background, card fill */
+    --accent: #4C8ED9;
+    /* Muted Blue – clean, modern button/link color */
 }
 
 .back-to-top {
@@ -139,35 +144,35 @@ h6,
     .navbar-brand h1 {
         font-size: 1.5rem !important;
     }
-    
+
     .navbar-brand img {
         height: 40px !important;
     }
-    
+
     .service-item .nav-link {
         padding: 1rem !important;
     }
-    
+
     .service-item .nav-link h5 {
         font-size: 1rem !important;
     }
-    
+
     .tab-content .col-md-6 {
         min-height: 250px !important;
     }
-    
+
     .display-5 {
         font-size: 2rem !important;
     }
-    
+
     .display-3 {
         font-size: 2.5rem !important;
     }
-    
+
     .footer .btn-link {
         padding: 0.25rem 0 !important;
     }
-    
+
     .footer p {
         font-size: 0.9rem !important;
     }
@@ -788,7 +793,7 @@ h6,
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: all 0.6s ease;
 }
 
@@ -823,6 +828,7 @@ h6,
         opacity: 0;
         transform: translateY(30px) scale(0.95);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -845,31 +851,31 @@ h6,
     .navbar-brand h1 {
         font-size: 1.25rem !important;
     }
-    
+
     .navbar-brand img {
         height: 35px !important;
     }
-    
+
     .service-item .nav-link {
         padding: 0.75rem !important;
     }
-    
+
     .tab-content .col-md-6 {
         min-height: 200px !important;
     }
-    
+
     .display-5 {
         font-size: 1.75rem !important;
     }
-    
+
     .display-3 {
         font-size: 2rem !important;
     }
-    
+
     .footer {
         text-align: center;
     }
-    
+
     .footer .col-md-6 {
         margin-bottom: 1.5rem;
     }
