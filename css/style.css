@@ -176,6 +176,16 @@ h6,
     width: 80%;
 }
 
+/* Remove underline effect for Services dropdown */
+.navbar .navbar-nav .nav-item.dropdown .nav-link::after {
+    display: none;
+}
+
+.navbar .navbar-nav .nav-item.dropdown .nav-link:hover::after,
+.navbar .navbar-nav .nav-item.dropdown .nav-link.active::after {
+    display: none;
+}
+
 @media (max-width: 991.98px) {
     .navbar {
         height: 60px;
@@ -961,4 +971,55 @@ h6,
 .btn-outline-primary:hover {
     background-color: var(--accent);
     border-color: var(--accent);
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-item.dropdown {
+    position: relative;
+}
+
+.nav-link.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid currentColor;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    background: transparent;
+}
+
+.nav-link.dropdown-toggle {
+    background: transparent !important;
+}
+
+.nav-link.dropdown-toggle:hover {
+    background: transparent !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 767.98px) {
+    .dropdown-menu {
+        display: none;
+    }
+    
+    .dropdown-menu.show {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
 }
