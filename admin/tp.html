@@ -1,0 +1,41 @@
+<input type="file" id="fileInput" />
+<button onclick="uploadImage()">Upload</button>
+
+<script>
+  async function uploadImage() {
+    const fileInput = document.getElementById("fileInput");
+    const file = fileInput.files[0];
+    if (!file) return alert("Select a file first.");
+
+    // 1. Get token from your backend
+    const authRes = await fetch("https://vablogs.vercel.app/api/auth");
+    const { token, expire, signature } = await authRes.json();
+
+    // 2. Build form data for ImageKit
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("fileName", file.name);
+    formData.append("token", token);
+    formData.append("expire", expire);
+    formData.append("signature", signature);
+    formData.append("publicKey", "public_C5juPBxFMNI+aIo/PkxOrNXPtFM="); // ✅ This is correct
+
+    // 3. Upload to ImageKit
+    const uploadRes = await fetch(
+      "https://upload.imagekit.io/api/v1/files/upload",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const result = await uploadRes.json();
+    if (uploadRes.ok) {
+      console.log("Uploaded:", result.url);
+      alert("Upload success!\n" + result.url);
+    } else {
+      console.error("Upload error:", result);
+      alert("Upload failed:\n" + result.message);
+    }
+  }
+</script>

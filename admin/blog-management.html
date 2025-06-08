@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Management - Vardhaman Associates</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Vardhaman Associates</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="blog-management.html">Create New Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="manage-blogs.html">Manage Blogs</a>
+            </li>
+            <li class="nav-item">
+              <button id="logoutBtn" class="btn btn-outline-light">Logout</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>Add New Blog Post</h3>
+            </div>
+            <div class="card-body">
+              <form id="blogForm">
+                <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="title" required />
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label"
+                    >Short Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="description"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="content" class="form-label">Content</label>
+                  <div id="editor" style="height: 300px"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="image" class="form-label">Featured Image</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="image"
+                    accept="image/*"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Publish Blog
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>Published Blogs</h3>
+            </div>
+            <div class="card-body">
+              <div id="blogList" class="list-group">
+                <!-- Blogs will be listed here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/11.9.0/firebase-storage.js"
+    ></script>
+
+    <!-- Quill Editor -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <!-- Add ImageKit SDK -->
+    <script src="https://unpkg.com/imagekit-javascript/dist/imagekit.min.js"></script>
+
+    <!-- Add jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Firebase Config and Blog Management -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+      import {
+        getAuth,
+        signOut,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        deleteDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAV6RSeZ1j5krYodWKIXGNJE1sY_l9pvh8",
+        authDomain: "vardhamanassociates-861f9.firebaseapp.com",
+        projectId: "vardhamanassociates-861f9",
+        storageBucket: "vardhamanassociates-861f9.appspot.com",
+        messagingSenderId: "322122751719",
+        appId: "1:322122751719:web:9f4ae6936a8bf144244c42",
+        measurementId: "G-Y06T3Q22YD",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+
+      // Initialize Quill editor with updated configuration
+      const quill = new Quill("#editor", {
+        theme: "snow",
+        modules: {
+          toolbar: {
+            container: [
+              ["bold", "italic", "underline", "strike"],
+              ["blockquote", "code-block"],
+              [{ header: 1 }, { header: 2 }],
+              [{ list: "ordered" }, { list: "bullet" }],
+              [{ script: "sub" }, { script: "super" }],
+              [{ indent: "-1" }, { indent: "+1" }],
+              [{ direction: "rtl" }],
+              [{ size: ["small", false, "large", "huge"] }],
+              [{ header: [1, 2, 3, 4, 5, 6, false] }],
+              [{ color: [] }, { background: [] }],
+              [{ font: [] }],
+              [{ align: [] }],
+              ["clean"],
+              ["link", "image"]
+            ],
+            handlers: {
+              image: function() {
+                const input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+                input.click();
+
+                input.onchange = async () => {
+                  const file = input.files[0];
+                  if (file) {
+                    try {
+                      // Upload content image (not thumbnail)
+                      const uploadResult = await uploadImageToImageKit(file, false);
+                      const range = quill.getSelection(true);
+                      quill.insertEmbed(range.index, 'image', uploadResult.url);
+                    } catch (error) {
+                      console.error('Error uploading image:', error);
+                      alert('Failed to upload image. Please try again.');
+                    }
+                  }
+                };
+              }
+            }
+          }
+        },
+        placeholder: "Write your blog content here...",
+      });
+
+      // Check authentication state
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          window.location.href = "index.html";
+        }
+      });
+
+      // Logout functionality
+      document
+        .getElementById("logoutBtn")
+        .addEventListener("click", async () => {
+          try {
+            await signOut(auth);
+            window.location.href = "index.html";
+          } catch (error) {
+            console.error("Error signing out:", error);
+          }
+        });
+
+      // Function to upload image to ImageKit
+      async function uploadImageToImageKit(file, isThumbnail = false) {
+        return new Promise((resolve, reject) => {
+          // First get the authentication token
+          $.ajax({
+            url: "https://vablogs.vercel.app/api/auth",
+            method: "GET",
+            dataType: "json",
+            success: function (authData) {
+              console.log("Auth data received:", authData);
+
+              // Create form data for the upload
+              const formData = new FormData();
+              formData.append("file", file);
+              formData.append("fileName", `${Date.now()}_${file.name}`);
+              formData.append("token", authData.token);
+              formData.append("signature", authData.signature);
+              formData.append("expire", authData.expire);
+              formData.append(
+                "publicKey",
+                "public_C5juPBxFMNI+aIo/PkxOrNXPtFM="
+              );
+              // Set folder based on whether it's a thumbnail or content image
+              formData.append("folder", isThumbnail ? "/blog-thumbnails" : "/blog-content");
+
+              // Log the form data contents
+              for (let pair of formData.entries()) {
+                console.log(pair[0] + ": " + pair[1]);
+              }
+
+              // Upload to ImageKit
+              $.ajax({
+                url: "https://upload.imagekit.io/api/v1/files/upload",
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                  Accept: "application/json",
+                },
+                success: function (response) {
+                  console.log("Upload successful:", response);
+                  resolve(response);
+                },
+                error: function (xhr, status, error) {
+                  console.error("Upload error details:", {
+                    status: xhr.status,
+                    statusText: xhr.statusText,
+                    responseText: xhr.responseText,
+                    error: error,
+                  });
+
+                  // Try to parse the error response
+                  let errorMessage = "Upload failed";
+                  try {
+                    const errorResponse = JSON.parse(xhr.responseText);
+                    errorMessage =
+                      errorResponse.message ||
+                      errorResponse.error ||
+                      errorMessage;
+                  } catch (e) {
+                    errorMessage = xhr.responseText || errorMessage;
+                  }
+
+                  reject(new Error(errorMessage));
+                },
+              });
+            },
+            error: function (xhr, status, error) {
+              console.error("Auth error details:", {
+                status: xhr.status,
+                statusText: xhr.statusText,
+                responseText: xhr.responseText,
+                error: error,
+              });
+              reject(new Error("Failed to get authentication token"));
+            },
+          });
+        });
+      }
+
+      // Handle blog submission with improved error handling
+      document
+        .getElementById("blogForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const submitButton = e.target.querySelector('button[type="submit"]');
+          submitButton.disabled = true;
+          submitButton.textContent = "Publishing...";
+
+          try {
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const content = quill.root.innerHTML;
+            const imageFile = document.getElementById("image").files[0];
+
+            if (!imageFile) {
+              throw new Error("Please select an image");
+            }
+
+            // Upload thumbnail image to ImageKit
+            const uploadResult = await uploadImageToImageKit(imageFile, true);
+
+            if (!uploadResult.url) {
+              throw new Error("Failed to upload image");
+            }
+
+            // Add blog to Firestore
+            const docRef = await addDoc(collection(db, "blogs"), {
+              title,
+              description,
+              content,
+              imageUrl: uploadResult.url,
+              createdAt: new Date().toISOString(),
+              author: auth.currentUser.email,
+            });
+
+            alert("Blog published successfully!");
+            document.getElementById("blogForm").reset();
+            quill.root.innerHTML = "";
+            loadBlogs();
+          } catch (error) {
+            console.error("Error publishing blog:", error);
+            alert(`Error publishing blog: ${error.message}`);
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Publish Blog";
+          }
+        });
+
+      // Load and display blogs with improved error handling
+      async function loadBlogs() {
+        const blogList = document.getElementById("blogList");
+        blogList.innerHTML =
+          '<div class="text-center"><div class="spinner-border" role="status"></div></div>';
+
+        try {
+          const querySnapshot = await getDocs(collection(db, "blogs"));
+          blogList.innerHTML = "";
+
+          if (querySnapshot.empty) {
+            blogList.innerHTML =
+              '<div class="text-center">No blogs published yet.</div>';
+            return;
+          }
+
+          querySnapshot.forEach((doc) => {
+            const blog = doc.data();
+            const blogElement = document.createElement("div");
+            blogElement.className = "list-group-item";
+            blogElement.innerHTML = `
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5>${blog.title}</h5>
+                                <p class="mb-1">${blog.description}</p>
+                                <small>Published: ${new Date(
+                                  blog.createdAt
+                                ).toLocaleDateString()}</small>
+                            </div>
+                            <div>
+                                <button class="btn btn-danger btn-sm" onclick="deleteBlog('${
+                                  doc.id
+                                }')">Delete</button>
+                            </div>
+                        </div>
+                    `;
+            blogList.appendChild(blogElement);
+          });
+        } catch (error) {
+          console.error("Error loading blogs:", error);
+          blogList.innerHTML =
+            '<div class="alert alert-danger">Error loading blogs. Please try again.</div>';
+        }
+      }
+
+      // Delete blog with confirmation
+      window.deleteBlog = async (blogId) => {
+        if (
+          confirm(
+            "Are you sure you want to delete this blog? This action cannot be undone."
+          )
+        ) {
+          try {
+            await deleteDoc(doc(db, "blogs", blogId));
+            loadBlogs();
+          } catch (error) {
+            console.error("Error deleting blog:", error);
+            alert("Error deleting blog. Please try again.");
+          }
+        }
+      };
+
+      // Load blogs on page load
+      loadBlogs();
+    </script>
+  </body>
+</html>
