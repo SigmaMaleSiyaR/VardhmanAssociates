@@ -151,17 +151,6 @@ h6,
     font-size: 0.9rem;
 }
 
-.navbar .navbar-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: var(--accent);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
@@ -174,6 +163,11 @@ h6,
 .navbar .navbar-nav .nav-link:hover::after,
 .navbar .navbar-nav .nav-link.active::after {
     width: 80%;
+}
+
+.navbar .navbar-nav #servicesDropdown:hover::after,
+.navbar .navbar-nav #servicesDropdown.active::after {
+    width: 9%;
 }
 
 /* Remove underline effect for Services dropdown */
