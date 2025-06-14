@@ -1,14 +1,26 @@
 {
+  "version": 2,
+  "routes": [
+    {
+      "src": "/admin/(.*)",
+      "dest": "/admin/$1",
+      "headers": {
+        "x-vercel-skip-rewrite": "true"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/admin/index.html",
-      "has": [
-        {
-          "type": "host",
-          "value": "admin.vardhmanassociates.com"
-        }
-      ]
+      "source": "/admin/:path*",
+      "destination": "/admin/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
     }
   ]
 }
