@@ -18,19 +18,28 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Vardhaman Associates</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="blog-management.html">Create New Blog</a>
+              <a class="nav-link active" href="blog-management.html"
+                >Create New Blog</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="manage-blogs.html">Manage Blogs</a>
             </li>
             <li class="nav-item">
-              <button id="logoutBtn" class="btn btn-outline-light">Logout</button>
+              <button id="logoutBtn" class="btn btn-outline-light">
+                Logout
+              </button>
             </li>
           </ul>
         </div>
@@ -177,13 +186,13 @@
               [{ font: [] }],
               [{ align: [] }],
               ["clean"],
-              ["link", "image"]
+              ["link", "image"],
             ],
             handlers: {
-              image: function() {
-                const input = document.createElement('input');
-                input.setAttribute('type', 'file');
-                input.setAttribute('accept', 'image/*');
+              image: function () {
+                const input = document.createElement("input");
+                input.setAttribute("type", "file");
+                input.setAttribute("accept", "image/*");
                 input.click();
 
                 input.onchange = async () => {
@@ -191,18 +200,21 @@
                   if (file) {
                     try {
                       // Upload content image (not thumbnail)
-                      const uploadResult = await uploadImageToImageKit(file, false);
+                      const uploadResult = await uploadImageToImageKit(
+                        file,
+                        false
+                      );
                       const range = quill.getSelection(true);
-                      quill.insertEmbed(range.index, 'image', uploadResult.url);
+                      quill.insertEmbed(range.index, "image", uploadResult.url);
                     } catch (error) {
-                      console.error('Error uploading image:', error);
-                      alert('Failed to upload image. Please try again.');
+                      console.error("Error uploading image:", error);
+                      alert("Failed to upload image. Please try again.");
                     }
                   }
                 };
-              }
-            }
-          }
+              },
+            },
+          },
         },
         placeholder: "Write your blog content here...",
       });
@@ -231,7 +243,7 @@
         return new Promise((resolve, reject) => {
           // First get the authentication token
           $.ajax({
-            url: "https://vablogs.vercel.app/api/auth",
+            url: "https://blog-gray-two-79.vercel.app/api/auth.js",
             method: "GET",
             dataType: "json",
             success: function (authData) {
@@ -249,7 +261,10 @@
                 "public_C5juPBxFMNI+aIo/PkxOrNXPtFM="
               );
               // Set folder based on whether it's a thumbnail or content image
-              formData.append("folder", isThumbnail ? "/blog-thumbnails" : "/blog-content");
+              formData.append(
+                "folder",
+                isThumbnail ? "/blog-thumbnails" : "/blog-content"
+              );
 
               // Log the form data contents
               for (let pair of formData.entries()) {
