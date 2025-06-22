@@ -72,11 +72,61 @@
             <a href="about.html" class="nav-item nav-link active">About</a>
             <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="padding:25px 15px;">Services</a>
-              <div class="dropdown-menu border-0 rounded-0 m-0">
-                <a href="business-registration.html" class="dropdown-item">Business Registration & Licensing</a>
-                <a href="tax-compliance.html" class="dropdown-item">Tax & Compliance Services</a>
-                <a href="legal-advisory.html" class="dropdown-item">Legal & Corporate Advisory</a>
-                <a href="accounting-auditing.html" class="dropdown-item">Accounting & Auditing</a>
+              <div class="dropdown-menu dropdown-menu-start border-0 rounded-0 m-0 p-4 services-dropdown-menu" style="min-width: 700px; max-width: 95vw; width: 900px;">
+                <div class="row">
+                  <!-- CA Services -->
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">CHARTERED ACCOUNTANT (CA) SERVICES</h6>
+                    <a class="dropdown-item" href="#">Start A Business</a>
+                    <a class="dropdown-item" href="#">Business Registration & Licence</a>
+                    <a class="dropdown-item" href="#">Income-Tax Services</a>
+                    <a class="dropdown-item" href="#">GST Services</a>
+                    <a class="dropdown-item" href="#">TDS Services</a>
+                    <a class="dropdown-item" href="#">ESI & PF Services</a>
+                    <a class="dropdown-item" href="#">Income Tax Notice & Appeal</a>
+                    <a class="dropdown-item" href="#">Accounting & Auditing</a>
+                    <a class="dropdown-item" href="#">Society & Ngo Services</a>
+                    <a class="dropdown-item" href="#">CMA Data  And Project Report</a>
+                    <a class="dropdown-item" href="#">Loan & Project Finance</a>
+                  </div>
+                  <!-- CS Services -->
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">COMPANY SECRETARIES (CS) SERVICES</h6>
+                    <a class="dropdown-item" href="#">Annual Compliances</a>
+                    <a class="dropdown-item" href="#">Corporate & Financial Restructuring</a>
+                    <a class="dropdown-item" href="#">Due Diligence</a>
+                    <a class="dropdown-item" href="#">Company Incorporation & Amendment</a>
+                    <a class="dropdown-item" href="#">Company Strike off & Closer</a>
+                    <a class="dropdown-item" href="#">Winding Up & Dissolution</a>
+                    <a class="dropdown-item" href="#">Secretarial Audit</a>
+                    <a class="dropdown-item" href="#">Insolvency and Bankruptcy Matters</a>
+                    <a class="dropdown-item" href="#">XBRL Filing</a>
+                    <a class="dropdown-item" href="#">NCLT Appeal</a>
+                    <a class="dropdown-item" href="#">Appointment & Resignation</a>
+                    <a class="dropdown-item" href="#">RBI & FEMA Overseas Law Compliance</a>
+                    <a class="dropdown-item" href="#">Minutes & Resolutions</a>
+                    <a class="dropdown-item" href="#">XML Data Conversion</a>
+                    <a class="dropdown-item" href="#">Share Certificate & Transfer</a>
+                  </div>
+                  <!-- Advocate Services -->
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">ADVOCATE (LAW) SERVICES</h6>
+                    <a class="dropdown-item" href="#">Civil Law</a>
+                    <a class="dropdown-item" href="#">Banking & Finance Law</a>
+                    <a class="dropdown-item" href="#">Legal Advisory</a>
+                    <a class="dropdown-item" href="#">Consumer Law & Protection</a>
+                    <a class="dropdown-item" href="#">Corporate Law & Advisory</a>
+                    <a class="dropdown-item" href="#">Family Law</a>
+                    <a class="dropdown-item" href="#">Deed Making & Drafting</a>
+                    <a class="dropdown-item" href="#">Debt Recovery & Suit</a>
+                    <a class="dropdown-item" href="#">Labour & Employment Law</a>
+                    <a class="dropdown-item" href="#">NIA Matter</a>
+                    <a class="dropdown-item" href="#">Property Valuation Services</a>
+                    <a class="dropdown-item" href="#">Real Estate & Regulatory Act (RERA)</a>
+                    <a class="dropdown-item" href="#">Appeal</a>
+                    <a class="dropdown-item" href="#">SARFAESI Law</a>
+                  </div>
+                </div>
               </div>
             </div>
             <a href="display-blog.html" class="nav-item nav-link">Blogs</a>
@@ -1174,132 +1224,3 @@
     <script src="js/main.js"></script>
   </body>
 </html>
-
-<style>
-  .team-item {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    height: 100%;
-  }
-
-  .team-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  .team-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-
-  .team-text {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .team-text h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-
-  .team-text .text-primary {
-    color: var(--primary) !important;
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
-
-  .team-text .text-muted {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-  }
-
-  .team-text p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #666;
-  }
-
-  .team-social {
-    justify-content: center;
-    margin-top: 15px;
-  }
-
-  .team-social .btn {
-    width: 35px;
-    height: 35px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary);
-    color: #fff;
-    transition: all 0.3s ease;
-  }
-
-  .team-social .btn:hover {
-    background: var(--accent);
-    transform: translateY(-3px);
-  }
-
-  @media (max-width: 768px) {
-    .team-item img {
-      height: 250px;
-    }
-
-    .team-text {
-      padding: 15px;
-    }
-
-    .team-text h4 {
-      font-size: 1.1rem;
-    }
-  }
-
-  .modal-content {
-    border-radius: 15px;
-    border: none;
-  }
-
-  .modal-header {
-    padding: 1rem 1rem 0;
-  }
-
-  .modal-body {
-    padding: 2rem;
-  }
-
-  .modal-body img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .modal-body h3 {
-    color: var(--primary);
-    font-weight: 600;
-  }
-
-  .modal-body .text-primary {
-    color: var(--primary) !important;
-  }
-
-  .modal-body ul li {
-    font-size: 0.95rem;
-    color: #666;
-  }
-
-  .team-item {
-    transition: all 0.3s ease;
-  }
-
-  .team-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  }
-</style>
