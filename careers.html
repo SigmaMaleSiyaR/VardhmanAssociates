@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Careers - Vardhman Associates</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -13,11 +13,20 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet" />
@@ -30,250 +39,551 @@
     <link href="css/style.css" rel="stylesheet" />
 
     <style>
-        .career-card {
-            transition: transform 0.3s ease;
-            border: 1px solid #e9ecef;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+      .career-card {
+        transition: transform 0.3s ease;
+        border: 1px solid #e9ecef;
+        border-radius: 10px;
+        overflow: hidden;
+      }
 
-        .career-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+      .career-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
 
-        .career-header {
-            background: #0F172B;
-            color: white;
-            padding: 20px;
-        }
+      .career-header {
+        background: #0f172b;
+        color: white;
+        padding: 20px;
+      }
 
-        .career-body {
-            padding: 20px;
-        }
+      .career-body {
+        padding: 20px;
+      }
 
-        .benefits-list {
-            list-style: none;
-            padding-left: 0;
-        }
+      .benefits-list {
+        list-style: none;
+        padding-left: 0;
+      }
 
-        .benefits-list li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
+      .benefits-list li {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+      }
 
-        .benefits-list li:before {
-            content: "✓";
-            color: #00B98E;
-            position: absolute;
-            left: 0;
-        }
+      .benefits-list li:before {
+        content: "✓";
+        color: #00b98e;
+        position: absolute;
+        left: 0;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem"></div>
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        role="status"
+        style="width: 3rem; height: 3rem"
+      ></div>
     </div>
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
     <div class="container-fluid px-0 wow fadeIn" data-wow-delay="0.1s">
-        <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-            <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-                <img src="img/logo.jpg" alt="Vardhman Associates Logo" class="img-fluid" style="height: 44px; border-radius: 9px;background: white; padding: 1px;">
-                <div class="d-flex flex-column">
-                    <h1 class="display-5 text-white m-0">Vardhaman Associates</h1>
-                    <span class="text-white" style="font-size: 0.9rem;">Group of CA, CS & Advocates</span>
+      <nav
+        class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn"
+        data-wow-delay="0.1s"
+      >
+        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+          <img
+            src="img/logo.jpg"
+            alt="Vardhman Associates Logo"
+            class="img-fluid"
+            style="
+              height: 44px;
+              border-radius: 9px;
+              background: white;
+              padding: 1px;
+            "
+          />
+          <div class="d-flex flex-column">
+            <h1 class="display-5 text-white m-0">Vardhaman Associates</h1>
+            <span class="text-white" style="font-size: 0.9rem"
+              >Group of CA, CS & Advocates</span
+            >
+          </div>
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler me-4"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                style="padding: 25px 15px"
+                >Services</a
+              >
+              <div
+                class="dropdown-menu dropdown-menu-start border-0 rounded-0 m-0 p-4 services-dropdown-menu"
+                style="min-width: 700px; max-width: 95vw; width: 900px"
+              >
+                <div class="row">
+                  <!-- CA Services -->
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">
+                      CHARTERED ACCOUNTANT (CA) SERVICES
+                    </h6>
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/1. Start A Business.html"
+                      >Start A Business</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/2. Business Registration & Licences.html"
+                      >Business Registration & Licence</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/3. Income Tax.html"
+                      >Income-Tax Services</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/4. GST Services.html"
+                      >GST Services</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/5. TDS Services.html"
+                      >TDS Services</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/6. ESI & PF Services.html"
+                      >ESI & PF Services</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/7. Income Tax Notice & Appeal .html"
+                      >Income Tax Notice & Appeal</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/8. Accounting & Auditing.html"
+                      >Accounting & Auditing</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/9. Society and NGO.html"
+                      >Society & Ngo Services</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/10. CMA Data & Project Report.html"
+                      >CMA Data And Project Report</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Ca/11. Loans & Project Finance.html"
+                      >Loan & Project Finance</a
+                    >
+                  </div>
+                  <!-- CS Services -->
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">
+                      COMPANY SECRETARIES (CS) SERVICES
+                    </h6>
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/1. Annual Compliances.html"
+                      >Annual Compliances</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/2. Corporate & Financial Restructuring.html"
+                      >Corporate & Financial Restructuring</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/3. Due Diligence.html"
+                      >Due Diligence</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/4. Company Incorporation & Amendment.html"
+                      >Company Incorporation & Amendment</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/5. Company Strike off & Closer.html"
+                      >Company Strike off & Closer</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/6. Winding Up & Disslution.html"
+                      >Winding Up & Dissolution</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/7. Secretarial Audit.html"
+                      >Secretarial Audit</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/8. Insolvency and Bankruptcy Matters.html"
+                      >Insolvency and Bankruptcy Matters</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/9. XBRL Filing.html"
+                      >XBRL Filing</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/10. NCLT Appeal.html"
+                      >NCLT Appeal</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/11. Appointment & Resignation.html"
+                      >Appointment & Resignation</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/12. RBI & FEMA Overseas Law Compliance.html"
+                      >RBI & FEMA Overseas Law Compliance</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/13. Mintues & Resolutions.html"
+                      >Minutes & Resolutions</a
+                    >
+                    <a class="dropdown-item" href="Services/Cs/"
+                      >XML Data Conversion</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Cs/15. Share Certificate & Transfer.html"
+                      >Share Certificate & Transfer</a
+                    >
+                  </div>
+                  <!-- Advocate Services -->
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">ADVOCATE (LAW) SERVICES</h6>
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/1. Civil Law.html"
+                      >Civil Law</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/2. Banking & Finance Law.html"
+                      >Banking & Finance Law</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate//3. Legal Advisory.html"
+                      >Legal Advisory</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/4. Consumer Law & Protection.html"
+                      >Consumer Law & Protection</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/5. Corporate Law & Advisory.html"
+                      >Corporate Law & Advisory</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/6. Family Law.html"
+                      >Family Law</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/7. Deed Making & Drafting.html"
+                      >Deed Making & Drafting</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/8. Debt Recovery & Suit.html"
+                      >Debt Recovery & Suit</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/9. Labour & Employment Law.html"
+                      >Labour & Employment Law</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/10. NIA Matter.html"
+                      >NIA Matter</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/11. Property Valuation Services.html"
+                      >Property Valuation Services</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/12. Real Estate & Regulatory Act (RERA).html"
+                      >Real Estate & Regulatory Act (RERA)</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/13. Appeal.html"
+                      >Appeal</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="Services/Advocate/14. SARFAESI Law.html"
+                      >SARFAESI Law</a
+                    >
+                  </div>
                 </div>
-            </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="padding:25px 15px;">Services</a>
-                        <div class="dropdown-menu border-0 rounded-0 m-0">
-                            <a href="business-registration.html" class="dropdown-item">Business Registration & Licensing</a>
-                            <a href="tax-compliance.html" class="dropdown-item">Tax & Compliance Services</a>
-                            <a href="legal-advisory.html" class="dropdown-item">Legal & Corporate Advisory</a>
-                            <a href="accounting-auditing.html" class="dropdown-item">Accounting & Auditing</a>
-                        </div>
-                    </div>
-                    <a href="display-blog.html" class="nav-item nav-link">Blogs</a>
-                    <a href="careers.html" class="nav-item nav-link active">Careers</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    <a href="disclaimer.html" class="nav-item nav-link">Disclaimer</a>
-                </div>
+              </div>
             </div>
-        </nav>
+            <a href="display-blog.html" class="nav-item nav-link">Blogs</a>
+            <a href="careers.html" class="nav-item nav-link active">Careers</a>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="disclaimer.html" class="nav-item nav-link">Disclaimer</a>
+          </div>
+        </div>
+      </nav>
     </div>
     <!-- Navbar End -->
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Careers</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">Careers</li>
-                </ol>
-            </nav>
-        </div>
+    <div
+      class="container-fluid page-header py-5 mb-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Careers</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb text-uppercase mb-0">
+            <li class="breadcrumb-item">
+              <a class="text-white" href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item text-primary active" aria-current="page">
+              Careers
+            </li>
+          </ol>
+        </nav>
+      </div>
     </div>
     <!-- Page Header End -->
 
     <!-- Careers Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
-                <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Join Our Team</p>
-                <h1 class="display-5 mb-5">Build Your Career With Us</h1>
-            </div>
-            <div class="row g-4">
-                <!-- Full-Time Positions -->
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="career-card">
-                        <div class="career-header">
-                            <h3 class="mb-0">Full-Time Positions</h3>
-                        </div>
-                        <div class="career-body">
-                            <h4 class="mb-3">Current Openings</h4>
-                            <ul class="benefits-list">
-                                <li>Chartered Accountant (CA)</li>
-                                <li>Company Secretary (CS)</li>
-                                <li>Legal Consultant</li>
-                                <li>Tax Consultant</li>
-                                <li>Business Development Executive</li>
-                            </ul>
-                            <h5 class="mt-4 mb-3">Benefits</h5>
-                            <ul class="benefits-list">
-                                <li>Competitive salary package</li>
-                                <li>Health insurance coverage</li>
-                                <li>Professional development opportunities</li>
-                                <li>Work-life balance</li>
-                                <li>Growth-oriented environment</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary mt-3">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Internship Opportunities -->
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="career-card">
-                        <div class="career-header">
-                            <h3 class="mb-0">Internship Program</h3>
-                        </div>
-                        <div class="career-body">
-                            <h4 class="mb-3">Available Internships</h4>
-                            <ul class="benefits-list">
-                                <li>CA Articleship</li>
-                                <li>CS Internship</li>
-                                <li>Legal Internship</li>
-                                <li>Tax & Compliance Internship</li>
-                                <li>Business Development Internship</li>
-                            </ul>
-                            <h5 class="mt-4 mb-3">Program Benefits</h5>
-                            <ul class="benefits-list">
-                                <li>Hands-on experience</li>
-                                <li>Mentorship from industry experts</li>
-                                <li>Stipend based on performance</li>
-                                <li>Potential for full-time employment</li>
-                                <li>Professional networking opportunities</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary mt-3">Apply for Internship</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Why Join Us Section -->
-            <div class="row mt-5">
-                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h2 class="mb-4">Why Join Vardhman Associates?</h2>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="feature-box border rounded p-4">
-                        <i class="fa fa-users fa-3x text-primary mb-3"></i>
-                        <h4 class="mb-3">Professional Growth</h4>
-                        <p>Continuous learning and development opportunities in a dynamic work environment.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="feature-box border rounded p-4">
-                        <i class="fa fa-handshake fa-3x text-primary mb-3"></i>
-                        <h4 class="mb-3">Work Culture</h4>
-                        <p>A supportive and collaborative work environment that values innovation and teamwork.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="feature-box border rounded p-4">
-                        <i class="fa fa-chart-line fa-3x text-primary mb-3"></i>
-                        <h4 class="mb-3">Career Progression</h4>
-                        <p>Clear career paths and opportunities for advancement within the organization.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div
+          class="text-center mx-auto wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 600px"
+        >
+          <p
+            class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3"
+          >
+            Join Our Team
+          </p>
+          <h1 class="display-5 mb-5">Build Your Career With Us</h1>
         </div>
+        <div class="row g-4">
+          <!-- Full-Time Positions -->
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="career-card">
+              <div class="career-header">
+                <h3 class="mb-0">Full-Time Positions</h3>
+              </div>
+              <div class="career-body">
+                <h4 class="mb-3">Current Openings</h4>
+                <ul class="benefits-list">
+                  <li>Chartered Accountant (CA)</li>
+                  <li>Company Secretary (CS)</li>
+                  <li>Legal Consultant</li>
+                  <li>Tax Consultant</li>
+                  <li>Business Development Executive</li>
+                </ul>
+                <h5 class="mt-4 mb-3">Benefits</h5>
+                <ul class="benefits-list">
+                  <li>Competitive salary package</li>
+                  <li>Health insurance coverage</li>
+                  <li>Professional development opportunities</li>
+                  <li>Work-life balance</li>
+                  <li>Growth-oriented environment</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary mt-3"
+                  >Apply Now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Internship Opportunities -->
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="career-card">
+              <div class="career-header">
+                <h3 class="mb-0">Internship Program</h3>
+              </div>
+              <div class="career-body">
+                <h4 class="mb-3">Available Internships</h4>
+                <ul class="benefits-list">
+                  <li>CA Articleship</li>
+                  <li>CS Internship</li>
+                  <li>Legal Internship</li>
+                  <li>Tax & Compliance Internship</li>
+                  <li>Business Development Internship</li>
+                </ul>
+                <h5 class="mt-4 mb-3">Program Benefits</h5>
+                <ul class="benefits-list">
+                  <li>Hands-on experience</li>
+                  <li>Mentorship from industry experts</li>
+                  <li>Stipend based on performance</li>
+                  <li>Potential for full-time employment</li>
+                  <li>Professional networking opportunities</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary mt-3"
+                  >Apply for Internship</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Join Us Section -->
+        <div class="row mt-5">
+          <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h2 class="mb-4">Why Join Vardhman Associates?</h2>
+          </div>
+          <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="feature-box border rounded p-4">
+              <i class="fa fa-users fa-3x text-primary mb-3"></i>
+              <h4 class="mb-3">Professional Growth</h4>
+              <p>
+                Continuous learning and development opportunities in a dynamic
+                work environment.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="feature-box border rounded p-4">
+              <i class="fa fa-handshake fa-3x text-primary mb-3"></i>
+              <h4 class="mb-3">Work Culture</h4>
+              <p>
+                A supportive and collaborative work environment that values
+                innovation and teamwork.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="feature-box border rounded p-4">
+              <i class="fa fa-chart-line fa-3x text-primary mb-3"></i>
+              <h4 class="mb-3">Career Progression</h4>
+              <p>
+                Clear career paths and opportunities for advancement within the
+                organization.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Careers End -->
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-4">Our Office</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Gopalpura Mode, Vivek Vihar (Sodala), Sansar Chandra Road, Bas Badanpura, Jaipur</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9928857684</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>vardhman.assoiates8@gmail.com</p>
-                    <p class="mb-2"><i class="fa fa-clock me-3"></i>Mon - Sat: 9:00 AM - 6:00 PM</p>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-4">Our Services</h4>
-                    <a class="btn btn-link" href="service.html">Business Registration & Licensing</a>
-                    <a class="btn btn-link" href="service.html">GST Registration & Filing</a>
-                    <a class="btn btn-link" href="service.html">Income Tax & TDS</a>
-                    <a class="btn btn-link" href="service.html">Company Law Compliance</a>
-                    <a class="btn btn-link" href="service.html">Accounting & Auditing</a>
-                    <a class="btn btn-link" href="service.html">Legal Advisory</a>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="about.html">About Us</a>
-                    <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="service.html">Our Services</a>
-                    <a class="btn btn-link" href="faq.html">FAQ</a>
-                    <a class="btn btn-link" href="refund-policy.html">Refund Policy</a>
-                    <a class="btn btn-link" href="disclaimer.html">Disclaimer</a>
-                </div>
-            </div>
+    <div
+      class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-4 col-md-6">
+            <h4 class="text-white mb-4">Our Office</h4>
+            <p class="mb-2">
+              <i class="fa fa-map-marker-alt me-3"></i>Gopalpura Mode, Vivek
+              Vihar (Sodala), Sansar Chandra Road, Bas Badanpura, Jaipur
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-phone-alt me-3"></i>+91 9928857684
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-envelope me-3"></i>vardhman.assoiates8@gmail.com
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-clock me-3"></i>Mon - Sat: 9:00 AM - 6:00 PM
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h4 class="text-white mb-4">Our Services</h4>
+            <a class="btn btn-link" href="service.html"
+              >Business Registration & Licensing</a
+            >
+            <a class="btn btn-link" href="service.html"
+              >GST Registration & Filing</a
+            >
+            <a class="btn btn-link" href="service.html">Income Tax & TDS</a>
+            <a class="btn btn-link" href="service.html"
+              >Company Law Compliance</a
+            >
+            <a class="btn btn-link" href="service.html"
+              >Accounting & Auditing</a
+            >
+            <a class="btn btn-link" href="service.html">Legal Advisory</a>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h4 class="text-white mb-4">Quick Links</h4>
+            <a class="btn btn-link" href="about.html">About Us</a>
+            <a class="btn btn-link" href="contact.html">Contact Us</a>
+            <a class="btn btn-link" href="service.html">Our Services</a>
+            <a class="btn btn-link" href="faq.html">FAQ</a>
+            <a class="btn btn-link" href="refund-policy.html">Refund Policy</a>
+            <a class="btn btn-link" href="disclaimer.html">Disclaimer</a>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Footer End -->
 
     <!-- Copyright Start -->
     <div class="container-fluid copyright py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Vardhman Associates</a>, All Rights Reserved.
-                </div>
-                <div class="col-md-6 text-center text-md-end"></div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="#">Vardhman Associates</a>,
+            All Rights Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end"></div>
         </div>
+      </div>
     </div>
     <!-- Copyright End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a
+      href="#"
+      class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -286,5 +596,5 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
-</html> 
+  </body>
+</html>
