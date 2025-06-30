@@ -21,7 +21,6 @@
       color: #212529;
       font-size: 1.05rem;
       line-height: 1.8;
-      padding: 3rem 2rem;
     }
     h1, h2, h3 {
       font-family: 'Inter', sans-serif;
@@ -65,9 +64,19 @@
     table.table-bordered th, table.table-bordered td {
       border-color: var(--border);
     }
+    #navbar-placeholder {
+    display: block;
+    width: 100%;
+    height: auto; /* important: no fixed height */
+    overflow: visible;
+    }
+
   </style>
 </head>
-<body class="px-3 px-md-5">
+<body >
+ <!-- ✅ Navbar will be injected here -->
+  <div id="navbar-placeholder"></div>
+  <div class="px-3 px-md-5" style="margin-top: 100px;">
   <h1>6. Family Law</h1>
   <p class='mb-3'>Family Law</p>
 <p class='mb-3'>Compassionate Legal Support for Life’s Most Sensitive Matters</p>
@@ -143,5 +152,9 @@
 <p class='mb-3'>🛡️ Privacy &amp; Confidentiality Note</p>
 <p class='mb-3'>“All consultations and client information are kept strictly confidential in accordance with the Advocates Act and Bar Council of India rules.”</p>
 
-</body>
+  </div>
+    <div id="footer-placeholder"></div>
+  </body>
+<script src="../../js/navbar-inject.js"></script>
+<script src="../../js/footer-inject.js"></script>
 </html>

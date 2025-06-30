@@ -21,7 +21,6 @@
       color: #212529;
       font-size: 1.05rem;
       line-height: 1.8;
-      padding: 3rem 2rem;
     }
     h1, h2, h3 {
       font-family: 'Inter', sans-serif;
@@ -65,9 +64,19 @@
     table.table-bordered th, table.table-bordered td {
       border-color: var(--border);
     }
+    #navbar-placeholder {
+    display: block;
+    width: 100%;
+    height: auto; /* important: no fixed height */
+    overflow: visible;
+    }
+
   </style>
 </head>
-<body class="px-3 px-md-5">
+<body >
+ <!-- ✅ Navbar will be injected here -->
+  <div id="navbar-placeholder"></div>
+  <div class="px-3 px-md-5" style="margin-top: 100px;">
   <h1>8. Insolvency and Bankruptcy Matters</h1>
   <p class='mb-3'>Insolvency &amp; Bankruptcy Matters</p>
 <p class='mb-3'>Efficient Solutions to Financial Distress with Expert Legal &amp; Compliance Support</p>
@@ -145,5 +154,9 @@
 <p class='mb-3'>Timelines: CIRP must be completed within 180–270 days; liquidation timelines vary.</p>
 <p class='mb-3'>Every financial challenge is unique. Whether you&#x27;re seeking resolution or recovery, our specialized services as a CS professional ensure clarity, compliance, and confidence throughout the process.</p>
 
-</body>
+  </div>
+    <div id="footer-placeholder"></div>
+  </body>
+<script src="../../js/navbar-inject.js"></script>
+<script src="../../js/footer-inject.js"></script>
 </html>

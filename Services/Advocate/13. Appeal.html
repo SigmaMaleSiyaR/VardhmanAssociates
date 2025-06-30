@@ -21,7 +21,6 @@
       color: #212529;
       font-size: 1.05rem;
       line-height: 1.8;
-      padding: 3rem 2rem;
     }
     h1, h2, h3 {
       font-family: 'Inter', sans-serif;
@@ -65,9 +64,19 @@
     table.table-bordered th, table.table-bordered td {
       border-color: var(--border);
     }
+    #navbar-placeholder {
+    display: block;
+    width: 100%;
+    height: auto; /* important: no fixed height */
+    overflow: visible;
+    }
+
   </style>
 </head>
-<body class="px-3 px-md-5">
+<body >
+ <!-- ✅ Navbar will be injected here -->
+  <div id="navbar-placeholder"></div>
+  <div class="px-3 px-md-5" style="margin-top: 100px;">
   <h1>13. Appeal</h1>
   <p class='mb-3'>Appeal Services – Your Legal Right to Challenge Unfair Decisions</p>
 <p class='mb-3'>Have you received a judgment or order that seems unjust or unfavorable? Don’t settle — assert your rights with our professional Appeal Services. As your trusted legal advisor, we help you challenge and overturn incorrect or biased decisions through well-prepared and timely appeals before the appropriate appellate authorities.</p>
@@ -168,5 +177,9 @@
 <p class='mb-3'>Vakalatnama/Authorization</p>
 <p class='mb-3'>Filing fees as applicable</p>
 
-</body>
+  </div>
+    <div id="footer-placeholder"></div>
+  </body>
+<script src="../../js/navbar-inject.js"></script>
+<script src="../../js/footer-inject.js"></script>
 </html>

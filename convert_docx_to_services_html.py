@@ -99,7 +99,6 @@ def wrap_with_bootstrap(title, body):
       color: #212529;
       font-size: 1.05rem;
       line-height: 1.8;
-      padding: 3rem 2rem;
     }}
     h1, h2, h3 {{
       font-family: 'Inter', sans-serif;
@@ -143,12 +142,26 @@ def wrap_with_bootstrap(title, body):
     table.table-bordered th, table.table-bordered td {{
       border-color: var(--border);
     }}
+    #navbar-placeholder {{
+    display: block;
+    width: 100%;
+    height: auto; /* important: no fixed height */
+    overflow: visible;
+    }}
+
   </style>
 </head>
-<body class="px-3 px-md-5">
+<body >
+ <!-- ✅ Navbar will be injected here -->
+  <div id="navbar-placeholder"></div>
+  <div class="px-3 px-md-5" style="margin-top: 100px;">
   <h1>{escape(title)}</h1>
   {body}
-</body>
+  </div>
+    <div id="footer-placeholder"></div>
+  </body>
+<script src="../../js/navbar-inject.js"></script>
+<script src="../../js/footer-inject.js"></script>
 </html>
 """
 
