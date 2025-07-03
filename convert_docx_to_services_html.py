@@ -162,6 +162,7 @@ def wrap_with_bootstrap(title, body):
   </body>
 <script src="../../js/navbar-inject.js"></script>
 <script src="../../js/footer-inject.js"></script>
+<script src="../../Services/disable-copy.js"></script>
 </html>
 """
 
