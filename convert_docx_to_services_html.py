@@ -7,16 +7,14 @@ import re
 INPUT_ROOT = "docs"
 OUTPUT_ROOT = "Services"
 
-# Emoji-like indicators that suggest heading
+# Known emoji indicators to detect headings
 HEADING_INDICATORS = ["✅", "📈", "🧠", "🛠️", "📍", "🕰️", "🎯", "👉", "🚀", "📊", "💡", "🧾", "📱"]
 
 def clean_emoji(text):
-    """Remove known emoji-like prefixes"""
     pattern = r"^(" + "|".join(re.escape(e) for e in HEADING_INDICATORS) + r")\s*"
     return re.sub(pattern, "", text).strip()
 
 def is_heading_like(text_raw):
-    """Check if text looks like a heading"""
     if not text_raw:
         return False
     if any(text_raw.startswith(e) for e in HEADING_INDICATORS):
@@ -25,8 +23,20 @@ def is_heading_like(text_raw):
         return True
     return False
 
-def convert_docx_to_html_body(doc):
+def remove_leading_numbering(text):
+    """Remove numbering like '1.', '2.3.', or even just '.'"""
+    return re.sub(r"^\s*(\d+(\.\d+)*\.?|\.)\s*", "", text).strip()
+
+def convert_docx_to_html_body(doc, category, title):
     html = ""
+    inserted_image = False
+    heading_count = 0
+
+    formatted_title = title.replace(" ", "_").replace("&", "").replace(",", "")
+    relative_path = f"../images/{category}/{formatted_title}.jpg"
+    absolute_path = os.path.join("Services", "images", category, f"{formatted_title}.jpg")
+    image_exists = os.path.exists(absolute_path)
+
     inside_list = False
 
     for para in doc.paragraphs:
@@ -37,28 +47,48 @@ def convert_docx_to_html_body(doc):
 
         style = para.style.name.lower()
 
-        if "heading" in style:
-            level = ''.join(filter(str.isdigit, style)) or "2"
-            cleaned = escape(clean_emoji(text_raw))
-            html += f"<h{level} class='mt-4 fw-bold'>{cleaned}</h{level}>\n"
-            inside_list = False
+        is_heading = False
+        heading_level = 0
 
-        elif para.style.name == "List Paragraph" or text_raw.startswith(("•", "●", "-", "–")):
+        if "heading" in style:
+            heading_level = int(''.join(filter(str.isdigit, style)) or 2)
+            is_heading = True
+
+        elif is_heading_like(text_raw):
+            heading_level = 3
+            is_heading = True
+
+        if is_heading:
+            heading_count += 1
+
+            # 🖼️ Insert image above second heading only
+            if heading_count == 2 and not inserted_image and image_exists:
+                html += f"""
+<div class="text-center my-4">
+  <img src="{relative_path}" alt="{title}" class="img-fluid rounded shadow-sm" style="max-height: 350px; object-fit: cover;">
+</div>
+"""
+
+                inserted_image = True
+
+            cleaned = escape(clean_emoji(text_raw))
+            html += f"<h{heading_level} class='mt-4 fw-bold'>{cleaned}</h{heading_level}>\n"
+            inside_list = False
+            continue
+
+        # List handling
+        if para.style.name == "List Paragraph" or text_raw.startswith(("•", "●", "-", "–")):
             if not inside_list:
                 html += "<ul class='mb-3'>\n"
                 inside_list = True
             html += f"<li>{escape(text_raw.lstrip('•●–- ').strip())}</li>\n"
-
-        elif is_heading_like(text_raw):
-            cleaned = escape(clean_emoji(text_raw))
-            html += f"<h3 class='mt-4 fw-semibold'>{cleaned}</h3>\n"
-            inside_list = False
-
+            continue
         else:
             if inside_list:
                 html += "</ul>\n"
                 inside_list = False
-            html += f"<p class='mb-3'>{text}</p>\n"
+
+        html += f"<p class='mb-3'>{text}</p>\n"
 
     if inside_list:
         html += "</ul>\n"
@@ -75,7 +105,18 @@ def convert_docx_to_html_body(doc):
 
     return html
 
-def wrap_with_bootstrap(title, body):
+def get_image_tag(category, title):
+    """Generate <img> tag with correct relative path from HTML to image."""
+    formatted_title = title.replace(" ", "_").replace("&", "").replace(",", "")
+    relative_path = f"../images/{category}/{formatted_title}.jpg"
+    absolute_path = os.path.join("Services", "images", category, f"{formatted_title}.jpg")
+    
+    if os.path.exists(absolute_path):
+        return f'<img src="{relative_path}" alt="{title}" class="img-fluid rounded mb-4 shadow-sm" style="max-height: 400px; object-fit: cover;">'
+    return ""  # Return nothing if image doesn't exist
+
+def wrap_with_bootstrap(title, body, category):
+    image_html = get_image_tag(category, title)
     return f"""
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +124,7 @@ def wrap_with_bootstrap(title, body):
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{escape(title)}</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {{
@@ -127,39 +168,28 @@ def wrap_with_bootstrap(title, body):
       padding-left: 1.5rem;
       margin-bottom: 1.5rem;
     }}
-    .highlight-section {{
-      background-color: var(--highlight);
-      padding: 1rem 1.5rem;
-      border-left: 4px solid var(--secondary);
-      margin: 2rem 0;
-    }}
     table {{
       background-color: #fff;
-    }}
-    thead {{
-      background-color: var(--highlight);
     }}
     table.table-bordered th, table.table-bordered td {{
       border-color: var(--border);
     }}
     #navbar-placeholder {{
-    display: block;
-    width: 100%;
-    height: auto; /* important: no fixed height */
-    overflow: visible;
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
     }}
-
   </style>
 </head>
-<body >
- <!-- ✅ Navbar will be injected here -->
+<body>
   <div id="navbar-placeholder"></div>
   <div class="px-3 px-md-5" style="margin-top: 100px;">
-  <h1>{escape(title)}</h1>
-  {body}
+    <h1>{escape(title)}</h1>
+    {body}
   </div>
-    <div id="footer-placeholder"></div>
-  </body>
+  <div id="footer-placeholder"></div>
+</body>
 <script src="../../js/navbar-inject.js"></script>
 <script src="../../js/footer-inject.js"></script>
 <script src="../../Services/disable-copy.js"></script>
@@ -172,7 +202,7 @@ def convert_all():
         if not os.path.isdir(category_path):
             continue
 
-        output_folder = os.path.join(OUTPUT_ROOT, category.capitalize())
+        output_folder = os.path.join(OUTPUT_ROOT, category)
         os.makedirs(output_folder, exist_ok=True)
 
         for file in os.listdir(category_path):
@@ -182,10 +212,15 @@ def convert_all():
             file_path = os.path.join(category_path, file)
             try:
                 doc = Document(file_path)
-                html_body = convert_docx_to_html_body(doc)
-                title = file.replace(".docx", "").replace("-", " ").replace("_", " ")
-                full_html = wrap_with_bootstrap(title, html_body)
 
+                # Clean the file name to get a readable title
+                raw_title = file.replace(".docx", "").replace("-", " ").replace("_", " ")
+                title = remove_leading_numbering(raw_title)
+
+                # ✅ Pass the category and title
+                html_body = convert_docx_to_html_body(doc, category, title)
+
+                full_html = wrap_with_bootstrap(title, html_body, category)
                 output_file = file.replace(".docx", ".html")
                 output_path = os.path.join(output_folder, output_file)
 
