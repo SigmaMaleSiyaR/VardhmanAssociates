@@ -10,6 +10,8 @@ OUTPUT_ROOT = "Services"
 # Known emoji indicators to detect headings
 HEADING_INDICATORS = ["✅", "📈", "🧠", "🛠️", "📍", "🕰️", "🎯", "👉", "🚀", "📊", "💡", "🧾", "📱"]
 
+
+
 def clean_emoji(text):
     pattern = r"^(" + "|".join(re.escape(e) for e in HEADING_INDICATORS) + r")\s*"
     return re.sub(pattern, "", text).strip()
@@ -115,86 +117,100 @@ def get_image_tag(category, title):
         return f'<img src="{relative_path}" alt="{title}" class="img-fluid rounded mb-4 shadow-sm" style="max-height: 400px; object-fit: cover;">'
     return ""  # Return nothing if image doesn't exist
 
-def wrap_with_bootstrap(title, body, category):
-    image_html = get_image_tag(category, title)
-    return f"""
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{escape(title)}</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Icon Font Stylesheet -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
-  <style>
-    :root {{
-      --primary: #003366;
-      --secondary: #005b96;
-      --light-bg: #f8f9fa;
-      --highlight: #e9ecef;
-      --border: #dee2e6;
-    }}
-    body {{
-      font-family: 'Merriweather', serif;
-      background-color: var(--light-bg);
-      color: #212529;
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }}
-    h1, h2, h3 {{
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      color: var(--primary);
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-    }}
-    h1 {{
-      font-size: 2rem;
-      border-bottom: 2px solid var(--secondary);
-      padding-bottom: 0.5rem;
-    }}
-    h2 {{
-      font-size: 1.5rem;
-      color: var(--secondary);
-    }}
-    h3 {{
-      font-size: 1.3rem;
-      margin-top: 2rem;
-    }}
-    p, li {{
-      font-size: 1.05rem;
-    }}
-    ul {{
-      padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
-    }}
-    table {{
-      background-color: #fff;
-    }}
-    table.table-bordered th, table.table-bordered td {{
-      border-color: var(--border);
-    }}
-    #navbar-placeholder {{
-      display: block;
-      width: 100%;
-      height: auto;
-      overflow: visible;
-    }}
-  </style>
+def wrap_with_bootstrap(title, body, category, sidebar_items):
+    banner_image_url = f"../images/{category}/banner.jpg"  # You can customize this
+    service_list_html = "\n".join(f"""
+        <li><a href='#' class='d-flex'><p>{escape(service)}</p></a></li>
+    """ for service in sidebar_items)
+
+    return f"""<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{escape(title)} - {category} Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {{
+            font-family: 'Open Sans', sans-serif;
+        }}
+        .banner {{
+            height: 20vh;
+            background: url('{banner_image_url}') center/cover no-repeat;
+            position: relative;
+        }}
+        .banner h1 {{
+            position: absolute;
+            bottom: 10px;
+            left: 30px;
+            color: white;
+            font-weight: 700;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }}
+        .content-wrapper {{
+            display: flex;
+            margin-top: 2rem;
+        }}
+        .main-content {{
+            width: 80%;
+            padding-right: 2rem;
+        }}
+        .sidebar {{
+            width: 20%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-left: 1px solid #ddd;
+            padding-left: 1rem;
+        }}
+        .sidebar h4 {{
+            font-weight: 600;
+        }}
+        .sidebar ul {{
+            list-style: none;
+            padding: 0;
+        }}
+        .sidebar li {{
+            margin-bottom: 10px;
+        }}
+        .sidebar a {{
+            text-decoration: none;
+            color: #007bff;
+        }}
+        .sidebar a:hover {{
+            text-decoration: underline;
+        }}
+    </style>
 </head>
 <body>
-  <div id="navbar-placeholder"></div>
-  <div class="px-3 px-md-5" style="margin-top: 10px;">
-    <h1>{escape(title)}</h1>
-    {body}
-  </div>
-  <div id="footer-placeholder"></div>
+
+    <div class="banner">
+        <h1>{escape(title)}</h1>
+    </div>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="main-content">
+                {body}
+            </div>
+            <div class="sidebar">
+                <h4>Our Services</h4>
+                <ul>
+                    {service_list_html}
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
-<script src="../../js/navbar-inject.js"></script>
-<script src="../../js/footer-inject.js"></script>
-<!-- <script src="../../Services/disable-copy.js"></script> -->
 </html>
 """
 
@@ -220,9 +236,36 @@ def convert_all():
                 title = remove_leading_numbering(raw_title)
 
                 # ✅ Pass the category and title
-                html_body = convert_docx_to_html_body(doc, category, title)
 
-                full_html = wrap_with_bootstrap(title, html_body, category)
+
+                html_body = convert_docx_to_html_body(doc, category, title)
+                
+                # Sidebar items for the given category
+                SIDEBAR_SERVICES = {
+                    "CA": [
+                        "Start A Business", "Business Registration & Licence", "Income-Tax Services", "GST Services",
+                        "TDS Services", "ESI & PF Services", "Income Tax Notice & Appeal", "Accounting & Auditing",
+                        "Society & Ngo Services", "CMA Data And Project Report", "Loan & Project Finance"
+                    ],
+                    "CS": [
+                        "Annual Compliances", "Corporate & Financial Restructuring", "Due Diligence",
+                        "Company Incorporation & Amendment", "Company Strike off & Closer", "Winding Up & Dissolution",
+                        "Secretarial Audit", "Insolvency and Bankruptcy Matters", "XBRL Filing", "NCLT Appeal",
+                        "Appointment & Resignation", "RBI & FEMA Overseas Law Compliance", "Minutes & Resolutions",
+                        "XML Data Conversion", "Share Certificate & Transfer"
+                    ],
+                    "Advocate": [
+                        "Civil Law", "Banking & Finance Law", "Legal Advisory", "Consumer Law & Protection",
+                        "Corporate Law & Advisory", "Family Law", "Deed Making & Drafting", "Debt Recovery & Suit",
+                        "Labour & Employment Law", "NIA Matter", "Property Valuation Services",
+                        "Real Estate & Regulatory Act (RERA)", "Appeal", "SARFAESI Law"
+                    ]
+                }
+
+                sidebar_items = SIDEBAR_SERVICES.get(category, [])
+                full_html = wrap_with_bootstrap(title, html_body, category, sidebar_items)
+
+
                 output_file = file.replace(".docx", ".html")
                 output_path = os.path.join(output_folder, output_file)
 
