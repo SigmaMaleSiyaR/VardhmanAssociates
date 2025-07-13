@@ -12,61 +12,62 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
-        <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 14px;
-        }
-        .banner {
-            height: 20vh;
-            background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
-            position: relative;
-        }
-        .banner h1 {
-            position: absolute;
-            bottom: 10px;
-            left: 30px;
-            color: white;
-            font-weight: 700;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-        .content-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-            gap: 2%;
-        }
-        .main-content {
-            flex: 0 0 60%;
-        }
-        .sidebar {
-            flex: 0 0 33%;
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-left: 1px solid #ddd;
-            padding-left: 1.5rem;
-        }
-        .sidebar h4 {
-            font-weight: 600;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar li {
-            margin-bottom: 10px;
-        }
-        .sidebar a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        .sidebar a:hover {
-            text-decoration: underline;
-        }
+    <style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+    }
+    .banner {
+        height: 30vh;
+        background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
+        position: relative;
+    }
+    .banner h1 {
+        position: absolute;
+        bottom: 10px;
+        left: 30px;
+        color: white;
+        font-weight: 700;
+        /* background: rgba(0, 0, 0, 0.5); */
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+    .content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        gap: 2%;
+    }
+    .main-content {
+        flex: 0 0 60%;
+    }
+    .sidebar {
+        height: fit-content;
+        flex: 0 0 33%;
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-left: 1px solid #ddd;
+        padding-left: 1.5rem;
+    }
+    .sidebar h4 {
+        font-weight: 600;
+    }
+    .sidebar ul {
+        padding: 1rem;
+        list-style: disc;
+    }
+    .sidebar li {
+        margin-bottom: 10px;
+    }
+    .sidebar a {
+        text-decoration: none;
+        color: #007bff;
+    }
+    .sidebar a:hover {
+        color: var(--primary) !important;
+    }
     </style>
 
 </head>
@@ -81,7 +82,7 @@
             <div class="main-content">
                 
 <div class="text-center my-4">
-  <img src="../images/Advocate/Civil_Law.jpg" alt="Civil Law" class="img-fluid rounded shadow-sm" style="max-height: 350px; object-fit: cover;">
+  <img src="../images/Advocate/Civil_Law.jpg" alt="Civil Law" class="img-fluid rounded shadow-sm" style="min-width:100% ; object-fit: cover;">
 </div>
 <p class='mb-3'>Civil Law</p>
 <p class='mb-3'>🔹 Protecting Your Rights, Resolving Your Disputes</p>
@@ -217,5 +218,5 @@
 </body>
 <script src="../../js/navbar-inject.js"></script>
 <script src="../../js/footer-inject.js"></script>
-<script src="../../Services/disable-copy.js"></script>
+<!-- <script src="../../Services/disable-copy.js"></script> -->
 </html>
