@@ -12,13 +12,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
-    <style>
+        <style>
         body {
             font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
         }
         .banner {
             height: 20vh;
-            background: url('../images/CA/banner.jpg') center/cover no-repeat;
+            background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
             position: relative;
         }
         .banner h1 {
@@ -33,18 +34,21 @@
         }
         .content-wrapper {
             display: flex;
+            flex-wrap: wrap;
             margin-top: 2rem;
+            gap: 2%;
         }
         .main-content {
-            width: 80%;
-            padding-right: 2rem;
+            flex: 0 0 60%;
         }
         .sidebar {
-            width: 20%;
-            max-height: 90vh;
-            overflow-y: auto;
+            flex: 0 0 33%;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-left: 1px solid #ddd;
-            padding-left: 1rem;
+            padding-left: 1.5rem;
         }
         .sidebar h4 {
             font-weight: 600;
@@ -64,26 +68,27 @@
             text-decoration: underline;
         }
     </style>
+
 </head>
 <body>
 
+    <div id="navbar-placeholder"></div>
     <div class="banner">
         <h1>Society and NGO</h1>
     </div>
-
     <div class="container">
         <div class="content-wrapper">
             <div class="main-content">
-                <p class='mb-3'>🏢 Society &amp; NGO Compliance Services</p>
+                
+<div class="text-center my-4">
+  <img src="../images/CA/Society_and_NGO.jpg" alt="Society and NGO" class="img-fluid rounded shadow-sm" style="max-height: 350px; object-fit: cover;">
+</div>
+<p class='mb-3'>🏢 Society &amp; NGO Compliance Services</p>
 <p class='mb-3'>Strengthening the Backbone of Social Impact with Legal &amp; Financial Clarity</p>
 <p class='mb-3'>Non-profits, trusts, and societies operate with a noble vision—but managing legal, tax, and regulatory requirements can be daunting. We provide specialized services tailored to the unique needs of NGOs, charitable trusts, and societies.</p>
 <p class='mb-3'>From initial registration under the Societies Act, Trust Act, or Section 8 of the Companies Act, to obtaining 12A, 80G, and FCRA approvals, our firm ensures that your organization enjoys legal recognition and tax-exempt status. We also handle accounting, donor reporting, audit, and compliance filing so that you remain eligible for government grants and foreign contributions.</p>
 <p class='mb-3'>With deep domain knowledge and a passion for supporting change-makers, we help you run your organization smoothly—ensuring transparency, credibility, and compliance at every step.</p>
 <h3 class='mt-4 fw-bold'>Supporting Your Vision to Serve Society – With Full Legal and Financial Compliance</h3>
-
-<div class="text-center my-4">
-  <img src="../images/CA/Society_and_NGO.jpg" alt="Society and NGO" class="img-fluid rounded shadow-sm" style="max-height: 350px; object-fit: cover;">
-</div>
 <h2 class='mt-4 fw-bold'>🔹 What is an NGO?</h2>
 <p class='mb-3'>An NGO (Non-Governmental Organization) is a non-profit group that operates independently of government and is formed to serve social, charitable, religious, educational, or humanitarian objectives. NGOs may be registered under different legal structures, each with its own benefits.</p>
 <h2 class='mt-4 fw-bold'>Main Objectives of NGOs &amp; Societies</h2>
@@ -107,19 +112,30 @@
 <h3 class='mt-4 fw-bold'>Why Choose Us?</h3>
 <ul class='mb-3'>
 <li>Complete Registration Support for Trusts, Societies, &amp; NGOs</li>
+<ul class='mb-3'>
 <li>12A, 80G, FCRA Registrations with renewals &amp; follow-ups</li>
+<ul class='mb-3'>
 <li>Accounting &amp; Auditing Systems designed for NGO needs</li>
+<ul class='mb-3'>
 <li>Annual Return &amp; Tax Filing without compliance stress</li>
+<ul class='mb-3'>
 <li>Utilization &amp; CSR Reports for donors and sponsors</li>
+<ul class='mb-3'>
 <li>Transparent, timely, and mission-driven services</li>
 <h3 class='mt-4 fw-bold'>What We Offer:</h3>
 <ul class='mb-3'>
 <li>Registration of Trust, Society &amp; NGO</li>
+<ul class='mb-3'>
 <li>12A, 80G Registration for Income Tax exemption</li>
+<ul class='mb-3'>
 <li>FCRA Registration for foreign donations</li>
+<ul class='mb-3'>
 <li>Annual Compliance &amp; Audit Support</li>
+<ul class='mb-3'>
 <li>Financial Reporting &amp; Filing</li>
+<ul class='mb-3'>
 <li>Project-based Fund Utilization Certificates</li>
+<ul class='mb-3'>
 <li>Consultation on Governance, CSR Funding &amp; Donations</li>
 <h2 class='mt-4 fw-bold'>🤝 Let&#x27;s Build Something Meaningful Together</h2>
 <p class='mb-3'>We understand the passion behind every non-profit effort. Our goal is to make the legal, financial, and compliance journey smooth and transparent, so you can focus on creating real impact.</p>
@@ -284,43 +300,25 @@
             <div class="sidebar">
                 <h4>Our Services</h4>
                 <ul>
-                    
-        <li><a href='#' class='d-flex'><p>Start A Business</p></a></li>
-    
+                    <li><a href='../CA/1. Start A Business.html' class='d-flex'><p>Start A Business</p></a></li>
+<li><a href='../CA/2. Business Registration & Licences.html' class='d-flex'><p>Business Registration &amp; Licence</p></a></li>
+<li><a href='../CA/3. Income Tax.html' class='d-flex'><p>Income Tax</p></a></li>
+<li><a href='../CA/4. GST Services.html' class='d-flex'><p>GST Services</p></a></li>
+<li><a href='../CA/5. TDS Services.html' class='d-flex'><p>TDS Services</p></a></li>
+<li><a href='../CA/6. ESI & PF Services.html' class='d-flex'><p>ESI &amp; PF Services</p></a></li>
+<li><a href='../CA/7. Income Tax Notice & Appeal .html' class='d-flex'><p>Income Tax Notice &amp; Appeal</p></a></li>
+<li><a href='../CA/8. Accounting & Auditing.html' class='d-flex'><p>Accounting &amp; Auditing</p></a></li>
+<li><a href='../CA/9. Society and NGO.html' class='d-flex'><p>Society and NGO</p></a></li>
+<li><a href='../CA/10. CMA Data & Project Report.html' class='d-flex'><p>CMA Data &amp; Project Report</p></a></li>
+<li><a href='../CA/11. Loans & Project Finance.html' class='d-flex'><p>Loans &amp; Project Finance</p></a></li>
 
-        <li><a href='#' class='d-flex'><p>Business Registration &amp; Licence</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>Income-Tax Services</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>GST Services</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>TDS Services</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>ESI &amp; PF Services</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>Income Tax Notice &amp; Appeal</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>Accounting &amp; Auditing</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>Society &amp; Ngo Services</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>CMA Data And Project Report</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>Loan &amp; Project Finance</p></a></li>
-    
                 </ul>
             </div>
         </div>
     </div>
-
+    <div id="footer-placeholder"></div>
 </body>
+<script src="../../js/navbar-inject.js"></script>
+<script src="../../js/footer-inject.js"></script>
+<script src="../../Services/disable-copy.js"></script>
 </html>

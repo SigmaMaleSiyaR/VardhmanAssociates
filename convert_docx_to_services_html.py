@@ -2,6 +2,8 @@ import os
 from docx import Document
 from html import escape
 import re
+import glob
+
 
 # Input/output folders
 INPUT_ROOT = "docs"
@@ -31,15 +33,22 @@ def remove_leading_numbering(text):
 
 def convert_docx_to_html_body(doc, category, title):
     html = ""
-    inserted_image = False
-    heading_count = 0
 
     formatted_title = title.replace(" ", "_").replace("&", "").replace(",", "")
     relative_path = f"../images/{category}/{formatted_title}.jpg"
     absolute_path = os.path.join("Services", "images", category, f"{formatted_title}.jpg")
     image_exists = os.path.exists(absolute_path)
 
-    inside_list = False
+    # 🖼️ Insert image once at the top of the HTML section (before any content)
+    if image_exists:
+        html += f"""
+<div class="text-center my-4">
+  <img src="{relative_path}" alt="{title}" class="img-fluid rounded shadow-sm" style="max-height: 350px; object-fit: cover;">
+</div>
+"""
+    else:
+        print(f"⚠️ Image missing for: {category}/{formatted_title}.jpg")
+
 
     for para in doc.paragraphs:
         text_raw = para.text.strip()
@@ -55,27 +64,15 @@ def convert_docx_to_html_body(doc, category, title):
         if "heading" in style:
             heading_level = int(''.join(filter(str.isdigit, style)) or 2)
             is_heading = True
-
         elif is_heading_like(text_raw):
             heading_level = 3
             is_heading = True
 
+        inside_list = False
+        
         if is_heading:
-            heading_count += 1
-
-            # 🖼️ Insert image above second heading only
-            if heading_count == 2 and not inserted_image and image_exists:
-                html += f"""
-<div class="text-center my-4">
-  <img src="{relative_path}" alt="{title}" class="img-fluid rounded shadow-sm" style="max-height: 350px; object-fit: cover;">
-</div>
-"""
-
-                inserted_image = True
-
             cleaned = escape(clean_emoji(text_raw))
             html += f"<h{heading_level} class='mt-4 fw-bold'>{cleaned}</h{heading_level}>\n"
-            inside_list = False
             continue
 
         # List handling
@@ -118,10 +115,21 @@ def get_image_tag(category, title):
     return ""  # Return nothing if image doesn't exist
 
 def wrap_with_bootstrap(title, body, category, sidebar_items):
-    banner_image_url = f"../images/{category}/banner.jpg"  # You can customize this
-    service_list_html = "\n".join(f"""
-        <li><a href='#' class='d-flex'><p>{escape(service)}</p></a></li>
-    """ for service in sidebar_items)
+    banner_image_url = f"/img/ServicesHeader.jpg"
+
+    # Find actual filenames in the category folder
+    category_dir = os.path.join(OUTPUT_ROOT, category)
+    all_html_files = os.listdir(category_dir)
+
+    service_list_html = ""
+    for service in sidebar_items:
+        match = next((f for f in all_html_files if service in f and f.endswith(".html")), None)
+        if match:
+            href = f"../{category}/{match}"
+        else:
+            href = "#"
+        service_list_html += f"<li><a href='{href}' class='d-flex'><p>{escape(service)}</p></a></li>\n"
+
 
     return f"""<!DOCTYPE html>
   <html lang="en">
@@ -137,9 +145,10 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
-    <style>
+        <style>
         body {{
             font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
         }}
         .banner {{
             height: 20vh;
@@ -158,18 +167,21 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
         }}
         .content-wrapper {{
             display: flex;
+            flex-wrap: wrap;
             margin-top: 2rem;
+            gap: 2%;
         }}
         .main-content {{
-            width: 80%;
-            padding-right: 2rem;
+            flex: 0 0 60%;
         }}
         .sidebar {{
-            width: 20%;
-            max-height: 90vh;
-            overflow-y: auto;
+            flex: 0 0 33%;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-left: 1px solid #ddd;
-            padding-left: 1rem;
+            padding-left: 1.5rem;
         }}
         .sidebar h4 {{
             font-weight: 600;
@@ -189,13 +201,14 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
             text-decoration: underline;
         }}
     </style>
+
 </head>
 <body>
 
+    <div id="navbar-placeholder"></div>
     <div class="banner">
         <h1>{escape(title)}</h1>
     </div>
-
     <div class="container">
         <div class="content-wrapper">
             <div class="main-content">
@@ -209,8 +222,11 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
             </div>
         </div>
     </div>
-
+    <div id="footer-placeholder"></div>
 </body>
+<script src="../../js/navbar-inject.js"></script>
+<script src="../../js/footer-inject.js"></script>
+<script src="../../Services/disable-copy.js"></script>
 </html>
 """
 
@@ -239,19 +255,19 @@ def convert_all():
 
 
                 html_body = convert_docx_to_html_body(doc, category, title)
-                
+
                 # Sidebar items for the given category
                 SIDEBAR_SERVICES = {
                     "CA": [
-                        "Start A Business", "Business Registration & Licence", "Income-Tax Services", "GST Services",
+                        "Start A Business", "Business Registration & Licence", "Income Tax", "GST Services",
                         "TDS Services", "ESI & PF Services", "Income Tax Notice & Appeal", "Accounting & Auditing",
-                        "Society & Ngo Services", "CMA Data And Project Report", "Loan & Project Finance"
+                        "Society and NGO", "CMA Data & Project Report", "Loans & Project Finance"
                     ],
                     "CS": [
                         "Annual Compliances", "Corporate & Financial Restructuring", "Due Diligence",
-                        "Company Incorporation & Amendment", "Company Strike off & Closer", "Winding Up & Dissolution",
+                        "Company Incorporation & Amendment", "Company Strike off & Closer", "Winding Up & Disslution",
                         "Secretarial Audit", "Insolvency and Bankruptcy Matters", "XBRL Filing", "NCLT Appeal",
-                        "Appointment & Resignation", "RBI & FEMA Overseas Law Compliance", "Minutes & Resolutions",
+                        "Appointment & Resignation", "RBI & FEMA Overseas Law Compliance", "Mintues & Resolutions",
                         "XML Data Conversion", "Share Certificate & Transfer"
                     ],
                     "Advocate": [

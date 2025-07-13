@@ -12,13 +12,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
-    <style>
+        <style>
         body {
             font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
         }
         .banner {
             height: 20vh;
-            background: url('../images/CA/banner.jpg') center/cover no-repeat;
+            background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
             position: relative;
         }
         .banner h1 {
@@ -33,18 +34,21 @@
         }
         .content-wrapper {
             display: flex;
+            flex-wrap: wrap;
             margin-top: 2rem;
+            gap: 2%;
         }
         .main-content {
-            width: 80%;
-            padding-right: 2rem;
+            flex: 0 0 60%;
         }
         .sidebar {
-            width: 20%;
-            max-height: 90vh;
-            overflow-y: auto;
+            flex: 0 0 33%;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-left: 1px solid #ddd;
-            padding-left: 1rem;
+            padding-left: 1.5rem;
         }
         .sidebar h4 {
             font-weight: 600;
@@ -64,22 +68,23 @@
             text-decoration: underline;
         }
     </style>
+
 </head>
 <body>
 
+    <div id="navbar-placeholder"></div>
     <div class="banner">
         <h1>Start A Business</h1>
     </div>
-
     <div class="container">
         <div class="content-wrapper">
             <div class="main-content">
-                <h3 class='mt-4 fw-bold'>Start Your Business the Right Way — With Expert CA Guidance</h3>
-<p class='mb-3'>Starting a business is an exciting journey — but choosing the right business structure is the foundation of long-term success. Whether you&#x27;re a solo entrepreneur, startup founder, service provider, or social impact creator, the right entity helps you:</p>
-
+                
 <div class="text-center my-4">
   <img src="../images/CA/Start_A_Business.jpg" alt="Start A Business" class="img-fluid rounded shadow-sm" style="max-height: 350px; object-fit: cover;">
 </div>
+<h3 class='mt-4 fw-bold'>Start Your Business the Right Way — With Expert CA Guidance</h3>
+<p class='mb-3'>Starting a business is an exciting journey — but choosing the right business structure is the foundation of long-term success. Whether you&#x27;re a solo entrepreneur, startup founder, service provider, or social impact creator, the right entity helps you:</p>
 <h3 class='mt-4 fw-bold'>Save taxes
 ✅ Stay compliant
 ✅ Gain investor trust
@@ -128,8 +133,8 @@ Need help with budgeting, cash flow, or investments? I offer insights tailored t
 <p class='mb-3'>1. Business Consultation</p>
 <ul class='mb-3'>
 <li>Understand your business idea, budget &amp; future goals</li>
+<ul class='mb-3'>
 <li>Help you choose the best legal structure (Proprietorship / OPC / LLP / Pvt Ltd etc.)</li>
-</ul>
 <p class='mb-3'>2. Documentation Preparation</p>
 <p class='mb-3'>✔️ PAN, Aadhaar, Address Proof
 ✔️ Utility bill, Rent Agreement / NOC for business address
@@ -244,43 +249,25 @@ Need help with budgeting, cash flow, or investments? I offer insights tailored t
             <div class="sidebar">
                 <h4>Our Services</h4>
                 <ul>
-                    
-        <li><a href='#' class='d-flex'><p>Start A Business</p></a></li>
-    
+                    <li><a href='../CA/1. Start A Business.html' class='d-flex'><p>Start A Business</p></a></li>
+<li><a href='../CA/2. Business Registration & Licences.html' class='d-flex'><p>Business Registration &amp; Licence</p></a></li>
+<li><a href='../CA/3. Income Tax.html' class='d-flex'><p>Income Tax</p></a></li>
+<li><a href='../CA/4. GST Services.html' class='d-flex'><p>GST Services</p></a></li>
+<li><a href='../CA/5. TDS Services.html' class='d-flex'><p>TDS Services</p></a></li>
+<li><a href='../CA/6. ESI & PF Services.html' class='d-flex'><p>ESI &amp; PF Services</p></a></li>
+<li><a href='../CA/7. Income Tax Notice & Appeal .html' class='d-flex'><p>Income Tax Notice &amp; Appeal</p></a></li>
+<li><a href='../CA/8. Accounting & Auditing.html' class='d-flex'><p>Accounting &amp; Auditing</p></a></li>
+<li><a href='../CA/9. Society and NGO.html' class='d-flex'><p>Society and NGO</p></a></li>
+<li><a href='../CA/10. CMA Data & Project Report.html' class='d-flex'><p>CMA Data &amp; Project Report</p></a></li>
+<li><a href='../CA/11. Loans & Project Finance.html' class='d-flex'><p>Loans &amp; Project Finance</p></a></li>
 
-        <li><a href='#' class='d-flex'><p>Business Registration &amp; Licence</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>Income-Tax Services</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>GST Services</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>TDS Services</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>ESI &amp; PF Services</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>Income Tax Notice &amp; Appeal</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>Accounting &amp; Auditing</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>Society &amp; Ngo Services</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>CMA Data And Project Report</p></a></li>
-    
-
-        <li><a href='#' class='d-flex'><p>Loan &amp; Project Finance</p></a></li>
-    
                 </ul>
             </div>
         </div>
     </div>
-
+    <div id="footer-placeholder"></div>
 </body>
+<script src="../../js/navbar-inject.js"></script>
+<script src="../../js/footer-inject.js"></script>
+<script src="../../Services/disable-copy.js"></script>
 </html>
