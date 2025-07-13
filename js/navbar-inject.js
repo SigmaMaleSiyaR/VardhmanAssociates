@@ -6,7 +6,7 @@ fetch("/Services/navbar.html")
 
     // ✅ Force reflow after DOM injection (to allow CSS/animations to take effect)
     setTimeout(() => {
-      placeholder.style.height = placeholder.scrollHeight + "px";
+      // placeholder.style.height = placeholder.scrollHeight + "px";
     }, 100); // Give time for animations to render
 
     // ✅ Re-initialize Bootstrap dropdowns
