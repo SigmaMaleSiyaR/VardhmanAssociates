@@ -125,7 +125,7 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
     for service in sidebar_items:
         match = next((f for f in all_html_files if service in f and f.endswith(".html")), None)
         if match:
-            href = f"../{category}/{match}"
+            href = f"../{category.capitalize()}/{match}"
         else:
             href = "#"
         service_list_html += f"<li><a href='{href}' class='d-flex'><p>{escape(service)}</p></a></li>\n"
@@ -227,7 +227,7 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
 </body>
 <script src="../../js/navbar-inject.js"></script>
 <script src="../../js/footer-inject.js"></script>
-<!-- <script src="../../Services/disable-copy.js"></script> -->
+<script src="../../Services/disable-copy.js"></script>
 </html>
 """
 
