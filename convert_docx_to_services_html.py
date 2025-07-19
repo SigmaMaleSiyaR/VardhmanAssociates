@@ -216,7 +216,7 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
                 {body}
             </div>
             <div class="sidebar">
-                <h4>Our Services</h4>
+                <h4>Services</h4>
                 <ul>
                     {service_list_html}
                 </ul>

@@ -158,7 +158,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(9, 30, 62, 0.7);
+        background: rgba(9, 30, 62, 0.5);
         z-index: 1;
       }
 
@@ -404,6 +404,109 @@
   </head>
 
   <body>
+    <!-- Legal Disclaimer Modal -->
+    <!-- Legal Disclaimer Modal -->
+    <div
+      class="modal fade"
+      id="disclaimerModal"
+      tabindex="-1"
+      aria-labelledby="disclaimerModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header py-2">
+            <h5 class="modal-title" id="disclaimerModalLabel">
+              Legal Disclaimer
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body small py-2">
+            <p class="mb-2">
+              By accessing or using the services of Vardhman Associates, you
+              agree to the terms outlined below:
+            </p>
+
+            <p class="mb-1">
+              <strong>1. General Information:</strong> All content on this
+              website is for informational purposes only. While we strive to
+              maintain accuracy, we make no guarantees regarding completeness or
+              reliability.
+            </p>
+
+            <p class="mb-1">
+              <strong>2. Professional Advice:</strong> The information provided
+              does not constitute legal, financial, or professional advice.
+              Please consult a qualified expert for decisions requiring such
+              advice.
+            </p>
+
+            <p class="mb-1">
+              <strong>3. Limitation of Liability:</strong> Vardhman Associates
+              is not liable for any loss or damage arising from the use of our
+              website or services.
+            </p>
+
+            <p class="mb-1">
+              <strong>4. External Links:</strong> We may provide links to
+              third-party websites for convenience. We are not responsible for
+              their content, accuracy, or practices.
+            </p>
+
+            <p class="mb-1">
+              <strong>5. Data Privacy:</strong> While we take steps to protect
+              your data, we cannot guarantee complete security. Any information
+              you provide is at your own risk.
+            </p>
+
+            <p class="mb-1">
+              <strong>6. Service Availability:</strong> We do not guarantee
+              uninterrupted access to our services and may change or discontinue
+              features at any time without prior notice.
+            </p>
+
+            <p class="mb-1">
+              <strong>7. Jurisdiction:</strong> This disclaimer is governed by
+              the laws of India. Any legal matters will be handled exclusively
+              in the courts of Jaipur, Rajasthan.
+            </p>
+
+            <p class="mb-1">
+              <strong>8. Updates:</strong> We may update this disclaimer
+              periodically. Continued use of our services implies acceptance of
+              the latest terms.
+            </p>
+          </div>
+          <div class="modal-footer py-2">
+            <button
+              type="button"
+              class="btn btn-primary btn-sm"
+              data-bs-dismiss="modal"
+            >
+              I Acknowledge
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auto-show on page load -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var myModal = new bootstrap.Modal(
+          document.getElementById("disclaimerModal")
+        );
+        myModal.show();
+      });
+    </script>
+
+    <!-- Legal Disclaimer Modal end -->
+
     <!-- Spinner Start -->
     <div
       id="spinner"
@@ -416,65 +519,9 @@
       ></div>
     </div>
     <!-- Spinner End -->
-    <!-- Social Media Strip (scrolls with page) -->
-    <div
-      class="social-strip d-flex justify-content-between align-items-center px-4 py-2"
-      style="
-        background-color: var(--light);
-        font-family: 'Open Sans', sans-serif;
-        color: var(--tertiary);
-        font-weight: 600;
-        font-size: 0.9rem;
-      "
-    >
-      <div class="d-flex align-items-center gap-3 flex-wrap">
-        <span>Connect with us:</span>
-        <a
-          href="https://facebook.com"
-          target="_blank"
-          class="social-icon"
-          style="color: #6c757d"
-          aria-label="Facebook"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          class="social-icon"
-          style="color: #6c757d"
-          aria-label="LinkedIn"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          class="social-icon"
-          style="color: #6c757d"
-          aria-label="Instagram"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a
-          href="https://twitter.com"
-          target="_blank"
-          class="social-icon"
-          style="color: #6c757d"
-          aria-label="Twitter"
-          ><i class="fab fa-x-twitter"></i
-        ></a>
-      </div>
-
-      <a
-        href="tel:+919928857684"
-        class="phone-button"
-        aria-label="Call us at +91 99288 57684"
-      >
-        +91 99288 57684
-      </a>
-    </div>
 
     <!-- Navbar Start -->
     <!-- StickyWrapper -->
-
     <nav
       class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn"
       data-wow-delay="0.1s"
@@ -741,11 +788,67 @@
           <a href="display-blog.html" class="nav-item nav-link">Blogs</a>
           <a href="careers.html" class="nav-item nav-link">Careers</a>
           <a href="contact.html" class="nav-item nav-link">Contact</a>
-          <a href="disclaimer.html" class="nav-item nav-link">Disclaimer</a>
+          <!-- <a href="disclaimer.html" class="nav-item nav-link">Disclaimer</a> -->
         </div>
       </div>
     </nav>
     <!-- Navbar End -->
+
+    <!-- Social Media Strip (scrolls with page) -->
+    <div
+      class="social-strip d-flex justify-content-between align-items-center px-4 py-2"
+      style="
+        background-color: var(--light);
+        font-family: 'Open Sans', sans-serif;
+        color: var(--tertiary);
+        font-weight: 600;
+        font-size: 0.9rem;
+      "
+    >
+      <div class="d-flex align-items-center gap-3 flex-wrap">
+        <span>Connect with us:</span>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          class="social-icon"
+          style="color: #6c757d"
+          aria-label="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          class="social-icon"
+          style="color: #6c757d"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          class="social-icon"
+          style="color: #6c757d"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          class="social-icon"
+          style="color: #6c757d"
+          aria-label="Twitter"
+          ><i class="fab fa-x-twitter"></i
+        ></a>
+      </div>
+
+      <a
+        href="tel:+919928857684"
+        class="phone-button"
+        aria-label="Call us at +91 99288 57684"
+      >
+        +91 99288 57684
+      </a>
+    </div>
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
@@ -1022,7 +1125,7 @@
             <div class="position-relative h-100">
               <img
                 class="img-fluid rounded w-100 h-100"
-                src="img/service-1.jpg"
+                src="img/CA_Logo.png"
                 alt="Chartered Accountant Services"
                 style="object-fit: cover"
               />
@@ -1219,7 +1322,7 @@
             <div class="position-relative h-100">
               <img
                 class="img-fluid rounded w-100 h-100"
-                src="img/service-2.jpg"
+                src="img/cs.jpeg"
                 alt="Company Secretaries Services"
                 style="object-fit: cover"
               />
@@ -1240,7 +1343,7 @@
             <div class="position-relative h-100">
               <img
                 class="img-fluid rounded w-100 h-100"
-                src="img/service-3.jpg"
+                src="img/advocate.png"
                 alt="Advocate Services"
                 style="object-fit: cover"
               />
@@ -1436,7 +1539,7 @@
             <div class="position-relative h-100">
               <img
                 class="img-fluid rounded w-100 h-100"
-                src="img/service-4.jpg"
+                src="img/finance.png"
                 alt="Loan and Finance Services"
                 style="object-fit: cover"
               />
