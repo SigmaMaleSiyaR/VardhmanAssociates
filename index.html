@@ -95,8 +95,12 @@
       .social-strip .social-icons a:hover {
         color: var(--accent);
       }
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
 
-      .phone-button {
+      /* .phone-button {
         background-color: var(--primary);
         color: white;
         font-family: "Open Sans", sans-serif;
@@ -108,7 +112,9 @@
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         transition: background-color 0.3s ease;
         white-space: nowrap;
-      }
+        height: fit-content;
+        padding: 25px 16px;
+      } */
 
       .phone-button:hover,
       .phone-button:focus {
@@ -519,6 +525,61 @@
       ></div>
     </div>
     <!-- Spinner End -->
+    <!-- Social Media Strip (scrolls with page) -->
+    <div
+      class="social-strip d-flex justify-content-between align-items-center px-4 py-2"
+      style="
+        background-color: var(--light);
+        font-family: 'Open Sans', sans-serif;
+        color: var(--tertiary);
+        font-weight: 600;
+        font-size: 0.9rem;
+      "
+    >
+      <div class="d-flex align-items-center gap-3 flex-wrap">
+        <span>Connect with us:</span>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          class="social-icon"
+          style="color: #6c757d"
+          aria-label="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          class="social-icon"
+          style="color: #6c757d"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          class="social-icon"
+          style="color: #6c757d"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          class="social-icon"
+          style="color: #6c757d"
+          aria-label="Twitter"
+          ><i class="fab fa-x-twitter"></i
+        ></a>
+      </div>
+
+      <!-- <a
+        href="tel:+919928857684"
+        class="phone-button"
+        aria-label="Call us at +91 99288 57684"
+      >
+        +91 99288 57684
+      </a> -->
+    </div>
 
     <!-- Navbar Start -->
     <!-- StickyWrapper -->
@@ -788,67 +849,18 @@
           <a href="display-blog.html" class="nav-item nav-link">Blogs</a>
           <a href="careers.html" class="nav-item nav-link">Careers</a>
           <a href="contact.html" class="nav-item nav-link">Contact</a>
-          <a href="disclaimer.html" class="nav-item nav-link">Disclaimer</a>
+          <a
+            href="tel:+919928857684"
+            class="phone-button"
+            aria-label="Call us at +91 99288 57684"
+          >
+            +91 99288 57684
+          </a>
+          <!-- <a href="disclaimer.html" class="nav-item nav-link">Disclaimer</a> -->
         </div>
       </div>
     </nav>
     <!-- Navbar End -->
-
-    <!-- Social Media Strip (scrolls with page) -->
-    <div
-      class="social-strip d-flex justify-content-between align-items-center px-4 py-2"
-      style="
-        background-color: var(--light);
-        font-family: 'Open Sans', sans-serif;
-        color: var(--tertiary);
-        font-weight: 600;
-        font-size: 0.9rem;
-      "
-    >
-      <div class="d-flex align-items-center gap-3 flex-wrap">
-        <span>Connect with us:</span>
-        <a
-          href="https://facebook.com"
-          target="_blank"
-          class="social-icon"
-          style="color: #6c757d"
-          aria-label="Facebook"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          class="social-icon"
-          style="color: #6c757d"
-          aria-label="LinkedIn"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          class="social-icon"
-          style="color: #6c757d"
-          aria-label="Instagram"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a
-          href="https://twitter.com"
-          target="_blank"
-          class="social-icon"
-          style="color: #6c757d"
-          aria-label="Twitter"
-          ><i class="fab fa-x-twitter"></i
-        ></a>
-      </div>
-
-      <a
-        href="tel:+919928857684"
-        class="phone-button"
-        aria-label="Call us at +91 99288 57684"
-      >
-        +91 99288 57684
-      </a>
-    </div>
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
@@ -940,28 +952,6 @@
       </div>
     </div>
     <!-- Carousel End -->
-
-    <!-- Quoted Philosophy Section -->
-    <section class="py-5" style="background-color: #1b365d">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-10">
-            <blockquote
-              class="blockquote text-white fs-5 fw-light"
-              style="line-height: 1.8"
-            >
-              "Behind every growing business is a team that understands more
-              than just numbers.<br />
-              We bring together legal insight, financial precision, and
-              strategic clarity.<br />
-              From compliance to consulting — we handle the complexities.<br />
-              So you can move forward with focus, not guesswork."
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Quoted Philosophy Section end -->
 
     <!-- About Start -->
     <div
@@ -1062,7 +1052,7 @@
     <!-- About End -->
 
     <!-- Start Journey -->
-    <section class="py-5" style="background-color: #223b5e; min-height: 30vh">
+    <section class="py-3" style="background-color: #223b5e">
       <div class="container h-100">
         <div class="row align-items-center h-100">
           <div class="col-lg-8 text-white">
@@ -1343,7 +1333,7 @@
             <div class="position-relative h-100">
               <img
                 class="img-fluid rounded w-100 h-100"
-                src="img/advocate.png"
+                src="img/Logo/advocate.jpg"
                 alt="Advocate Services"
                 style="object-fit: cover"
               />
@@ -1539,7 +1529,7 @@
             <div class="position-relative h-100">
               <img
                 class="img-fluid rounded w-100 h-100"
-                src="img/finance.png"
+                src="img/Logo/finance.png"
                 alt="Loan and Finance Services"
                 style="object-fit: cover"
               />
@@ -1811,117 +1801,109 @@
     </section>
 
     <!-- Contact Form Start -->
-    <div
-      class="container-xxl py-5"
-      style="
-        background-color: #1b365d;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-      "
-    >
-      <div class="container">
-        <div
-          class="text-center mx-auto wow fadeInUp"
-          data-wow-delay="0.1s"
-          style="max-width: 600px"
+
+    <div class="container" style="background-color: #1b365d; padding: 2% 1% 2%">
+      <div
+        class="text-center mx-auto wow fadeInUp"
+        data-wow-delay="0.1s"
+        style="max-width: 600px"
+      >
+        <p
+          class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3"
         >
-          <p
-            class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3"
-          >
-            Contact Us
-          </p>
-          <h1 class="display-5 mb-5 text-white">Get In Touch</h1>
-        </div>
-        <div class="row align-items-center">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <form>
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input
-                      type="text"
-                      class="form-control bg-transparent text-white"
-                      id="name"
-                      placeholder="Your Name"
-                      style="border-color: rgba(255, 255, 255, 0.1)"
-                    />
-                    <label for="name" class="text-white">Your Name</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input
-                      type="email"
-                      class="form-control bg-transparent text-white"
-                      id="email"
-                      placeholder="Your Email"
-                      style="border-color: rgba(255, 255, 255, 0.1)"
-                    />
-                    <label for="email" class="text-white">Your Email</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating">
-                    <input
-                      type="text"
-                      class="form-control bg-transparent text-white"
-                      id="subject"
-                      placeholder="Subject"
-                      style="border-color: rgba(255, 255, 255, 0.1)"
-                    />
-                    <label for="subject" class="text-white">Subject</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea
-                      class="form-control bg-transparent text-white"
-                      placeholder="Leave a message here"
-                      id="message"
-                      style="
-                        height: 150px;
-                        border-color: rgba(255, 255, 255, 0.1);
-                      "
-                    ></textarea>
-                    <label for="message" class="text-white">Message</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <button class="btn btn-primary w-100 py-3" type="submit">
-                    Send Message
-                  </button>
+          Contact Us
+        </p>
+        <h1 class="display-5 mb-5 text-white">Get In Touch</h1>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control bg-transparent text-white"
+                    id="name"
+                    placeholder="Your Name"
+                    style="border-color: rgba(255, 255, 255, 0.1)"
+                  />
+                  <label for="name" class="text-white">Your Name</label>
                 </div>
               </div>
-            </form>
-          </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="position-relative h-100">
-              <div class="position-relative">
-                <img
-                  src="img/hands.jpg"
-                  class="img-fluid rounded shadow"
-                  alt="Handshake"
-                  style="width: 100%; height: 400px; object-fit: cover"
-                />
-                <div
-                  class="position-absolute bottom-0 start-0 end-0 p-4"
-                  style="background: rgba(27, 54, 93, 0.8)"
-                >
-                  <p
-                    class="text-white mb-0 text-center"
-                    style="font-size: 1.2rem"
-                  >
-                    "Your Success is Our Priority - Let's Build Something Great
-                    Together"
-                  </p>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control bg-transparent text-white"
+                    id="email"
+                    placeholder="Your Email"
+                    style="border-color: rgba(255, 255, 255, 0.1)"
+                  />
+                  <label for="email" class="text-white">Your Email</label>
                 </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control bg-transparent text-white"
+                    id="subject"
+                    placeholder="Subject"
+                    style="border-color: rgba(255, 255, 255, 0.1)"
+                  />
+                  <label for="subject" class="text-white">Subject</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control bg-transparent text-white"
+                    placeholder="Leave a message here"
+                    id="message"
+                    style="
+                      height: 150px;
+                      border-color: rgba(255, 255, 255, 0.1);
+                    "
+                  ></textarea>
+                  <label for="message" class="text-white">Message</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-light w-100 py-3" type="submit">
+                  Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="position-relative h-100">
+            <div class="position-relative">
+              <img
+                src="img/hands.jpg"
+                class="img-fluid rounded shadow"
+                alt="Handshake"
+                style="width: 100%; height: 400px; object-fit: cover"
+              />
+              <div
+                class="position-absolute bottom-0 start-0 end-0 p-4"
+                style="background: rgba(27, 54, 93, 0.8)"
+              >
+                <p
+                  class="text-white mb-0 text-center"
+                  style="font-size: 1.2rem"
+                >
+                  "Your Success is Our Priority - Let's Build Something Great
+                  Together"
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <!-- Contact Form End -->
 
     <!-- Footer Start -->
