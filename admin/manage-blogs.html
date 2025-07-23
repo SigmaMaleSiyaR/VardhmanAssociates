@@ -652,6 +652,7 @@
             if (imageFile) {
               const uploadResult = await uploadImageToImageKit(imageFile, true);
               updateData.imageUrl = uploadResult.url;
+              updateData.imageFileId = uploadResult.fileId; // <-- store fileId
             }
 
             // Update Firestore
@@ -680,11 +681,19 @@
           )
         ) {
           try {
-            // Extract file ID from image URL
-            const fileId = imageUrl.split("/").pop().split("?")[0];
+            // Fetch the blog document to get the fileId
+            const docRef = doc(db, "blogs", blogId);
+            const docSnap = await getDoc(docRef);
+            let fileId = null;
+            if (docSnap.exists()) {
+              const blogData = docSnap.data();
+              fileId = blogData.imageFileId || null;
+            }
 
-            // Delete from ImageKit
-            await deleteImageFromImageKit(fileId);
+            // Delete from ImageKit if fileId exists
+            if (fileId) {
+              await deleteImageFromImageKit(fileId);
+            }
 
             // Delete from Firestore
             await deleteDoc(doc(db, "blogs", blogId));
