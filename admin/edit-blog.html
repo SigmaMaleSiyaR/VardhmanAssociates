@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Blog - Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      .sidebar {
+        min-height: 100vh;
+        background: var(--secondary, #c0c6cc);
+        padding-top: 2rem;
+      }
+      .sidebar .nav-link.active {
+        background: var(--primary, #1b365d);
+        color: #fff !important;
+      }
+      .sidebar .nav-link {
+        color: var(--tertiary, #1a1a1a);
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+      .main-content {
+        padding: 1.5rem 0.5rem;
+        background: var(--light, #f5f5f5);
+        min-height: 100vh;
+      }
+      .blog-image-preview {
+        max-width: 160px;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        display: block;
+      }
+    </style>
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-2 col-lg-2 d-md-block sidebar">
+          <div class="position-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="add-blog.html">Add Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="manage-blogs.html">Manage Blogs</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Main Content -->
+        <main
+          class="col-md-10 ms-sm-auto col-lg-10 main-content d-flex flex-column align-items-center"
+        >
+          <h2 class="mb-3 w-100 text-center">Edit Blog</h2>
+          <form id="editBlogForm" class="w-100" style="max-width: 900px">
+            <div class="mb-3 text-center">
+              <img
+                id="currentImage"
+                class="blog-image-preview"
+                src=""
+                alt="Current Thumbnail"
+                style="display: none"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="editTitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="editTitle" required />
+            </div>
+            <div class="mb-3">
+              <label for="editAuthor" class="form-label">Author</label>
+              <input
+                type="text"
+                class="form-control"
+                id="editAuthor"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="editDescription" class="form-label"
+                >Description</label
+              >
+              <div id="editDescriptionEditor" style="height: 200px"></div>
+              <input type="hidden" id="editDescription" required />
+            </div>
+            <div class="mb-3">
+              <label for="editImage" class="form-label"
+                >Change Thumbnail Image (optional)</label
+              >
+              <input
+                type="file"
+                class="form-control"
+                id="editImage"
+                accept="image/*"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Update Blog</button>
+          </form>
+          <div id="editBlogMessage" class="mt-3 w-100 text-center"></div>
+        </main>
+      </div>
+    </div>
+    <script type="module">
+      import { db } from "./firebase-config.js";
+      import {
+        doc,
+        getDoc,
+        updateDoc,
+      } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
+      import {
+        IMAGEKIT_PUBLIC_KEY,
+        IMAGEKIT_AUTH_ENDPOINT,
+        IMAGEKIT_THUMBNAIL_FOLDER,
+      } from "./imagekit-config.js";
+
+      async function uploadImageToImageKit(file) {
+        return new Promise((resolve, reject) => {
+          fetch(IMAGEKIT_AUTH_ENDPOINT)
+            .then((res) => res.json())
+            .then((authData) => {
+              const formData = new FormData();
+              formData.append("file", file);
+              formData.append("fileName", `${Date.now()}_${file.name}`);
+              formData.append("token", authData.token);
+              formData.append("signature", authData.signature);
+              formData.append("expire", authData.expire);
+              formData.append("publicKey", IMAGEKIT_PUBLIC_KEY);
+              formData.append("folder", IMAGEKIT_THUMBNAIL_FOLDER);
+              fetch("https://upload.imagekit.io/api/v1/files/upload", {
+                method: "POST",
+                body: formData,
+              })
+                .then((res) => res.json())
+                .then(resolve)
+                .catch((err) =>
+                  reject(new Error(err.message || "Upload failed"))
+                );
+            })
+            .catch(() =>
+              reject(new Error("Failed to get authentication token"))
+            );
+        });
+      }
+
+      // Helper to get blogId from URL
+      function getBlogIdFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("blogId");
+      }
+
+      // Initialize Quill editor
+      const quill = new Quill("#editDescriptionEditor", {
+        theme: "snow",
+        modules: {
+          toolbar: [
+            [{ font: [] }, { size: [] }],
+            ["bold", "italic", "underline", "strike"],
+            [{ color: [] }, { background: [] }],
+            [{ list: "ordered" }, { list: "bullet" }],
+            [{ align: [] }],
+            ["image"],
+            ["clean"],
+          ],
+        },
+      });
+
+      let currentImageFileId = null;
+
+      async function loadBlogForEdit() {
+        const blogId = getBlogIdFromUrl();
+        if (!blogId) return;
+        const blogDoc = await getDoc(doc(db, "blogs", blogId));
+        if (!blogDoc.exists()) return;
+        const blog = blogDoc.data();
+        document.getElementById("editTitle").value = blog.title || "";
+        document.getElementById("editAuthor").value = blog.author || "";
+        quill.root.innerHTML = blog.description || "";
+        if (blog.imageUrl) {
+          const img = document.getElementById("currentImage");
+          img.src = blog.imageUrl;
+          img.style.display = "block";
+        }
+        currentImageFileId = blog.imageFileId || null;
+      }
+
+      // Helper to delete image from ImageKit
+      async function deleteImageFromImageKit(fileId) {
+        if (!fileId) return;
+        console.log("Deleting thumbnail fileId from ImageKit:", fileId);
+        return new Promise((resolve, reject) => {
+          fetch(IMAGEKIT_AUTH_ENDPOINT)
+            .then((res) => res.json())
+            .then((authData) => {
+              fetch(`https://api.imagekit.io/v1/files/${fileId}`, {
+                method: "DELETE",
+                headers: {
+                  Authorization: `Bearer ${authData.token}`,
+                  Accept: "application/json",
+                },
+              })
+                .then((res) => res.json())
+                .then(resolve)
+                .catch((err) =>
+                  reject(new Error(err.message || "Delete failed"))
+                );
+            })
+            .catch(() =>
+              reject(new Error("Failed to get authentication token"))
+            );
+        });
+      }
+
+      // Calculate read time (words/200, rounded up)
+      function calculateReadTime(html) {
+        const text = html.replace(/<[^>]+>/g, " ");
+        const wordCount = text.trim().split(/\s+/).length;
+        return Math.max(1, Math.ceil(wordCount / 200));
+      }
+
+      document
+        .getElementById("editBlogForm")
+        ?.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const blogId = getBlogIdFromUrl();
+          if (!blogId) return;
+          const title = document.getElementById("editTitle").value.trim();
+          const author = document.getElementById("editAuthor").value.trim();
+          const description = quill.root.innerHTML;
+          document.getElementById("editDescription").value = description;
+          const imageFile = document.getElementById("editImage").files[0];
+          const messageDiv = document.getElementById("editBlogMessage");
+          if (!title || !author) {
+            messageDiv.innerHTML =
+              '<div class="alert alert-warning">Please fill all required fields.</div>';
+            return;
+          }
+          const btn = this.querySelector('button[type="submit"]');
+          btn.disabled = true;
+          btn.textContent = "Updating...";
+          messageDiv.innerHTML = "";
+          try {
+            let updateData = {
+              title,
+              author,
+              description,
+              readTime: calculateReadTime(description),
+            };
+            if (imageFile) {
+              // Delete old thumbnail from ImageKit if it exists
+              if (currentImageFileId) {
+                await deleteImageFromImageKit(currentImageFileId);
+              }
+              const imageKitRes = await uploadImageToImageKit(imageFile);
+              updateData.imageUrl = imageKitRes.url;
+              updateData.imageFileId = imageKitRes.fileId;
+            }
+            await updateDoc(doc(db, "blogs", blogId), updateData);
+            messageDiv.innerHTML =
+              '<div class="alert alert-success">Blog updated successfully!</div>';
+          } catch (err) {
+            messageDiv.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
+          } finally {
+            btn.disabled = false;
+            btn.textContent = "Update Blog";
+          }
+        });
+
+      loadBlogForEdit();
+    </script>
+  </body>
+</html>
