@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Service Content</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.quilljs.com/1.3.7/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/quill-better-table@1.2.10/dist/quill-better-table.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+    <style>
+      body {
+        background: #f5f5f5;
+      }
+      .editor-container {
+        max-width: 100vw;
+        width: 100%;
+        margin: 0;
+        padding: 2rem 2vw;
+        background: #fff;
+        min-height: 100vh;
+      }
+      .ql-toolbar.ql-snow {
+        border-radius: 0.5rem 0.5rem 0 0;
+      }
+      .ql-container.ql-snow {
+        border-radius: 0 0 0.5rem 0.5rem;
+        min-height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="editor-container">
+      <h2 class="mb-4">Edit Service Content</h2>
+      <form id="editServiceForm">
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label class="form-label">Service Type</label>
+            <input type="text" id="serviceType" class="form-control" readonly />
+          </div>
+          <div class="col-md-5">
+            <label class="form-label">Service Title</label>
+            <input type="text" id="serviceTitle" class="form-control" readonly />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" id="contentLabel" data-tippy-content="You can use tables, images, and formatting tools here!">Content <span style="cursor:help; color:#1b365d;" data-tippy-content="Rich text editing supported!">&#9432;</span></label>
+          <div id="quillEditor" style="height: 350px;"></div>
+          <input type="hidden" id="serviceContent" name="serviceContent" />
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="manage-services.html" class="btn btn-secondary ms-2">Back</a>
+        <div id="message" class="mt-3"></div>
+      </form>
+    </div>
+    <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill-better-table@1.2.10/dist/quill-better-table.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script type="module" src="./edit-service.js"></script>
+    <script>
+      tippy('[data-tippy-content]');
+      function addQuillTooltips() {
+        const tooltips = [
+          { selector: '.ql-bold', text: 'Bold' },
+          { selector: '.ql-italic', text: 'Italic' },
+          { selector: '.ql-underline', text: 'Underline' },
+          { selector: '.ql-strike', text: 'Strikethrough' },
+          { selector: '.ql-color', text: 'Text Color' },
+          { selector: '.ql-background', text: 'Background Color' },
+          { selector: '.ql-list[value="ordered"]', text: 'Numbered List' },
+          { selector: '.ql-list[value="bullet"]', text: 'Bulleted List' },
+          { selector: '.ql-align', text: 'Align' },
+          { selector: '.ql-blockquote', text: 'Blockquote' },
+          { selector: '.ql-code-block', text: 'Code Block' },
+          { selector: '.ql-link', text: 'Insert Link' },
+          { selector: '.ql-image', text: 'Insert Image' },
+          { selector: '.ql-video', text: 'Insert Video' },
+          { selector: '.ql-clean', text: 'Remove Formatting' },
+          { selector: '.ql-better-table', text: 'Insert Table' }
+        ];
+        tooltips.forEach(({ selector, text }) => {
+          document.querySelectorAll(selector).forEach(el => {
+            el.setAttribute('data-tippy-content', text);
+          });
+        });
+        tippy('.ql-toolbar [data-tippy-content]');
+      }
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(addQuillTooltips, 500);
+      });
+    </script>
+  </body>
+</html>
