@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>XBRL Filing - CS Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-    body {
-        font-family: 'Open Sans', sans-serif;
+      body {
+        font-family: "Open Sans", sans-serif;
         font-size: 14px;
-    }
-    .banner {
+      }
+      .banner {
         height: 30vh;
-        background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
+        background: url("/img/ServicesHeader.jpg") center/cover no-repeat;
         position: relative;
-    }
-    .banner h1 {
+      }
+      .banner h1 {
         position: absolute;
         bottom: 10px;
         left: 30px;
         color: white;
         font-weight: 700;
-        /* background: rgba(0, 0, 0, 0.5); */
         padding: 10px 20px;
         border-radius: 5px;
-    }
-    .content-wrapper {
+      }
+      .content-wrapper {
         display: flex;
         flex-wrap: wrap;
         margin-top: 2rem;
         gap: 2%;
-    }
-    .main-content {
-        flex: 0 0 60%;
-    }
-    #sidebar {
-        height: fit-content;
+      }
+      .main-content {
+        flex: 0 0 65%;
+        max-width: 65%;
+      }
+      #sidebar {
         flex: 0 0 33%;
+        max-width: 33%;
+        height: fit-content;
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 5px;
@@ -51,451 +61,131 @@
         border-left: 1px solid #ddd;
         padding-left: 1.5rem;
         position: sticky;
-        top: 100px; /* adjust this based on your navbar height */
+        top: 100px;
         align-self: start;
-    }
-   #sidebar h4 {
+      }
+      #sidebar h4 {
         font-weight: 600;
         color: black;
         text-decoration: none;
         font-style: normal;
         font-size: x-large;
-    }
-    #sidebar ul {
+      }
+      #sidebar ul {
         padding: 1rem;
         list-style: disc;
-    }
-    #sidebar li {
+      }
+      #sidebar li {
         margin-bottom: 10px;
-    }
-    #sidebar a {
+      }
+      #sidebar a {
         text-decoration: none;
         color: #007bff;
-    }
-    #sidebar a:hover {
+      }
+      #sidebar a:hover {
         color: var(--primary) !important;
-    }
+      }
+      @media (max-width: 991px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      /* Service content styling */
+      #service-content {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      #service-content h1,
+      #service-content h2,
+      #service-content h3,
+      #service-content h4,
+      #service-content h5,
+      #service-content h6 {
+        color: #1b365d;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #service-content p {
+        margin-bottom: 1rem;
+      }
+
+      #service-content ul,
+      #service-content ol {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+      }
+
+      #service-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      #service-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      #service-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      #service-content table,
+      #service-content th,
+      #service-content td {
+        border: 1px solid #ddd;
+      }
+
+      #service-content th,
+      #service-content td {
+        padding: 0.75rem;
+        text-align: left;
+      }
+
+      #service-content th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+      }
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div class="banner">
-        <h1>XBRL Filing</h1>
+      <h1>XBRL Filing</h1>
     </div>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="main-content">
-                
-<div class="WordSection1">
-<p align="center" class="MsoNormal" style="text-align:center"><b><span style='font-size:20.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji";font-variant:small-caps'>📊</span></b><b><span style="font-size:20.0pt;line-height:115%;font-variant:small-caps"> </span></b><b><u><span style="font-size:22.0pt;mso-bidi-font-size:20.0pt;line-height:115%;font-variant:
-small-caps">XBRL Filing � Simplifying Financial Reporting for Your Business</span></u></b><b><u><span style="font-size:20.0pt;line-height:115%;font-variant:small-caps"><o:p></o:p></span></u></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>Do you want your company�s financial data to speak the global
-business language?</b><br/>
-Welcome to our <b>XBRL (eXtensible Business Reporting Language) Filing Services</b>
-� where accuracy, compliance, and transparency go hand-in-hand. As your trusted
-Company Secretary, we help you meet regulatory requirements while saving time,
-avoiding penalties, and enhancing investor confidence.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>✅</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> What is
-XBRL Filing?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">XBRL is a digital format used for the electronic filing of financial
-statements with the Ministry of Corporate Affairs (MCA). It converts your
-traditional balance sheets and profit &amp; loss accounts into a structured,
-machine-readable format, making your data accessible, comparable, and
-compliant.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>📌</span> Why is XBRL Filing Important for Companies?<o:p></o:p></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l7 level1 lfo1;tab-stops:list 36.0pt"><b>Mandatory
-     Compliance</b>: Required by MCA for certain class of companies.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l7 level1 lfo1;tab-stops:list 36.0pt"><b>Improved
-     Transparency</b>: Helps regulators, banks, and stakeholders easily
-     interpret financial data.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l7 level1 lfo1;tab-stops:list 36.0pt"><b>Error Reduction</b>:
-     Automates reporting, minimizing manual errors.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l7 level1 lfo1;tab-stops:list 36.0pt"><b>Faster
-     Decision-Making</b>: Easier analysis by investors and authorities.</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>🏢</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> Who Needs
-to File in XBRL?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">XBRL filing is <b>mandatory</b> for:</p>
-<ol start="1" style="margin-top:0cm" type="1">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo2;tab-stops:list 36.0pt"><b>All Listed
-     Companies in India</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo2;tab-stops:list 36.0pt"><b>Companies with
-     Paid-up Capital ≥ ₹5 Crores</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo2;tab-stops:list 36.0pt"><b>Companies with
-     Turnover ≥ ₹100 Crores</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo2;tab-stops:list 36.0pt"><b>Companies
-     required to file their Financial Statements under Section 137 of the
-     Companies Act, 2013 in XBRL format.</b></li>
-</ol>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">(<i>Exclusions: Non-Banking Financial Companies, Housing Finance
-Companies, and companies engaged in banking and insurance.</i>)</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>🗂️</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> Types of
-Reports Filed in XBRL<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo3;tab-stops:list 36.0pt"><span style="mso-bidi-font-weight:bold">Balance Sheet</span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo3;tab-stops:list 36.0pt"><span style="mso-bidi-font-weight:bold">Profit &amp; Loss Account</span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo3;tab-stops:list 36.0pt"><span style="mso-bidi-font-weight:bold">Cash Flow Statement</span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo3;tab-stops:list 36.0pt"><span style="mso-bidi-font-weight:bold">Statement of Changes in Equity</span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo3;tab-stops:list 36.0pt"><span style="mso-bidi-font-weight:bold">Notes to Accounts</span></li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>🛠️</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> Our
-End-to-End XBRL Filing Services Include:<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo4;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Symbol","sans-serif";mso-bidi-font-family:
-     "Segoe UI Symbol"'>✔</span> Conversion of Financials into XBRL
-     format</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo4;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Symbol","sans-serif";mso-bidi-font-family:
-     "Segoe UI Symbol"'>✔</span> Tagging and Validation of Financial
-     Data</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo4;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Symbol","sans-serif";mso-bidi-font-family:
-     "Segoe UI Symbol"'>✔</span> Generating &amp; Reviewing XBRL
-     Instance Documents</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo4;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Symbol","sans-serif";mso-bidi-font-family:
-     "Segoe UI Symbol"'>✔</span> Pre-Scrutiny and Filing with MCA Portal
-     (Form AOC-4 XBRL)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo4;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Symbol","sans-serif";mso-bidi-font-family:
-     "Segoe UI Symbol"'>✔</span> Expert Review to Ensure 100% Compliance</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo4;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Symbol","sans-serif";mso-bidi-font-family:
-     "Segoe UI Symbol"'>✔</span> Timely Filing to Avoid Late Fees or
-     Penalties</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>📅</span> When to File?<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">The <b>due date for XBRL filing</b> is <b>within 30 days</b> from the
-date of AGM (Annual General Meeting).</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>⚠️</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> Penalties
-for Non-Compliance<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo5;tab-stops:list 36.0pt">Delay in XBRL
-     filing can attract <b>heavy penalties</b> ranging from ₹100 per day.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo5;tab-stops:list 36.0pt">May also result in
-     regulatory scrutiny or MCA notices.</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>📌</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> Legal
-Framework &amp; Compliance Reference:<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo7;tab-stops:list 36.0pt"><b>Section 137</b>
-     of the Companies Act, 2013</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo7;tab-stops:list 36.0pt"><b>Rule 12(2)</b>
-     of the Companies (Accounts) Rules, 2014</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo7;tab-stops:list 36.0pt"><b>Filing Form</b>:
-     AOC-4 XBRL</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo7;tab-stops:list 36.0pt"><b>Taxonomy Used</b>:
-     As prescribed by MCA � based on Indian Accounting Standards (IND-AS) or
-     Companies (Accounting Standards) Rules depending on the entity.</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>📎</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> Documents
-Required for XBRL Filing:<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">To initiate XBRL conversion and filing, we usually require the
-following:</p>
-<ol start="1" style="margin-top:0cm" type="1">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo8;tab-stops:list 36.0pt">Audited Financial
-     Statements (in PDF/Word/Excel)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo8;tab-stops:list 36.0pt">Notes to Accounts</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo8;tab-stops:list 36.0pt">Auditor�s Report</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo8;tab-stops:list 36.0pt">Director�s Report</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo8;tab-stops:list 36.0pt">Cash Flow Statement
-     (if applicable)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo8;tab-stops:list 36.0pt">AGM Date and Board
-     Resolution</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo8;tab-stops:list 36.0pt">Previous year�s
-     XBRL file (for comparison, if available)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo8;tab-stops:list 36.0pt">Digital Signature
-     Certificate (DSC) of Director or Authorized Signatory</li>
-</ol>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>🛑</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> Common
-Challenges in XBRL Filing (and How We Help):<o:p></o:p></span></b></p>
-<table border="1" cellpadding="0" cellspacing="0" class="GridTableLight" style="border-collapse:collapse;border:none;mso-border-alt:solid #BFBFBF .5pt;
- mso-border-themecolor:background1;mso-border-themeshade:191;mso-yfti-tbllook:
- 1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt">
-<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
-<td style="width:216.9pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;mso-border-alt:
-  solid #BFBFBF .5pt;mso-border-themecolor:background1;mso-border-themeshade:
-  191;background:#2F5496;mso-background-themecolor:accent1;mso-background-themeshade:
-  191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="362">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal"><b>Challenge<o:p></o:p></b></p>
-</td>
-<td style="width:270.9pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-left:none;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#2F5496;mso-background-themecolor:
-  accent1;mso-background-themeshade:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="452">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal"><b>Our Solution<o:p></o:p></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td style="width:216.9pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-top:none;
-  mso-border-top-alt:solid #BFBFBF .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#E7E6E6;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="362">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Incorrect tagging</p>
-</td>
-<td style="width:270.9pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#E7E6E6;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="452">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">We follow MCA taxonomy strictly to ensure proper
-  classification</p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td style="width:216.9pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-top:none;
-  mso-border-top-alt:solid #BFBFBF .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#E7E6E6;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="362">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Validation errors on MCA portal</p>
-</td>
-<td style="width:270.9pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#E7E6E6;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="452">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Pre-scrutiny and error-checking tools are used
-  before submission</p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3">
-<td style="width:216.9pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-top:none;
-  mso-border-top-alt:solid #BFBFBF .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#E7E6E6;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="362">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Missed deadlines</p>
-</td>
-<td style="width:270.9pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#E7E6E6;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="452">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Our proactive reminder system keeps you informed</p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes">
-<td style="width:216.9pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-top:none;
-  mso-border-top-alt:solid #BFBFBF .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#E7E6E6;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="362">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Confusion over taxonomy (IND-AS vs AS)</p>
-</td>
-<td style="width:270.9pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#E7E6E6;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="452">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">We assess and apply the correct taxonomy based on
-  your company type</p>
-</td>
-</tr>
-</table>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>🔄</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> Annual
-XBRL Filing Process Flow (for client understanding):<o:p></o:p></span></b></p>
-<ol start="1" style="margin-top:0cm" type="1">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo9;tab-stops:list 36.0pt"><b>Initial
-     Discussion &amp; Document Collection</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo9;tab-stops:list 36.0pt"><b>Assessment of
-     Applicability &amp; Taxonomy</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo9;tab-stops:list 36.0pt"><b>Data Structuring
-     &amp; XBRL Conversion</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo9;tab-stops:list 36.0pt"><b>Tagging &amp;
-     Technical Validation</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo9;tab-stops:list 36.0pt"><b>Review &amp;
-     Client Confirmation</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo9;tab-stops:list 36.0pt"><b>Digital Signing</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo9;tab-stops:list 36.0pt"><b>Filing AOC-4
-     XBRL on MCA Portal</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo9;tab-stops:list 36.0pt"><b>Acknowledgement
-     &amp; Filing Confirmation</b></li>
-</ol>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>🧾</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> Optional
-Add-on Services :<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo10;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>✅</span> XBRL conversion for group companies or
-     consolidated financials</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo10;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>✅</span> XBRL training or advisory for internal
-     teams</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo10;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>✅</span> Rectification filing (in case of previous
-     incorrect XBRL filings)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo10;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>✅</span> Post-filing support for MCA queries or
-     resubmissions</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>💼</span></b><b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"> Why Choose
-Us?<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo6;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>🧾</span> <b>Professional Expertise</b>: Managed
-     by certified Company Secretaries.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo6;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>📈</span> <b>Accurate Tagging &amp; Mapping</b>:
-     Ensuring error-free submissions.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo6;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>⏱️</span> <b>Timely Delivery</b>: Never
-     miss a compliance deadline.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo6;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>🔐</span> <b>Confidentiality Assured</b>: Your
-     financial data is safe with us.</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-</div>
-
-            </div>
-            <div id="sidebar">
-                <h4>CS Services</h4>
-                <ul>
-                    <li><a href='../Cs/1. Annual Compliances.html' class='d-flex'><p>Annual Compliances</p></a></li>
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="service-content">
+            <!-- Content will be loaded from Firebase here -->
+          </div>
+        </div>
+        <div id="sidebar">
+          <h4>CS Services</h4>
+          <ul>
+            <li><a href='../Cs/1. Annual Compliances.html' class='d-flex'><p>Annual Compliances</p></a></li>
 <li><a href='../Cs/2. Corporate & Financial Restructuring.html' class='d-flex'><p>Corporate &amp; Financial Restructuring</p></a></li>
 <li><a href='../Cs/3. Due Diligence.html' class='d-flex'><p>Due Diligence</p></a></li>
 <li><a href='../Cs/4. Company Incorporation & Amendment.html' class='d-flex'><p>Company Incorporation &amp; Amendment</p></a></li>
@@ -511,13 +201,13 @@ justify"><o:p> </o:p></p>
 <li><a href='../Cs/14. XML Data Conversion.html' class='d-flex'><p>XML Data Conversion</p></a></li>
 <li><a href='../Cs/15. Share Certificate & Transfer.html' class='d-flex'><p>Share Certificate &amp; Transfer</p></a></li>
 
-                </ul>
-            </div>
+          </ul>
         </div>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-</body>
-<script src="../../js/navbar-inject.js"></script>
-<script src="../../js/footer-inject.js"></script>
-<script src="../../Services/disable-copy.js"></script>
+  </body>
+  <script src="../../js/navbar-inject.js"></script>
+  <script src="../../js/footer-inject.js"></script>
+  <script type="module" src="../auto-load-service.js"></script>
 </html>

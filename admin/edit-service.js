@@ -27,6 +27,12 @@ document.getElementById("serviceTitle").value = title || "";
 
 const messageDiv = document.getElementById("message");
 
+// Show warning if accessed without proper parameters
+if (!type || !title || type.trim() === "" || title.trim() === "") {
+  messageDiv.innerHTML =
+    '<div class="alert alert-warning"><strong>Warning:</strong> No service selected. Please go back to <a href="manage-services.html" class="alert-link">Manage Services</a> and select a service to edit.</div>';
+}
+
 // Register quill-better-table module only
 if (window.Quill && window.quillBetterTable) {
   Quill.register(
@@ -135,10 +141,24 @@ loadContent();
 
 document.getElementById("editServiceForm").onsubmit = async function (e) {
   e.preventDefault();
-  if (!type || !title) return;
+
+  // Validate service type and title
+  if (!type || !title || type.trim() === "" || title.trim() === "") {
+    messageDiv.innerHTML =
+      '<div class="alert alert-danger">Error: Service type and title are required. Please select a valid service from the manage services page.</div>';
+    return;
+  }
+
   const content = quill.root.innerHTML.trim();
   document.getElementById("serviceContent").value = content;
-  if (!content) return;
+
+  // Validate content
+  if (!content) {
+    messageDiv.innerHTML =
+      '<div class="alert alert-warning">Warning: Service content cannot be empty. Please add some content before saving.</div>';
+    return;
+  }
+
   try {
     // Check if a service with this type and title exists
     const q = query(
@@ -151,7 +171,8 @@ document.getElementById("editServiceForm").onsubmit = async function (e) {
       // Update existing
       const docRef = querySnapshot.docs[0].ref;
       await updateDoc(docRef, { content });
-      messageDiv.innerText = "Content updated successfully!";
+      messageDiv.innerHTML =
+        '<div class="alert alert-success">Content updated successfully!</div>';
     } else {
       // Add new
       await addDoc(collection(db, "services"), {
@@ -159,9 +180,10 @@ document.getElementById("editServiceForm").onsubmit = async function (e) {
         title,
         content,
       });
-      messageDiv.innerText = "Content added successfully!";
+      messageDiv.innerHTML =
+        '<div class="alert alert-success">Content added successfully!</div>';
     }
   } catch (err) {
-    messageDiv.innerText = `Error: ${err.message}`;
+    messageDiv.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
   }
 };

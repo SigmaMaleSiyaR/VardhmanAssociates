@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Real Estate &amp; Regulatory Act (RERA) - Advocate Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-    body {
-        font-family: 'Open Sans', sans-serif;
+      body {
+        font-family: "Open Sans", sans-serif;
         font-size: 14px;
-    }
-    .banner {
+      }
+      .banner {
         height: 30vh;
-        background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
+        background: url("/img/ServicesHeader.jpg") center/cover no-repeat;
         position: relative;
-    }
-    .banner h1 {
+      }
+      .banner h1 {
         position: absolute;
         bottom: 10px;
         left: 30px;
         color: white;
         font-weight: 700;
-        /* background: rgba(0, 0, 0, 0.5); */
         padding: 10px 20px;
         border-radius: 5px;
-    }
-    .content-wrapper {
+      }
+      .content-wrapper {
         display: flex;
         flex-wrap: wrap;
         margin-top: 2rem;
         gap: 2%;
-    }
-    .main-content {
-        flex: 0 0 60%;
-    }
-    #sidebar {
-        height: fit-content;
+      }
+      .main-content {
+        flex: 0 0 65%;
+        max-width: 65%;
+      }
+      #sidebar {
         flex: 0 0 33%;
+        max-width: 33%;
+        height: fit-content;
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 5px;
@@ -51,397 +61,131 @@
         border-left: 1px solid #ddd;
         padding-left: 1.5rem;
         position: sticky;
-        top: 100px; /* adjust this based on your navbar height */
+        top: 100px;
         align-self: start;
-    }
-   #sidebar h4 {
+      }
+      #sidebar h4 {
         font-weight: 600;
         color: black;
         text-decoration: none;
         font-style: normal;
         font-size: x-large;
-    }
-    #sidebar ul {
+      }
+      #sidebar ul {
         padding: 1rem;
         list-style: disc;
-    }
-    #sidebar li {
+      }
+      #sidebar li {
         margin-bottom: 10px;
-    }
-    #sidebar a {
+      }
+      #sidebar a {
         text-decoration: none;
         color: #007bff;
-    }
-    #sidebar a:hover {
+      }
+      #sidebar a:hover {
         color: var(--primary) !important;
-    }
+      }
+      @media (max-width: 991px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      /* Service content styling */
+      #service-content {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      #service-content h1,
+      #service-content h2,
+      #service-content h3,
+      #service-content h4,
+      #service-content h5,
+      #service-content h6 {
+        color: #1b365d;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #service-content p {
+        margin-bottom: 1rem;
+      }
+
+      #service-content ul,
+      #service-content ol {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+      }
+
+      #service-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      #service-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      #service-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      #service-content table,
+      #service-content th,
+      #service-content td {
+        border: 1px solid #ddd;
+      }
+
+      #service-content th,
+      #service-content td {
+        padding: 0.75rem;
+        text-align: left;
+      }
+
+      #service-content th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+      }
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div class="banner">
-        <h1>Real Estate &amp; Regulatory Act (RERA)</h1>
+      <h1>Real Estate &amp; Regulatory Act (RERA)</h1>
     </div>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="main-content">
-                
-<div class="WordSection1">
-<p align="center" class="MsoNormal" style="text-align:center"><b><span style='font-size:20.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji";font-variant:small-caps'>🏠</span></b><b><span style="font-size:20.0pt;line-height:115%;font-variant:small-caps"> Real Estate
-&amp; Regulatory Act (RERA) &amp; <o:p></o:p></span></b></p>
-<p align="center" class="MsoNormal" style="text-align:center"><b><span style="font-size:20.0pt;line-height:115%;font-variant:small-caps">Property Law
-Services<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
-line-height:115%">Secure Your Property Transactions with Expert Legal Support</span></b><span style="font-size:14.0pt;line-height:115%"><o:p></o:p></span></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Real estate is one of the most significant investments you'll make in
-your lifetime. Whether you're buying, selling, leasing, or dealing with
-builder-related disputes, having an experienced legal expert by your side
-ensures peace of mind and legal safety. Our property law services are tailored
-to safeguard your interests, avoid future litigation, and help you make
-informed decisions.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">We offer comprehensive legal solutions in the following key areas:</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>📜</span> Title Verification<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>Ensure Clear Ownership Before You Invest<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">We conduct thorough title due diligence to confirm ownership history,
-legal encumbrances, and government approvals. This prevents fraud and ensures a
-legally secure property purchase or investment.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>Our title verification includes:</b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo1;tab-stops:list 36.0pt">Chain of ownership
-     examination</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo1;tab-stops:list 36.0pt">Checking for
-     encumbrances, loans, or disputes</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo1;tab-stops:list 36.0pt">Verification of
-     government approvals and land use</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo1;tab-stops:list 36.0pt">Mutation records
-     and tax receipts</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>✍️</span> Sale Deed Drafting<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>Legally Sound Sale Deeds That Protect Your Rights<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">The Sale Deed is the most critical legal document in a property
-transaction. We draft, review, and register sale deeds that are legally
-binding, dispute-proof, and customized to your transaction terms.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>Key features:</b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l14 level1 lfo2;tab-stops:list 36.0pt">Drafting with
-     clear terms of sale, possession, and payment</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l14 level1 lfo2;tab-stops:list 36.0pt">Stamp duty &amp;
-     registration compliance</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l14 level1 lfo2;tab-stops:list 36.0pt">Risk minimization
-     clauses</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l14 level1 lfo2;tab-stops:list 36.0pt">Legal vetting
-     before registration</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>⚖️</span> Builder-Buyer Disputes<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>Your Legal Shield Against Delays, Defects &amp; Deception<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Facing possession delays, false promises, or poor construction by
-builders? We represent you in consumer forums and RERA to claim refunds,
-compensation, or timely possession.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>We handle:</b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo3;tab-stops:list 36.0pt">Delay in possession</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo3;tab-stops:list 36.0pt">Construction
-     quality issues</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo3;tab-stops:list 36.0pt">Hidden charges and
-     misrepresentation</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo3;tab-stops:list 36.0pt">Refunds and
-     compensation claims</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>🏗️</span> RERA Matters<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>RERA Legal Support to Protect Your Property Rights<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">The Real Estate (Regulation and Development) Act empowers homebuyers.
-We offer complete legal services under RERA including complaint filing,
-representation, and compliance support.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>RERA services include:</b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt">RERA complaint
-     drafting &amp; filing</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt">Representation
-     before RERA Authority &amp; Appellate Tribunal</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt">Guidance to
-     developers for registration and compliance</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt">Mediation &amp;
-     settlement support</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>📄</span> Lease and Rent Agreements<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>Legally Enforceable Agreements for Landlords &amp; Tenants<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Avoid future disputes with properly drafted lease or rental
-agreements. We prepare customized contracts that outline clear terms, rights,
-and remedies for both parties.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>Coverage:</b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l10 level1 lfo5;tab-stops:list 36.0pt">Residential and
-     commercial leasing</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l10 level1 lfo5;tab-stops:list 36.0pt">Lock-in periods,
-     security deposit, and maintenance clauses</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l10 level1 lfo5;tab-stops:list 36.0pt">Dispute resolution
-     provisions</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l10 level1 lfo5;tab-stops:list 36.0pt">Registration and
-     legal validity</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>🔍</span> Other Required Information to Include<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>📌</span> Common Client Situations <o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Help clients identify if they need your service:</p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l11 level1 lfo7;tab-stops:list 36.0pt">�I am planning to
-     buy a flat and need legal verification.�</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l11 level1 lfo7;tab-stops:list 36.0pt">�I�m facing delay
-     in possession by the builder.�</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l11 level1 lfo7;tab-stops:list 36.0pt">�My landlord is
-     not returning my security deposit.�</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l11 level1 lfo7;tab-stops:list 36.0pt">�I want to draft a
-     lease agreement for my commercial property.�</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l11 level1 lfo7;tab-stops:list 36.0pt">�I�ve been served
-     a legal notice in a property dispute.�</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>📂</span> Documents Required From Client (as per
-service)<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Clearly list what the client needs to provide:</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>For Title Verification:</b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l12 level1 lfo8;tab-stops:list 36.0pt">Previous sale
-     deeds / chain documents</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l12 level1 lfo8;tab-stops:list 36.0pt">Property tax
-     receipts</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l12 level1 lfo8;tab-stops:list 36.0pt">Encumbrance
-     certificate</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l12 level1 lfo8;tab-stops:list 36.0pt">Mutation record</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l12 level1 lfo8;tab-stops:list 36.0pt">Approved building
-     plan</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>For Sale Deed Drafting:</b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo9;tab-stops:list 36.0pt">Agreement to Sell /
-     MOU</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo9;tab-stops:list 36.0pt">Identity &amp;
-     address proofs of buyer/seller</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo9;tab-stops:list 36.0pt">PAN Card (for stamp
-     duty compliance)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo9;tab-stops:list 36.0pt">Property details
-     (Khasra no., plot no., etc.)</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>For RERA or Builder Disputes:</b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo10;tab-stops:list 36.0pt">Allottment letter
-     / Builder-Buyer agreement</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo10;tab-stops:list 36.0pt">Payment receipts</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo10;tab-stops:list 36.0pt">Email/WhatsApp
-     communications with builder</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo10;tab-stops:list 36.0pt">Any delay or
-     possession letters</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b>For Lease Agreement:</b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l13 level1 lfo11;tab-stops:list 36.0pt">ID proof of
-     landlord and tenant</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l13 level1 lfo11;tab-stops:list 36.0pt">Property
-     ownership proof</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l13 level1 lfo11;tab-stops:list 36.0pt">Agreed terms
-     (duration, rent, security, etc.)</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>📈</span> Benefits of Hiring a Property Lawyer<o:p></o:p></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo12;tab-stops:list 36.0pt">Protects you from
-     legal fraud or disputes</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo12;tab-stops:list 36.0pt">Ensures valid and
-     enforceable property documentation</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo12;tab-stops:list 36.0pt">Saves money by
-     avoiding future litigation</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo12;tab-stops:list 36.0pt">Helps with
-     negotiation and legal clarity in agreements</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo12;tab-stops:list 36.0pt">Peace of mind with
-     expert handling of complex legal procedures</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>🏛️</span> Courts &amp; Authorities We
-Represent At<o:p></o:p></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo13;tab-stops:list 36.0pt">Civil Courts</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo13;tab-stops:list 36.0pt">Consumer Disputes
-     Redressal Commission</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo13;tab-stops:list 36.0pt">RERA Authority
-     &amp; Appellate Tribunal</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo13;tab-stops:list 36.0pt">Sub-Registrar
-     Office (for registration work)</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>👨</span>‍</b><b><span style='font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>💼</span> Our Process (Step-by-Step)<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Show clients how easy it is to work with you:</p>
-<ol start="1" style="margin-top:0cm" type="1">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt"><b>Initial
-     Consultation</b> � Understand your issue or transaction</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt"><b>Document Review
-     &amp; Drafting</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt"><b>Title/Legal Due
-     Diligence (if applicable)</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt"><b>Representation
-     before authorities or registration</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt"><b>Final Handover
-     and Closure</b></li>
-</ol>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>🕐</span> Turnaround Time<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Give clients a clear idea of how long things take:</p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo15;tab-stops:list 36.0pt">Title Verification
-     � 3 to 7 working days</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo15;tab-stops:list 36.0pt">Sale Deed Drafting
-     � 1 to 2 working days</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo15;tab-stops:list 36.0pt">RERA Complaint
-     Filing � Within 2 to 5 working days</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo15;tab-stops:list 36.0pt">Lease Agreement
-     Drafting � Same day (if urgent)</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>✅</span> Why Choose Us?<o:p></o:p></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l15 level1 lfo16;tab-stops:list 36.0pt">Experienced in
-     civil and real estate law</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l15 level1 lfo16;tab-stops:list 36.0pt">Customized legal
-     advice for each client</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l15 level1 lfo16;tab-stops:list 36.0pt">Transparent
-     processes and timely services</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l15 level1 lfo16;tab-stops:list 36.0pt">Representation
-     before civil courts, consumer forums, and RERA</li>
-</ul>
-</div>
-
-            </div>
-            <div id="sidebar">
-                <h4>Advocate Services</h4>
-                <ul>
-                    <li><a href='../Advocate/1. Civil Law.html' class='d-flex'><p>Civil Law</p></a></li>
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="service-content">
+            <!-- Content will be loaded from Firebase here -->
+          </div>
+        </div>
+        <div id="sidebar">
+          <h4>Advocate Services</h4>
+          <ul>
+            <li><a href='../Advocate/1. Civil Law.html' class='d-flex'><p>Civil Law</p></a></li>
 <li><a href='../Advocate/2. Banking & Finance Law.html' class='d-flex'><p>Banking &amp; Finance Law</p></a></li>
 <li><a href='../Advocate/3. Legal Advisory.html' class='d-flex'><p>Legal Advisory</p></a></li>
 <li><a href='../Advocate/4. Consumer Law & Protection.html' class='d-flex'><p>Consumer Law &amp; Protection</p></a></li>
@@ -456,13 +200,13 @@ justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font
 <li><a href='../Advocate/13. Appeal.html' class='d-flex'><p>Appeal</p></a></li>
 <li><a href='../Advocate/14. SARFAESI Law.html' class='d-flex'><p>SARFAESI Law</p></a></li>
 
-                </ul>
-            </div>
+          </ul>
         </div>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-</body>
-<script src="../../js/navbar-inject.js"></script>
-<script src="../../js/footer-inject.js"></script>
-<script src="../../Services/disable-copy.js"></script>
+  </body>
+  <script src="../../js/navbar-inject.js"></script>
+  <script src="../../js/footer-inject.js"></script>
+  <script type="module" src="../auto-load-service.js"></script>
 </html>

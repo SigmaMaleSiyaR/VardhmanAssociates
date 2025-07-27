@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>TDS Services - CA Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-    body {
-        font-family: 'Open Sans', sans-serif;
+      body {
+        font-family: "Open Sans", sans-serif;
         font-size: 14px;
-    }
-    .banner {
+      }
+      .banner {
         height: 30vh;
-        background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
+        background: url("/img/ServicesHeader.jpg") center/cover no-repeat;
         position: relative;
-    }
-    .banner h1 {
+      }
+      .banner h1 {
         position: absolute;
         bottom: 10px;
         left: 30px;
         color: white;
         font-weight: 700;
-        /* background: rgba(0, 0, 0, 0.5); */
         padding: 10px 20px;
         border-radius: 5px;
-    }
-    .content-wrapper {
+      }
+      .content-wrapper {
         display: flex;
         flex-wrap: wrap;
         margin-top: 2rem;
         gap: 2%;
-    }
-    .main-content {
-        flex: 0 0 60%;
-    }
-    #sidebar {
-        height: fit-content;
+      }
+      .main-content {
+        flex: 0 0 65%;
+        max-width: 65%;
+      }
+      #sidebar {
         flex: 0 0 33%;
+        max-width: 33%;
+        height: fit-content;
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 5px;
@@ -51,1490 +61,131 @@
         border-left: 1px solid #ddd;
         padding-left: 1.5rem;
         position: sticky;
-        top: 100px; /* adjust this based on your navbar height */
+        top: 100px;
         align-self: start;
-    }
-   #sidebar h4 {
+      }
+      #sidebar h4 {
         font-weight: 600;
         color: black;
         text-decoration: none;
         font-style: normal;
         font-size: x-large;
-    }
-    #sidebar ul {
+      }
+      #sidebar ul {
         padding: 1rem;
         list-style: disc;
-    }
-    #sidebar li {
+      }
+      #sidebar li {
         margin-bottom: 10px;
-    }
-    #sidebar a {
+      }
+      #sidebar a {
         text-decoration: none;
         color: #007bff;
-    }
-    #sidebar a:hover {
+      }
+      #sidebar a:hover {
         color: var(--primary) !important;
-    }
+      }
+      @media (max-width: 991px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      /* Service content styling */
+      #service-content {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      #service-content h1,
+      #service-content h2,
+      #service-content h3,
+      #service-content h4,
+      #service-content h5,
+      #service-content h6 {
+        color: #1b365d;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #service-content p {
+        margin-bottom: 1rem;
+      }
+
+      #service-content ul,
+      #service-content ol {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+      }
+
+      #service-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      #service-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      #service-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      #service-content table,
+      #service-content th,
+      #service-content td {
+        border: 1px solid #ddd;
+      }
+
+      #service-content th,
+      #service-content td {
+        padding: 0.75rem;
+        text-align: left;
+      }
+
+      #service-content th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+      }
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div class="banner">
-        <h1>TDS Services</h1>
+      <h1>TDS Services</h1>
     </div>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="main-content">
-                
-<div class="WordSection1">
-<p align="center" class="MsoTitle" style="text-align:center"><b style="mso-bidi-font-weight:
-normal"><span style='font-size:20.0pt;mso-bidi-font-size:28.0pt;font-family:
-"Arial","sans-serif"'>TDS Return Filing &amp; Compliance Made Simple<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><span style="font-size:11.0pt;
-line-height:115%">In today�s compliance-driven environment, managing <b>Tax
-Deducted at Source (TDS)</b> isn't just a legal formality�it's a critical
-responsibility for every business, employer, and even individuals involved in
-high-value transactions. Whether you're paying salaries, professional fees,
-rent, or buying property, TDS obligations are everywhere�and errors can lead to
-<b>heavy penalties</b>, <b>notices</b>, and <b>compliance risks</b>.<o:p></o:p></span></p>
-<p class="MsoNormal" style="text-align:justify"><span style="font-size:11.0pt;
-line-height:115%">We help you <b>navigate the complexities of TDS compliance</b>
-with complete accuracy, timely filing, and expert support. From <b>quarterly
-TDS return filing</b> to <b>PAN validation, challan reconciliation, and TDS
-certificates (Form 16/16A)</b>�we ensure your obligations are met without
-hassle.<o:p></o:p></span></p>
-<p class="MsoNormal" style="text-align:justify"><span style='font-size:11.0pt;
-line-height:115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>💼</span><span style="font-size:11.0pt;line-height:
-115%"> Whether you�re a startup, a growing business, or an individual deductor,
-our TDS services are designed to give you <b>peace of mind</b>, <b>100%
-compliance</b>, and <b>no last-minute rush.<o:p></o:p></b></span></p>
-<p class="MsoNormal"><b><span style="font-size:16.0pt;line-height:115%">What is
-TDS Return Filing?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><span style="font-size:11.0pt;
-line-height:115%">TDS (Tax Deducted at Source) is a method of collecting tax at
-the source of income generation. As a responsible taxpayer or deductor, you are
-required to deduct TDS while making certain payments like salary, rent, interest,
-commission, etc., and deposit it with the government.<o:p></o:p></span></p>
-<p class="MsoNormal" style="text-align:justify"><span style="font-size:11.0pt;
-line-height:115%">TDS Return is a quarterly statement submitted to the Income
-Tax Department, detailing all TDS deductions and payments.<o:p></o:p></span></p>
-<p class="MsoNormal"><b><span style="font-size:16.0pt;line-height:115%">Who Needs
-to File TDS Returns?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><span style="font-size:11.0pt;line-height:115%">You are required to
-file TDS Returns if you are:<o:p></o:p></span></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo1;tab-stops:list 36.0pt"><span style="font-size:11.0pt;line-height:115%">A company or business entity<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo1;tab-stops:list 36.0pt"><span style="font-size:11.0pt;line-height:115%">An employer deducting TDS on
-     salaries<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo1;tab-stops:list 36.0pt"><span style="font-size:11.0pt;line-height:115%">A landlord receiving rent above
-     ₹2,40,000 per year<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo1;tab-stops:list 36.0pt"><span style="font-size:11.0pt;line-height:115%">Deducting TDS on professional
-     fees, contract payments, interest, or commission<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo1;tab-stops:list 36.0pt"><span style="font-size:11.0pt;line-height:115%">A buyer deducting TDS on
-     property purchases over ₹50 lakhs<o:p></o:p></span></li>
-</ul>
-<p class="MsoNormal"><b><span style="font-size:16.0pt;line-height:115%">Types of
-TDS Returns<o:p></o:p></span></b></p>
-<table border="1" cellpadding="0" cellspacing="0" class="MsoTableMediumShading1Accent1" style="border-collapse:collapse;border:none;mso-border-alt:solid #7295D2 1.0pt;
- mso-border-themecolor:accent1;mso-border-themetint:191;mso-yfti-tbllook:1184;
- mso-padding-alt:0cm 5.4pt 0cm 5.4pt">
-<tr style="mso-yfti-irow:-1;mso-yfti-firstrow:yes">
-<td style="width:72.9pt;border:solid #7295D2 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-right:none;
-  background:#4472C4;mso-background-themecolor:accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="122">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:5"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">Form</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="width:126.0pt;border-top:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;border-left:
-  none;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:none;background:#4472C4;
-  mso-background-themecolor:accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:1"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">Applicable For</span></b><span style="font-size:
-  11.0pt;color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="width:10.0cm;border:solid #7295D2 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  background:#4472C4;mso-background-themecolor:accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="473">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:1"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">Purpose</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:0">
-<td style="width:72.9pt;border-top:none;border-left:
-  solid #7295D2 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
-  #D0DBF0;mso-background-themecolor:accent1;mso-background-themetint:63;
-  padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="122">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt">Form 24Q<o:p></o:p></span></b></p>
-</td>
-<td style="width:126.0pt;border:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><span style="font-size:11.0pt">Salary payments<o:p></o:p></span></p>
-</td>
-<td style="width:10.0cm;border-top:none;border-left:
-  none;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7295D2 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
-  #D0DBF0;mso-background-themecolor:accent1;mso-background-themetint:63;
-  padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="473">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><span style="font-size:11.0pt">Filed by employers
-  deducting TDS on salaries<o:p></o:p></span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td style="width:72.9pt;border-top:none;border-left:
-  solid #7295D2 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="122">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:132"><b><span style="font-size:11.0pt">Form 26Q<o:p></o:p></span></b></p>
-</td>
-<td style="width:126.0pt;border:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:128"><span style="font-size:11.0pt">Non-salary payments<o:p></o:p></span></p>
-</td>
-<td style="width:10.0cm;border-top:none;border-left:
-  none;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7295D2 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="473">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:128"><span style="font-size:11.0pt">Filed for TDS on
-  contractor fees, professional fees, rent, interest, etc.<o:p></o:p></span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td style="width:72.9pt;border-top:none;border-left:
-  solid #7295D2 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
-  #D0DBF0;mso-background-themecolor:accent1;mso-background-themetint:63;
-  padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="122">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt">Form 27Q<o:p></o:p></span></b></p>
-</td>
-<td style="width:126.0pt;border:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><span style="font-size:11.0pt">Payments to non-residents<o:p></o:p></span></p>
-</td>
-<td style="width:10.0cm;border-top:none;border-left:
-  none;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7295D2 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
-  #D0DBF0;mso-background-themecolor:accent1;mso-background-themetint:63;
-  padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="473">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><span style="font-size:11.0pt">TDS details on
-  payments made to non-resident individuals or entities<o:p></o:p></span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3">
-<td style="width:72.9pt;border-top:none;border-left:
-  solid #7295D2 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="122">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:132"><b><span style="font-size:11.0pt">Form 26QB<o:p></o:p></span></b></p>
-</td>
-<td style="width:126.0pt;border:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:128"><span style="font-size:11.0pt">Property
-  transactions<o:p></o:p></span></p>
-</td>
-<td style="width:10.0cm;border-top:none;border-left:
-  none;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7295D2 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="473">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:128"><span style="font-size:11.0pt">Filed by buyers who
-  deduct TDS when purchasing property<o:p></o:p></span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes">
-<td style="width:72.9pt;border-top:none;border-left:
-  solid #7295D2 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
-  #D0DBF0;mso-background-themecolor:accent1;mso-background-themetint:63;
-  padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="122">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt">Form 26QC</span></b><span style="font-size:11.0pt"><o:p></o:p></span></p>
-</td>
-<td style="width:126.0pt;border:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><span style="font-size:11.0pt">Rent payments<o:p></o:p></span></p>
-</td>
-<td style="width:10.0cm;border-top:none;border-left:
-  none;border-bottom:solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7295D2 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
-  #D0DBF0;mso-background-themecolor:accent1;mso-background-themetint:63;
-  padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="473">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><span style="font-size:11.0pt">Filed by tenants
-  deducting TDS on rent (above ₹50,000/month)<o:p></o:p></span></p>
-</td>
-</tr>
-</table>
-<p class="MsoNormal"><b><span style="font-size:16.0pt;line-height:115%">Due Dates
-for Filing TDS Returns<o:p></o:p></span></b></p>
-<table border="1" cellpadding="0" cellspacing="0" class="MsoTableMediumShading1Accent1" style="border-collapse:collapse;border:none;mso-border-alt:solid #7295D2 1.0pt;
- mso-border-themecolor:accent1;mso-border-themetint:191;mso-yfti-tbllook:1184;
- mso-padding-alt:0cm 5.4pt 0cm 5.4pt">
-<tr style="mso-yfti-irow:-1;mso-yfti-firstrow:yes">
-<td style="border:solid #7295D2 1.0pt;mso-border-themecolor:accent1;
-  mso-border-themetint:191;border-right:none;background:#4472C4;mso-background-themecolor:
-  accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:5"><b><span style="color:white;mso-themecolor:background1">Quarter</span></b><span style="color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:solid #7295D2 1.0pt;mso-border-top-themecolor:
-  accent1;mso-border-top-themetint:191;border-left:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  border-right:none;background:#4472C4;mso-background-themecolor:accent1;
-  padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:1"><b><span style="color:white;mso-themecolor:background1">Period</span></b><span style="color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border:solid #7295D2 1.0pt;mso-border-themecolor:accent1;
-  mso-border-themetint:191;border-left:none;background:#4472C4;mso-background-themecolor:
-  accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:1"><b><span style="color:white;mso-themecolor:background1">Due
-  Date</span></b><span style="color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:0">
-<td style="border-top:none;border-left:solid #7295D2 1.0pt;
-  mso-border-left-themecolor:accent1;mso-border-left-themetint:191;border-bottom:
-  solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:
-  191;border-right:none;mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:
-  accent1;mso-border-top-themetint:191;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b>Q1<o:p></o:p></b></p>
-</td>
-<td style="border:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64">April � June</p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  border-right:solid #7295D2 1.0pt;mso-border-right-themecolor:accent1;
-  mso-border-right-themetint:191;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
-  #D0DBF0;mso-background-themecolor:accent1;mso-background-themetint:63;
-  padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64">31st July</p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td style="border-top:none;border-left:solid #7295D2 1.0pt;
-  mso-border-left-themecolor:accent1;mso-border-left-themetint:191;border-bottom:
-  solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:
-  191;border-right:none;mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:
-  accent1;mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:132"><b>Q2<o:p></o:p></b></p>
-</td>
-<td style="border:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:128">July � September</p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  border-right:solid #7295D2 1.0pt;mso-border-right-themecolor:accent1;
-  mso-border-right-themetint:191;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:128">31st October</p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td style="border-top:none;border-left:solid #7295D2 1.0pt;
-  mso-border-left-themecolor:accent1;mso-border-left-themetint:191;border-bottom:
-  solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:
-  191;border-right:none;mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:
-  accent1;mso-border-top-themetint:191;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b>Q3<o:p></o:p></b></p>
-</td>
-<td style="border:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64">October � December</p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  border-right:solid #7295D2 1.0pt;mso-border-right-themecolor:accent1;
-  mso-border-right-themetint:191;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
-  #D0DBF0;mso-background-themecolor:accent1;mso-background-themetint:63;
-  padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64">31st January</p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes">
-<td style="border-top:none;border-left:solid #7295D2 1.0pt;
-  mso-border-left-themecolor:accent1;mso-border-left-themetint:191;border-bottom:
-  solid #7295D2 1.0pt;mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:
-  191;border-right:none;mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:
-  accent1;mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:132"><b>Q4<o:p></o:p></b></p>
-</td>
-<td style="border:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  mso-border-top-alt:solid #7295D2 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:128">January � March</p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid #7295D2 1.0pt;
-  mso-border-bottom-themecolor:accent1;mso-border-bottom-themetint:191;
-  border-right:solid #7295D2 1.0pt;mso-border-right-themecolor:accent1;
-  mso-border-right-themetint:191;mso-border-top-alt:solid #7295D2 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:128">31st May</p>
-</td>
-</tr>
-</table>
-<p class="MsoNormal"><b><span style='font-size:6.0pt;mso-bidi-font-size:14.0pt;
-line-height:115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal"><b><span style='font-size:14.0pt;line-height:115%;
-font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>⚠️</span></b><b><span style="font-size:14.0pt;line-height:115%"> Important Notes:<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo6;tab-stops:list 36.0pt"><b><span style="font-size:11.0pt;line-height:115%">PAN Mandatory: If PAN is not furnished,
-     TDS is deducted at 20% (or higher).<o:p></o:p></span></b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo6;tab-stops:list 36.0pt"><b><span style="font-size:11.0pt;line-height:115%">Section 206AB: If deductee has
-     not filed ITR for last 2 years and TDS &gt; ₹50,000/year, then
-     higher TDS applies (twice the rate or 5%, whichever is higher).<o:p></o:p></span></b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo6;tab-stops:list 36.0pt"><b><span style="font-size:11.0pt;line-height:115%">Always check for latest
-     notifications or changes by the Income Tax Department.<o:p></o:p></span></b></li>
-</ul>
-<p align="center" class="MsoNormal" style="text-align:center"><b><u><span style='font-size:16.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>✅</span></u></b><b><u><span style="font-size:16.0pt;line-height:115%"> TDS Rate Chart for FY 2024-25 (AY
-2025-26)<o:p></o:p></span></u></b></p>
-<table border="1" cellpadding="0" cellspacing="0" class="MsoTableMediumGrid3Accent1" style="border-collapse:collapse;border:none;mso-border-alt:solid white 1.0pt;
- mso-border-themecolor:background1;mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt">
-<tr style="mso-yfti-irow:-1;mso-yfti-firstrow:yes">
-<td style="border:solid white 1.0pt;mso-border-themecolor:background1;
-  border-bottom:solid white 3.0pt;mso-border-bottom-themecolor:background1;
-  background:#4472C4;mso-background-themecolor:accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:5"><b><span style="color:white;mso-themecolor:background1"><span style="mso-spacerun:yes">��� </span></span></b><b><span style="font-size:
-  11.0pt;color:white;mso-themecolor:background1">Section</span></b><span style="font-size:11.0pt;color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:none;border-bottom:solid white 3.0pt;mso-border-bottom-themecolor:
-  background1;border-right:solid white 1.0pt;mso-border-right-themecolor:background1;
-  mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:background1;
-  background:#4472C4;mso-background-themecolor:accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:1"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">Nature of Payment</span></b><span style="font-size:11.0pt;color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:none;border-bottom:solid white 3.0pt;mso-border-bottom-themecolor:
-  background1;border-right:solid white 1.0pt;mso-border-right-themecolor:background1;
-  mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:background1;
-  background:#4472C4;mso-background-themecolor:accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:1"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">Threshold Limit</span></b><span style="font-size:
-  11.0pt;color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:none;border-bottom:solid white 3.0pt;mso-border-bottom-themecolor:
-  background1;border-right:solid white 1.0pt;mso-border-right-themecolor:background1;
-  mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:background1;
-  background:#4472C4;mso-background-themecolor:accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:1"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">TDS Rate</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:0">
-<td style="border-top:none;border-left:solid white 1.0pt;
-  mso-border-left-themecolor:background1;border-bottom:none;border-right:solid white 3.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;background:#4472C4;mso-background-themecolor:
-  accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">192</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Salary<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Basic exemption
-  limit<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">As per income tax
-  slab<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;mso-border-top-alt:solid white .75pt;mso-border-top-themecolor:
-  background1;mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:
-  background1;mso-border-right-alt:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:4"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">192A</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Premature EPF Withdrawal<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">₹50,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;mso-border-right-alt:solid white 1.0pt;
-  mso-border-right-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">10%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">193</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Interest on
-  Securities<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">₹5,000
-  (₹10,000 for debentures)<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">10%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;mso-border-top-alt:solid white .75pt;mso-border-top-themecolor:
-  background1;mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:
-  background1;mso-border-right-alt:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:4"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Dividend (other than by Mutual
-  Funds)<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">₹5,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;mso-border-right-alt:solid white 1.0pt;
-  mso-border-right-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">10%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:4">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194A</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Interest (Bank,
-  FD, etc.)<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">₹40,000
-  (₹50,000 for senior citizens)<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">10%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:5">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;mso-border-top-alt:solid white .75pt;mso-border-top-themecolor:
-  background1;mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:
-  background1;mso-border-right-alt:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:4"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194B</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Lottery / Game Winnings<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">₹10,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;mso-border-right-alt:solid white 1.0pt;
-  mso-border-right-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">30%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:6">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194C</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Payment to
-  Contractors<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">₹30,000
-  (single) / ₹1,00,000 (annual)<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">1%
-  (Individual/HUF), 2% (Others)<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:7">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;mso-border-top-alt:solid white .75pt;mso-border-top-themecolor:
-  background1;mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:
-  background1;mso-border-right-alt:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:4"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194D</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Insurance Commission<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">₹15,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;mso-border-right-alt:solid white 1.0pt;
-  mso-border-right-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">5%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:8">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194DA</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Maturity of Life
-  Insurance (non-exempt)<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">₹1,00,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">5% on income
-  portion<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:9">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;mso-border-top-alt:solid white .75pt;mso-border-top-themecolor:
-  background1;mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:
-  background1;mso-border-right-alt:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:4"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194H</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Commission/Brokerage<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">₹15,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;mso-border-right-alt:solid white 1.0pt;
-  mso-border-right-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">5%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:10">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194I (a)</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Rent � Plant &amp;
-  Machinery<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">₹2,40,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">2%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:11">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;mso-border-top-alt:solid white .75pt;mso-border-top-themecolor:
-  background1;mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:
-  background1;mso-border-right-alt:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:4"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194I (b)</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Rent � Land/Building/Furniture<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">₹2,40,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;mso-border-right-alt:solid white 1.0pt;
-  mso-border-right-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">10%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:12">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194IA</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Transfer of
-  Immovable Property<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">₹50,00,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">1%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:13">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;mso-border-top-alt:solid white .75pt;mso-border-top-themecolor:
-  background1;mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:
-  background1;mso-border-right-alt:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:4"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194IB</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Rent by Individuals/HUF (not liable
-  for audit)<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">₹50,000/month<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;mso-border-right-alt:solid white 1.0pt;
-  mso-border-right-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">5%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:14">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194IC</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Joint Development
-  Agreement<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">No limit<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">10%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:15">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;mso-border-top-alt:solid white .75pt;mso-border-top-themecolor:
-  background1;mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:
-  background1;mso-border-right-alt:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:4"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194J</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Professional/Technical Services<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">₹30,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;mso-border-right-alt:solid white 1.0pt;
-  mso-border-right-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">10% (2% for technical services)<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:16">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194M</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Payments by
-  Individual/HUF (not liable for audit) for contract, commission, or
-  professional fees<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">₹50,00,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">5%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:17">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;mso-border-top-alt:solid white .75pt;mso-border-top-themecolor:
-  background1;mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:
-  background1;mso-border-right-alt:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:4"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194N</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Cash Withdrawal (Bank/Co-op/PO)<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">&gt;₹1 crore<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;mso-border-right-alt:solid white 1.0pt;
-  mso-border-right-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">2% or 5% (based on withdrawal
-  history)<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:18">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">194O</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">E-commerce
-  Operator to Seller<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">₹5,00,000<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">1%<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:19">
-<td style="border-top:solid white 1.0pt;mso-border-top-themecolor:
-  background1;border-left:solid white 1.0pt;mso-border-left-themecolor:background1;
-  border-bottom:none;border-right:solid white 3.0pt;mso-border-right-themecolor:
-  background1;mso-border-top-alt:solid white .75pt;mso-border-top-themecolor:
-  background1;mso-border-left-alt:solid white 1.0pt;mso-border-left-themecolor:
-  background1;mso-border-right-alt:solid white 3.0pt;mso-border-right-themecolor:
-  background1;background:#4472C4;mso-background-themecolor:accent1;padding:
-  0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:4"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">195</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Payment to Non-Resident<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Any amount<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white .75pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .75pt;
-  mso-border-left-themecolor:background1;mso-border-alt:solid white .75pt;
-  mso-border-themecolor:background1;mso-border-right-alt:solid white 1.0pt;
-  mso-border-right-themecolor:background1;background:#D0DBF0;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal"><b><span style="font-size:11.0pt">Rates vary as per DTAA or IT Act<o:p></o:p></span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:20;mso-yfti-lastrow:yes">
-<td style="border:solid white 1.0pt;mso-border-themecolor:background1;
-  border-right:solid white 3.0pt;mso-border-right-themecolor:background1;
-  background:#4472C4;mso-background-themecolor:accent1;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:68"><b><span style="font-size:11.0pt;color:white;
-  mso-themecolor:background1">196C/196D</span></b><span style="font-size:11.0pt;
-  color:white;mso-themecolor:background1"><o:p></o:p></span></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Income from
-  foreign currency bonds or shares by FIIs<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">Any amount<o:p></o:p></span></b></p>
-</td>
-<td style="border-top:none;border-left:none;border-bottom:solid white 1.0pt;
-  mso-border-bottom-themecolor:background1;border-right:solid white 1.0pt;
-  mso-border-right-themecolor:background1;mso-border-top-alt:solid white 1.0pt;
-  mso-border-top-themecolor:background1;mso-border-left-alt:solid white 1.0pt;
-  mso-border-left-themecolor:background1;background:#A1B8E1;mso-background-themecolor:
-  accent1;mso-background-themetint:127;padding:0cm 5.4pt 0cm 5.4pt" valign="top">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;mso-yfti-cnfc:64"><b><span style="font-size:11.0pt">10% / 20%<o:p></o:p></span></b></p>
-</td>
-</tr>
-</table>
-<p class="MsoNormal"><b><span style="font-size:6.0pt;mso-bidi-font-size:12.0pt;
-line-height:115%"><o:p> </o:p></span></b></p>
-<p class="MsoNormal"><b><span style="font-size:16.0pt;line-height:115%">Why
-Choose Us for TDS Return Filing?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><span style='font-size:11.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>✅</span><span style="font-size:
-11.0pt;line-height:115%"> <b>Error-Free Filing</b>: Accurate computation
-and timely submission<o:p></o:p></span></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><span style='font-size:11.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>✅</span><span style="font-size:
-11.0pt;line-height:115%"> <b>PAN-Aadhar Validation</b>: Ensuring
-compliance and linking<o:p></o:p></span></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><span style='font-size:11.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>✅</span><span style="font-size:
-11.0pt;line-height:115%"> <b>TRACES Compliance</b>: Download of Form
-16/16A from the TDS portal<o:p></o:p></span></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><span style='font-size:11.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>✅</span><span style="font-size:
-11.0pt;line-height:115%"> <b>Correction Filing</b>: Revisions in case of
-defaults or mismatches<o:p></o:p></span></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><span style='font-size:11.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>✅</span><span style="font-size:
-11.0pt;line-height:115%"> <b>Expert Support</b>: Professional advice from
-qualified CAs<o:p></o:p></span></p>
-<p class="MsoNormal"><b><span style='font-size:16.0pt;line-height:115%;
-font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>🔍</span></b><b><span style="font-size:16.0pt;line-height:115%"> Additional Important Points :<o:p></o:p></span></b></p>
-<p class="MsoNormal"><b><span style="font-size:14.0pt;line-height:115%">1.
-Penalties for Late Filing / Non-Filing<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt"><span style="font-size:11.0pt;line-height:115%">Explain what happens if TDS return is
-not filed on time:<o:p></o:p></span></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l2 level1 lfo4;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">₹200/day under Section 234E (until the return is
-     filed)<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l2 level1 lfo4;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">Penalty under Section 271H (₹10,000 to
-     ₹1,00,000) for incorrect details or delay<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l2 level1 lfo4;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">Interest on late payment of TDS (1%�1.5% per month)<o:p></o:p></span></li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><span style='font-size:11.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><span style='font-size:11.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>💡</span><span style="font-size:
-11.0pt;line-height:115%"> This encourages timely filing and adds urgency for
-the client.<o:p></o:p></span></p>
-<p class="MsoNormal"><b><span style="font-size:14.0pt;line-height:115%"><o:p> </o:p></span></b></p>
-<p class="MsoNormal"><b><span style="font-size:14.0pt;line-height:115%">2.
-Documents Required from Clients<o:p></o:p></span></b></p>
-<p class="MsoNormal"><span style="font-size:11.0pt;line-height:115%">List what
-clients need to provide for smooth filing:<o:p></o:p></span></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l4 level1 lfo5;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">TAN of the deductor<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l4 level1 lfo5;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">PAN details of deductee(s)<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l4 level1 lfo5;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">TDS challan details<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l4 level1 lfo5;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">Salary/payments records<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l4 level1 lfo5;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">Bank statements (for reconciliation if needed)<o:p></o:p></span></li>
-</ul>
-<p class="MsoNormal"><span style='font-size:11.0pt;line-height:115%;font-family:
-"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>📄</span><span style="font-size:11.0pt;line-height:115%"> Helps clients come prepared and
-saves time.<o:p></o:p></span></p>
-<p class="MsoNormal"><o:p> </o:p></p>
-<p class="MsoNormal"><b><span style="font-size:16.0pt;line-height:115%">Our TDS
-Services Include:<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l3 level1 lfo3;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">TAN registration assistance<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l3 level1 lfo3;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">Preparation of TDS challans<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l3 level1 lfo3;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">Filing of quarterly TDS returns<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l3 level1 lfo3;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">Generation of Form 16/16A<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l3 level1 lfo3;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">Rectification of notices/defaults<o:p></o:p></span></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;mso-list:
-     l3 level1 lfo3;tab-stops:list 36.0pt"><span style="font-size:11.0pt;
-     line-height:115%">Compliance with latest TDS rules<o:p></o:p></span></li>
-</ul>
-<p class="MsoNormal"><o:p> </o:p></p>
-<p class="MsoNormal"><span lang="EN-US" style="mso-ansi-language:EN-US"><o:p> </o:p></span></p>
-</div>
-
-            </div>
-            <div id="sidebar">
-                <h4>CA Services</h4>
-                <ul>
-                    <li><a href='../Ca/1. Start A Business.html' class='d-flex'><p>Start A Business</p></a></li>
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="service-content">
+            <!-- Content will be loaded from Firebase here -->
+          </div>
+        </div>
+        <div id="sidebar">
+          <h4>CA Services</h4>
+          <ul>
+            <li><a href='../Ca/1. Start A Business.html' class='d-flex'><p>Start A Business</p></a></li>
 <li><a href='../Ca/2. Business Registration & Licences.html' class='d-flex'><p>Business Registration &amp; Licence</p></a></li>
 <li><a href='../Ca/3. Income Tax.html' class='d-flex'><p>Income Tax</p></a></li>
 <li><a href='../Ca/4. GST Services.html' class='d-flex'><p>GST Services</p></a></li>
@@ -1546,13 +197,13 @@ Services Include:<o:p></o:p></span></b></p>
 <li><a href='../Ca/10. CMA Data & Project Report.html' class='d-flex'><p>CMA Data &amp; Project Report</p></a></li>
 <li><a href='../Ca/11. Loans & Project Finance.html' class='d-flex'><p>Loans &amp; Project Finance</p></a></li>
 
-                </ul>
-            </div>
+          </ul>
         </div>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-</body>
-<script src="../../js/navbar-inject.js"></script>
-<script src="../../js/footer-inject.js"></script>
-<script src="../../Services/disable-copy.js"></script>
+  </body>
+  <script src="../../js/navbar-inject.js"></script>
+  <script src="../../js/footer-inject.js"></script>
+  <script type="module" src="../auto-load-service.js"></script>
 </html>

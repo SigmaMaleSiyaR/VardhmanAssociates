@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Society and NGO - CA Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-    body {
-        font-family: 'Open Sans', sans-serif;
+      body {
+        font-family: "Open Sans", sans-serif;
         font-size: 14px;
-    }
-    .banner {
+      }
+      .banner {
         height: 30vh;
-        background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
+        background: url("/img/ServicesHeader.jpg") center/cover no-repeat;
         position: relative;
-    }
-    .banner h1 {
+      }
+      .banner h1 {
         position: absolute;
         bottom: 10px;
         left: 30px;
         color: white;
         font-weight: 700;
-        /* background: rgba(0, 0, 0, 0.5); */
         padding: 10px 20px;
         border-radius: 5px;
-    }
-    .content-wrapper {
+      }
+      .content-wrapper {
         display: flex;
         flex-wrap: wrap;
         margin-top: 2rem;
         gap: 2%;
-    }
-    .main-content {
-        flex: 0 0 60%;
-    }
-    #sidebar {
-        height: fit-content;
+      }
+      .main-content {
+        flex: 0 0 65%;
+        max-width: 65%;
+      }
+      #sidebar {
         flex: 0 0 33%;
+        max-width: 33%;
+        height: fit-content;
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 5px;
@@ -51,1137 +61,131 @@
         border-left: 1px solid #ddd;
         padding-left: 1.5rem;
         position: sticky;
-        top: 100px; /* adjust this based on your navbar height */
+        top: 100px;
         align-self: start;
-    }
-   #sidebar h4 {
+      }
+      #sidebar h4 {
         font-weight: 600;
         color: black;
         text-decoration: none;
         font-style: normal;
         font-size: x-large;
-    }
-    #sidebar ul {
+      }
+      #sidebar ul {
         padding: 1rem;
         list-style: disc;
-    }
-    #sidebar li {
+      }
+      #sidebar li {
         margin-bottom: 10px;
-    }
-    #sidebar a {
+      }
+      #sidebar a {
         text-decoration: none;
         color: #007bff;
-    }
-    #sidebar a:hover {
+      }
+      #sidebar a:hover {
         color: var(--primary) !important;
-    }
+      }
+      @media (max-width: 991px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      /* Service content styling */
+      #service-content {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      #service-content h1,
+      #service-content h2,
+      #service-content h3,
+      #service-content h4,
+      #service-content h5,
+      #service-content h6 {
+        color: #1b365d;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #service-content p {
+        margin-bottom: 1rem;
+      }
+
+      #service-content ul,
+      #service-content ol {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+      }
+
+      #service-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      #service-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      #service-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      #service-content table,
+      #service-content th,
+      #service-content td {
+        border: 1px solid #ddd;
+      }
+
+      #service-content th,
+      #service-content td {
+        padding: 0.75rem;
+        text-align: left;
+      }
+
+      #service-content th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+      }
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div class="banner">
-        <h1>Society and NGO</h1>
+      <h1>Society and NGO</h1>
     </div>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="main-content">
-                
-<div class="WordSection1">
-<p align="center" class="MsoNormal" style="text-align:center"><b><span lang="EN" style='font-size:18.0pt;mso-bidi-font-size:11.0pt;line-height:115%;font-family:
-"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>🏢</span></b><b><span lang="EN" style="font-size:18.0pt;mso-bidi-font-size:11.0pt;line-height:115%">
-Society &amp; NGO Compliance Services<o:p></o:p></span></b></p>
-<p align="center" class="MsoNormal" style="text-align:center"><b><span lang="EN" style="font-size:18.0pt;mso-bidi-font-size:11.0pt;line-height:115%"><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><b><span lang="EN">Strengthening
-the Backbone of Social Impact with Legal &amp; Financial Clarity</span></b></p>
-<p class="MsoNormal" style="text-align:justify"><span lang="EN">Non-profits,
-trusts, and societies operate with a noble vision�but managing legal, tax, and
-regulatory requirements can be daunting. We provide specialized services
-tailored to the unique needs of NGOs, charitable trusts, and societies.</span></p>
-<p class="MsoNormal" style="text-align:justify"><span lang="EN">From <b>initial
-registration</b> under the Societies Act, Trust Act, or Section 8 of the
-Companies Act, to <b>obtaining 12A, 80G, and FCRA approvals</b>, our firm
-ensures that your organization enjoys legal recognition and tax-exempt status.
-We also handle <b>accounting, donor reporting, audit, and compliance filing</b>
-so that you remain eligible for government grants and foreign contributions.</span></p>
-<p class="MsoNormal" style="text-align:justify"><span lang="EN">With deep domain
-knowledge and a passion for supporting change-makers, we help you run your
-organization smoothly�ensuring transparency, credibility, and compliance at
-every step.</span></p>
-<h3 style="margin-top:14.0pt;text-align:justify;mso-pagination:widow-orphan;
-page-break-after:auto"><a name="_96hdtajhwtbb"></a><a name="_i7mmjsmvpcah"></a><b style="mso-bidi-font-weight:normal"><span lang="EN" style="font-size:13.0pt;
-line-height:115%;color:black">Supporting Your Vision to Serve Society � With
-Full Legal and Financial Compliance<o:p></o:p></span></b></h3>
-<h2 style="margin-bottom:4.0pt;mso-pagination:widow-orphan;page-break-after:
-auto"><a name="_c3pklfcroaow"></a><b style="mso-bidi-font-weight:normal"><span lang="EN" style="font-size:17.0pt;line-height:115%">🔹 What is an NGO?<o:p></o:p></span></b></h2>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-12.0pt;margin-left:0cm;text-align:justify"><span lang="EN">An <b style="mso-bidi-font-weight:normal">NGO (Non-Governmental Organization)</b> is
-a <b style="mso-bidi-font-weight:normal">non-profit</b> group that operates
-independently of government and is formed to serve <b style="mso-bidi-font-weight:
-normal">social, charitable, religious, educational, or humanitarian objectives</b>.
-NGOs may be registered under <b style="mso-bidi-font-weight:normal">different
-legal structures</b>, each with its own benefits.</span></p>
-<h2 style="margin-bottom:4.0pt;mso-pagination:widow-orphan;page-break-after:
-auto"><b style="mso-bidi-font-weight:normal"><span lang="EN" style="font-size:
-17.0pt;line-height:115%">🎯 Main Objectives of NGOs &amp; Societies<o:p></o:p></span></b></h2>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l3 level1 lfo1"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><span lang="EN">To serve the public without profit
-motive</span></p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo1"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><span lang="EN">Promote education, healthcare, and
-literacy</span></p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo1"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><span lang="EN">Work in rural development, women
-empowerment, and skill development</span></p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo1"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><span lang="EN">Provide aid during natural
-disasters</span></p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo1"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><span lang="EN">Promote environment conservation
-and animal welfare</span></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo1"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><span lang="EN">Foster arts, culture, and social
-harmony</span></p>
-<h2 style="margin-bottom:4.0pt;mso-pagination:widow-orphan;page-break-after:
-auto"><b style="mso-bidi-font-weight:normal"><span lang="EN" style="font-size:
-17.0pt;line-height:115%">📌 Key Objectives of NGOs &amp; Societies<o:p></o:p></span></b></h2>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-12.0pt;margin-left:0cm"><span lang="EN">Most societies and NGOs are set up with
-one or more of these <b style="mso-bidi-font-weight:normal">non-profit
-objectives</b>:</span></p>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><span lang="EN">Promotion of <b style="mso-bidi-font-weight:
-normal">education</b>, <b style="mso-bidi-font-weight:normal">healthcare</b>,
-or <b style="mso-bidi-font-weight:normal">environmental protection</b></span></p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><span lang="EN">Conducting <b style="mso-bidi-font-weight:
-normal">awareness programs</b>, <b style="mso-bidi-font-weight:normal">research</b>,
-and <b style="mso-bidi-font-weight:normal">training</b></span></p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><span lang="EN">Promoting <b style="mso-bidi-font-weight:
-normal">arts, culture, literature</b></span></p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><span lang="EN">Providing <b style="mso-bidi-font-weight:
-normal">relief to the poor</b> or <b style="mso-bidi-font-weight:normal">disaster-affected</b>
-groups</span></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2"><?if !supportLists?><span lang="EN"><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><b style="mso-bidi-font-weight:normal"><span lang="EN">Women empowerment</span></b><span lang="EN">, <b style="mso-bidi-font-weight:
-normal">child welfare</b>, <b style="mso-bidi-font-weight:normal">animal
-protection</b></span></p>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-12.0pt;margin-left:0cm;text-align:justify"><span lang="EN"><o:p> </o:p></span></p>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-12.0pt;margin-left:0cm;text-align:justify"><span lang="EN"><o:p> </o:p></span></p>
-<h2 style="margin-bottom:4.0pt;mso-pagination:widow-orphan;page-break-after:
-auto"><a name="_f8lf1547vxok"></a><b style="mso-bidi-font-weight:normal"><span lang="EN" style="font-size:17.0pt;line-height:115%">🏷️ Types of
-NGOs (By Legal Structure)<o:p></o:p></span></b></h2>
-<table border="1" cellpadding="0" cellspacing="0" class="MsoTableMediumGrid1Accent1" style="border-collapse:collapse;mso-table-layout-alt:fixed;
- border:none;mso-border-alt:solid #7BA0CD 1.0pt;mso-border-themecolor:accent1;
- mso-border-themetint:191;mso-yfti-tbllook:1536;mso-padding-alt:0cm 5.4pt 0cm 5.4pt" width="834">
-<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
-<td style="width:68.4pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;background:#D3DFEE;
-  mso-background-themecolor:accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="114">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Type of NGO</span></b></p>
-</td>
-<td style="width:202.1pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  mso-border-left-alt:solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;
-  mso-border-left-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="337">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Description</span></b></p>
-</td>
-<td style="width:117.4pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  mso-border-left-alt:solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;
-  mso-border-left-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="196">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Governing Law</span></b></p>
-</td>
-<td style="width:112.5pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  mso-border-left-alt:solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;
-  mso-border-left-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="188">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Best For</span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td style="width:68.4pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="114">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Trust</span></b></p>
-</td>
-<td style="width:202.1pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="337">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Created by a
-  Trust Deed, managed by Trustees. Flexible, often used for religious or
-  charitable purposes.</span></p>
-</td>
-<td style="width:117.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="196">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Indian Trust Act,
-  1882</span></p>
-</td>
-<td style="width:112.5pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="188">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Religious
-  institutions, Old age homes, Orphanages</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td style="width:68.4pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="114">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Society</span></b></p>
-</td>
-<td style="width:202.1pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="337">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Formed by a group
-  of people with a common charitable, cultural, educational, or scientific
-  goal.</span></p>
-</td>
-<td style="width:117.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="196">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Societies
-  Registration Act, 1860</span></p>
-</td>
-<td style="width:112.5pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="188">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Schools, Clubs,
-  Research bodies</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes">
-<td style="width:68.4pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="114">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Section 8 Company</span></b></p>
-</td>
-<td style="width:202.1pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="337">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Most formal
-  structure. Operates under corporate governance with a non-profit motive.</span></p>
-</td>
-<td style="width:117.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="196">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Companies Act,
-  2013</span></p>
-</td>
-<td style="width:112.5pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="188">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Large NGOs,
-  CSR-funded entities, International collaborations</span></p>
-</td>
-</tr>
-</table>
-<h2 style="margin-bottom:4.0pt;mso-pagination:widow-orphan;page-break-after:
-auto"><a name="_vyhhcwuhntau"></a><b style="mso-bidi-font-weight:normal"><span lang="EN" style="font-size:17.0pt;line-height:115%">🧾 Types of NGOs (By
-Activity Focus)<o:p></o:p></span></b></h2>
-<table border="1" cellpadding="0" cellspacing="0" class="MsoTableMediumGrid1Accent1" style="border-collapse:collapse;mso-table-layout-alt:fixed;
- border:none;mso-border-alt:solid #7BA0CD 1.0pt;mso-border-themecolor:accent1;
- mso-border-themetint:191;mso-yfti-tbllook:1536;mso-padding-alt:0cm 5.4pt 0cm 5.4pt" width="834">
-<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
-<td style="width:234.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;background:#D3DFEE;
-  mso-background-themecolor:accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="390">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Type</span></b></p>
-</td>
-<td style="width:266.4pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  mso-border-left-alt:solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;
-  mso-border-left-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="444">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Key Focus Areas</span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td style="width:234.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="390">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Charitable NGOs</span></b></p>
-</td>
-<td style="width:266.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="444">
-<p class="MsoNormal" style="text-align:justify;line-height:normal"><span lang="EN">Poverty relief, child welfare, old age care, food distribution</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td style="width:234.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="390">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Educational NGOs</span></b></p>
-</td>
-<td style="width:266.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="444">
-<p class="MsoNormal" style="text-align:justify;line-height:normal"><span lang="EN">Schools, literacy programs, coaching for underprivileged</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3">
-<td style="width:234.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="390">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Healthcare NGOs</span></b></p>
-</td>
-<td style="width:266.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="444">
-<p class="MsoNormal" style="text-align:justify;line-height:normal"><span lang="EN">Medical camps, health awareness, hospital support</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:4">
-<td style="width:234.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="390">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Environmental NGOs</span></b></p>
-</td>
-<td style="width:266.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="444">
-<p class="MsoNormal" style="text-align:justify;line-height:normal"><span lang="EN">Tree plantation, water conservation, climate awareness</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:5">
-<td style="width:234.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="390">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Cultural NGOs</span></b></p>
-</td>
-<td style="width:266.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="444">
-<p class="MsoNormal" style="text-align:justify;line-height:normal"><span lang="EN">Promotion of art, heritage, literature</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:6">
-<td style="width:234.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="390">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Women &amp; Child NGOs</span></b></p>
-</td>
-<td style="width:266.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="444">
-<p class="MsoNormal" style="text-align:justify;line-height:normal"><span lang="EN">Women empowerment, girl education, child protection</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:7">
-<td style="width:234.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="390">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Human Rights NGOs</span></b></p>
-</td>
-<td style="width:266.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="444">
-<p class="MsoNormal" style="text-align:justify;line-height:normal"><span lang="EN">Legal aid, equality campaigns, minority rights</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:8">
-<td style="width:234.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="390">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Animal Welfare NGOs</span></b></p>
-</td>
-<td style="width:266.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="444">
-<p class="MsoNormal" style="text-align:justify;line-height:normal"><span lang="EN">Street animal care, shelters, awareness drives</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:9;mso-yfti-lastrow:yes">
-<td style="width:234.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="390">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Rural Development NGOs</span></b></p>
-</td>
-<td style="width:266.4pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="444">
-<p class="MsoNormal" style="text-align:justify;line-height:normal"><span lang="EN">Sanitation, employment, skill training in villages</span></p>
-</td>
-</tr>
-</table>
-<p class="MsoNormal"><span lang="EN"><o:p> </o:p></span></p>
-<p class="MsoNormal"><a name="_t74fvi4hiodh"></a><a name="_wexghw3zb5nf"></a><b style="mso-bidi-font-weight:normal"><span lang="EN" style="font-size:17.0pt;
-line-height:115%">📌 Annual Filing &amp; Compliance Checklist<o:p></o:p></span></b></p>
-<table border="1" cellpadding="0" cellspacing="0" class="MsoTableMediumGrid1Accent1" style="border-collapse:collapse;mso-table-layout-alt:fixed;
- border:none;mso-border-alt:solid #7BA0CD 1.0pt;mso-border-themecolor:accent1;
- mso-border-themetint:191;mso-yfti-tbllook:1536;mso-padding-alt:0cm 5.4pt 0cm 5.4pt" width="834">
-<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
-<td style="width:126.5pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;background:#D3DFEE;
-  mso-background-themecolor:accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="211">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Compliance</span></b></p>
-</td>
-<td style="width:148.9pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  mso-border-left-alt:solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;
-  mso-border-left-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="248">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Description</span></b></p>
-</td>
-<td style="width:108.1pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  mso-border-left-alt:solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;
-  mso-border-left-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="180">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Applicable For</span></b></p>
-</td>
-<td style="width:117.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  mso-border-left-alt:solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;
-  mso-border-left-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Due Date</span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td style="width:126.5pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="211">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Annual Return Filing</span></b></p>
-</td>
-<td style="width:148.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="248">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Update member
-  list, financials (Society)</span></p>
-</td>
-<td style="width:108.1pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="180">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Society</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Yearly</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td style="width:126.5pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="211">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">ITR-7 Filing</span></b></p>
-</td>
-<td style="width:148.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="248">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Income tax return
-  under Section 139(4C)</span></p>
-</td>
-<td style="width:108.1pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="180">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">All NGOs</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">July 31 or Oct 31</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3">
-<td style="width:126.5pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="211">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Audit Report (Form 10B)</span></b></p>
-</td>
-<td style="width:148.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="248">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Mandatory if
-  income exceeds threshold</span></p>
-</td>
-<td style="width:108.1pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="180">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">All NGOs</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Along with ITR</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:4">
-<td style="width:126.5pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="211">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">12A &amp; 80G Registration/Renewal</span></b></p>
-</td>
-<td style="width:148.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="248">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Enables tax
-  exemption for NGO &amp; donors</span></p>
-</td>
-<td style="width:108.1pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="180">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Trust, Society,
-  Section 8</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Valid for 5 years</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:5">
-<td style="width:126.5pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="211">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">FCRA Registration</span></b></p>
-</td>
-<td style="width:148.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="248">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">For receiving foreign
-  contributions</span></p>
-</td>
-<td style="width:108.1pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="180">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">NGOs receiving
-  foreign donations</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Annually by Dec
-  31</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:6">
-<td style="width:126.5pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="211">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Project Utilization Reports</span></b></p>
-</td>
-<td style="width:148.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="248">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Required by
-  donors &amp; CSR contributors</span></p>
-</td>
-<td style="width:108.1pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="180">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Project-based
-  NGOs</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">As per agreement</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:7;mso-yfti-lastrow:yes">
-<td style="width:126.5pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="211">
-<p class="MsoNormal" style="line-height:normal"><b style="mso-bidi-font-weight:
-  normal"><span lang="EN">Minutes of Meetings</span></b></p>
-</td>
-<td style="width:148.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="248">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">For governing
-  body or trustees</span></p>
-</td>
-<td style="width:108.1pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="180">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">All NGOs</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Periodic/Annual</span></p>
-</td>
-</tr>
-</table>
-<p class="MsoNormal"><span lang="EN"><o:p> </o:p></span></p>
-<h2 style="margin-bottom:4.0pt;mso-pagination:widow-orphan;page-break-after:
-auto"><a name="_zhvcvejxkp37"></a><b style="mso-bidi-font-weight:normal"><span lang="EN" style="font-size:17.0pt;line-height:115%">🏛 Trust vs Society vs
-Section 8 Company � Quick Comparison<o:p></o:p></span></b></h2>
-<table border="1" cellpadding="0" cellspacing="0" class="MsoTableMediumGrid1Accent1" style="border-collapse:collapse;mso-table-layout-alt:fixed;
- border:none;mso-border-alt:solid #7BA0CD 1.0pt;mso-border-themecolor:accent1;
- mso-border-themetint:191;mso-yfti-tbllook:1536;mso-padding-alt:0cm 5.4pt 0cm 5.4pt" width="827">
-<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
-<td style="width:117.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;background:#D3DFEE;
-  mso-background-themecolor:accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Feature</span></b></p>
-</td>
-<td style="width:117.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  mso-border-left-alt:solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;
-  mso-border-left-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Trust</span></b></p>
-</td>
-<td style="width:135.9pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  mso-border-left-alt:solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;
-  mso-border-left-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="227">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Society</span></b></p>
-</td>
-<td style="width:126.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
-  mso-border-left-alt:solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;
-  mso-border-left-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p align="center" class="MsoNormal" style="text-align:center;line-height:normal"><b style="mso-bidi-font-weight:normal"><span lang="EN">Section 8 Company</span></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td style="width:117.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Minimum Members</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">2 Trustees</span></p>
-</td>
-<td style="width:135.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="227">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">7 Members</span></p>
-</td>
-<td style="width:126.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">2 Directors</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td style="width:117.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Governing Body</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Trustees</span></p>
-</td>
-<td style="width:135.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="227">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Governing
-  Committee</span></p>
-</td>
-<td style="width:126.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Board of
-  Directors</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3">
-<td style="width:117.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Formation
-  Document</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Trust Deed</span></p>
-</td>
-<td style="width:135.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="227">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">MoA + Rules</span></p>
-</td>
-<td style="width:126.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">MoA + AoA +
-  License</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:4">
-<td style="width:117.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Suitable For</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Religious/Charity
-  Work</span></p>
-</td>
-<td style="width:135.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="227">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Cultural/Research
-  Groups</span></p>
-</td>
-<td style="width:126.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Large NGOs/CSR
-  Funding</span></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:5;mso-yfti-lastrow:yes">
-<td style="width:117.0pt;border:solid #7BA0CD 1.0pt;
-  mso-border-themecolor:accent1;mso-border-themetint:191;border-top:none;
-  mso-border-top-alt:solid #7BA0CD 1.0pt;mso-border-top-themecolor:accent1;
-  mso-border-top-themetint:191;background:#D3DFEE;mso-background-themecolor:
-  accent1;mso-background-themetint:63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Regulation</span></p>
-</td>
-<td style="width:117.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="195">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Sub-Registrar</span></p>
-</td>
-<td style="width:135.9pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="227">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Registrar of
-  Societies</span></p>
-</td>
-<td style="width:126.0pt;border-top:none;border-left:
-  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent1;
-  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-border-right-themecolor:
-  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1.0pt;
-  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;mso-border-left-alt:
-  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-themetint:
-  191;background:#D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:
-  63;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="210">
-<p class="MsoNormal" style="line-height:normal"><span lang="EN">Registrar of
-  Companies (MCA)</span></p>
-</td>
-</tr>
-</table>
-<p class="MsoNormal"><span lang="EN"><o:p> </o:p></span></p>
-<p class="MsoNormal"><a name="_3w9djfp3z4rw"></a><a name="_xbcn8k9rdovz"></a><b style="mso-bidi-font-weight:normal"><span lang="EN">✅ <span style="mso-spacerun:yes">�</span>Why Choose Us?<o:p></o:p></span></b></p>
-<p class="MsoListParagraphCxSpFirst" style="text-indent:-18.0pt;mso-list:l1 level1 lfo4"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">Complete Registration Support for
-Trusts, Societies, &amp; NGOs</span></p>
-<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt;mso-list:l1 level1 lfo4"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">12A, 80G, FCRA Registrations with
-renewals &amp; follow-ups</span></p>
-<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt;mso-list:l1 level1 lfo4"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">Accounting &amp; Auditing Systems
-designed for NGO needs</span></p>
-<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt;mso-list:l1 level1 lfo4"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">Annual Return &amp; Tax Filing
-without compliance stress</span></p>
-<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt;mso-list:l1 level1 lfo4"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">Utilization &amp; CSR Reports for
-donors and sponsors</span></p>
-<p class="MsoListParagraphCxSpLast" style="text-indent:-18.0pt;mso-list:l1 level1 lfo4"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">Transparent, timely, and
-mission-driven services</span></p>
-<p class="MsoNormal"><span lang="EN"><o:p> </o:p></span></p>
-<p class="MsoNormal"><span lang="EN"><o:p> </o:p></span></p>
-<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN">✅
-<span style="mso-spacerun:yes">�</span>What We Offer:<o:p></o:p></span></b></p>
-<p class="MsoListParagraphCxSpFirst" style="text-indent:-18.0pt;mso-list:l2 level1 lfo3"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">Registration of Trust, Society
-&amp; NGO</span></p>
-<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt;mso-list:l2 level1 lfo3"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">12A, 80G Registration for Income
-Tax exemption</span></p>
-<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt;mso-list:l2 level1 lfo3"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">FCRA Registration for foreign
-donations</span></p>
-<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt;mso-list:l2 level1 lfo3"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">Annual Compliance &amp; Audit
-Support</span></p>
-<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt;mso-list:l2 level1 lfo3"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">Financial Reporting &amp; Filing</span></p>
-<p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt;mso-list:l2 level1 lfo3"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">Project-based Fund Utilization Certificates</span></p>
-<p class="MsoListParagraphCxSpLast" style="text-indent:-18.0pt;mso-list:l2 level1 lfo3"><?if !supportLists?><span lang="EN" style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><span lang="EN">Consultation on Governance, CSR
-Funding &amp; Donations</span></p>
-<p class="MsoNormal"><span lang="EN"><o:p> </o:p></span></p>
-<h2 style="margin-bottom:4.0pt;mso-pagination:widow-orphan;page-break-after:
-auto"><a name="_x8q7ad1guls5"></a><b style="mso-bidi-font-weight:normal"><span lang="EN" style="font-size:17.0pt;line-height:115%">🤝 Let's Build
-Something Meaningful Together<o:p></o:p></span></b></h2>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-12.0pt;margin-left:0cm"><span lang="EN">We understand the passion behind every
-non-profit effort. Our goal is to make the <b style="mso-bidi-font-weight:normal">legal,
-financial, and compliance journey smooth and transparent</b>, so you can focus
-on creating real impact.</span></p>
-</div>
-
-            </div>
-            <div id="sidebar">
-                <h4>CA Services</h4>
-                <ul>
-                    <li><a href='../Ca/1. Start A Business.html' class='d-flex'><p>Start A Business</p></a></li>
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="service-content">
+            <!-- Content will be loaded from Firebase here -->
+          </div>
+        </div>
+        <div id="sidebar">
+          <h4>CA Services</h4>
+          <ul>
+            <li><a href='../Ca/1. Start A Business.html' class='d-flex'><p>Start A Business</p></a></li>
 <li><a href='../Ca/2. Business Registration & Licences.html' class='d-flex'><p>Business Registration &amp; Licence</p></a></li>
 <li><a href='../Ca/3. Income Tax.html' class='d-flex'><p>Income Tax</p></a></li>
 <li><a href='../Ca/4. GST Services.html' class='d-flex'><p>GST Services</p></a></li>
@@ -1193,13 +197,13 @@ on creating real impact.</span></p>
 <li><a href='../Ca/10. CMA Data & Project Report.html' class='d-flex'><p>CMA Data &amp; Project Report</p></a></li>
 <li><a href='../Ca/11. Loans & Project Finance.html' class='d-flex'><p>Loans &amp; Project Finance</p></a></li>
 
-                </ul>
-            </div>
+          </ul>
         </div>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-</body>
-<script src="../../js/navbar-inject.js"></script>
-<script src="../../js/footer-inject.js"></script>
-<script src="../../Services/disable-copy.js"></script>
+  </body>
+  <script src="../../js/navbar-inject.js"></script>
+  <script src="../../js/footer-inject.js"></script>
+  <script type="module" src="../auto-load-service.js"></script>
 </html>

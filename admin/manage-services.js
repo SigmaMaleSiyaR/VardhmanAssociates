@@ -84,16 +84,30 @@ document.getElementById("btn-advocate").onclick = () => setType("Advocate");
 serviceDropdown.onchange = function () {
   const selectedTitle = this.value;
   const editContentBtn = document.getElementById("editContentBtn");
-  if (!selectedTitle) {
+  const messageDiv = document.getElementById("message");
+
+  if (!selectedTitle || selectedTitle.trim() === "") {
     editContentBtn.style.display = "none";
+    messageDiv.innerHTML = "";
     return;
   }
+
   // Show the edit button
   editContentBtn.style.display = "inline-block";
   editContentBtn.onclick = function () {
-    window.location.href = `edit-service.html?type=${encodeURIComponent(
-      currentType
-    )}&title=${encodeURIComponent(selectedTitle)}`;
+    if (
+      currentType &&
+      selectedTitle &&
+      currentType.trim() !== "" &&
+      selectedTitle.trim() !== ""
+    ) {
+      window.location.href = `edit-service.html?type=${encodeURIComponent(
+        currentType
+      )}&title=${encodeURIComponent(selectedTitle)}`;
+    } else {
+      messageDiv.innerHTML =
+        '<div class="alert alert-danger">Error: Please select a valid service type and title.</div>';
+    }
   };
 };
 

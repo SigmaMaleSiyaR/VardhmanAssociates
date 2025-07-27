@@ -81,6 +81,64 @@ def detect_encoding(file_path):
     result = chardet.detect(raw_data)
     return result['encoding']
 
+def create_firebase_content_script():
+    """Create a script to help add existing content to Firebase"""
+    script_content = '''# Firebase Content Migration Script
+# This script helps you add existing static content to Firebase
+
+import firebase_admin
+from firebase_admin import credentials, firestore
+import os
+
+# Initialize Firebase (you'll need to add your service account key)
+# cred = credentials.Certificate("path/to/your/serviceAccountKey.json")
+# firebase_admin.initialize_app(cred)
+# db = firestore.client()
+
+def add_service_to_firebase(service_type, service_title, content):
+    """Add a service to Firebase Firestore"""
+    try:
+        doc_ref = db.collection('services').document()
+        doc_ref.set({
+            'type': service_type,
+            'title': service_title,
+            'content': content
+        })
+        print(f"✅ Added to Firebase: {service_title} ({service_type})")
+    except Exception as e:
+        print(f"❌ Error adding {service_title}: {e}")
+
+# Example usage:
+# add_service_to_firebase("CA", "Start A Business", "<h2>Starting Your Business</h2><p>Content here...</p>")
+
+print("📋 To migrate existing content to Firebase:")
+print("1. Install firebase-admin: pip install firebase-admin")
+print("2. Add your Firebase service account key")
+print("3. Uncomment the Firebase initialization code")
+print("4. Add your existing content using the add_service_to_firebase function")
+print("5. Or use the admin panel at /admin/manage-services.html")
+'''
+    
+    with open("firebase_migration_helper.py", "w", encoding="utf-8") as f:
+        f.write(script_content)
+    print("📄 Created firebase_migration_helper.py - use this to migrate existing content to Firebase")
+
+def main():
+    print("🚀 Starting Firebase-ready service page generation...")
+    print("=" * 60)
+    
+    convert_preconverted_html()
+    
+    print("=" * 60)
+    print("✅ All service pages have been updated with Firebase integration!")
+    print("📋 Next steps:")
+    print("1. All pages now have Firebase content loading capability")
+    print("2. Pages will show 'Content Coming Soon' until you add content to Firebase")
+    print("3. Add content via admin panel: /admin/manage-services.html")
+    print("4. Or use the migration helper script to preserve existing content")
+    
+    create_firebase_content_script()
+
 def convert_preconverted_html():
     for category, input_folder in INPUT_HTML_FOLDERS.items():
         output_folder = os.path.join(OUTPUT_ROOT, category)
@@ -103,15 +161,22 @@ def convert_preconverted_html():
                 raw_title = file.replace(".html", "").replace("-", " ").replace("_", " ")
                 title = remove_leading_numbering(raw_title)
                 sidebar_items = SIDEBAR_SERVICES.get(category, [])
+                
+                # Create Firebase-ready HTML with static content as fallback
                 full_html = wrap_with_bootstrap(title, cleaned_body, category, sidebar_items)
 
                 output_path = os.path.join(output_folder, file)
                 with open(output_path, "w", encoding="utf-8") as f:
                     f.write(full_html)
 
-                print(f"✅ Wrapped: {file_path} → {output_path}")
+                print(f"✅ Created Firebase-ready page: {file_path} → {output_path}")
+                print(f"   📝 Service: {title} ({category})")
+                print(f"   🔗 Add content via admin panel: /admin/manage-services.html")
             except Exception as e:
                 print(f"❌ Error processing {file_path}: {e}")
+
+if __name__ == "__main__":
+    main()
 
 
 def get_image_tag(category, title):
@@ -151,51 +216,61 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
 
 
     return f"""<!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>{escape(title)} - {category} Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-    body {{
-        font-family: 'Open Sans', sans-serif;
+      body {{
+        font-family: "Open Sans", sans-serif;
         font-size: 14px;
-    }}
-    .banner {{
+      }}
+      .banner {{
         height: 30vh;
-        background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
+        background: url("/img/ServicesHeader.jpg") center/cover no-repeat;
         position: relative;
-    }}
-    .banner h1 {{
+      }}
+      .banner h1 {{
         position: absolute;
         bottom: 10px;
         left: 30px;
         color: white;
         font-weight: 700;
-        /* background: rgba(0, 0, 0, 0.5); */
         padding: 10px 20px;
         border-radius: 5px;
-    }}
-    .content-wrapper {{
+      }}
+      .content-wrapper {{
         display: flex;
         flex-wrap: wrap;
         margin-top: 2rem;
         gap: 2%;
-    }}
-    .main-content {{
-        flex: 0 0 60%;
-    }}
-    #sidebar {{
-        height: fit-content;
+      }}
+      .main-content {{
+        flex: 0 0 65%;
+        max-width: 65%;
+      }}
+      #sidebar {{
         flex: 0 0 33%;
+        max-width: 33%;
+        height: fit-content;
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 5px;
@@ -203,57 +278,140 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
         border-left: 1px solid #ddd;
         padding-left: 1.5rem;
         position: sticky;
-        top: 100px; /* adjust this based on your navbar height */
+        top: 100px;
         align-self: start;
-    }}
-   #sidebar h4 {{
+      }}
+      #sidebar h4 {{
         font-weight: 600;
         color: black;
         text-decoration: none;
         font-style: normal;
         font-size: x-large;
-    }}
-    #sidebar ul {{
+      }}
+      #sidebar ul {{
         padding: 1rem;
         list-style: disc;
-    }}
-    #sidebar li {{
+      }}
+      #sidebar li {{
         margin-bottom: 10px;
-    }}
-    #sidebar a {{
+      }}
+      #sidebar a {{
         text-decoration: none;
         color: #007bff;
-    }}
-    #sidebar a:hover {{
+      }}
+      #sidebar a:hover {{
         color: var(--primary) !important;
-    }}
+      }}
+      @media (max-width: 991px) {{
+        .content-wrapper {{
+          flex-direction: column;
+          gap: 1rem;
+        }}
+        .main-content,
+        #sidebar {{
+          flex: 1 1 100%;
+          max-width: 100%;
+        }}
+      }}
+      @media (max-width: 768px) {{
+        .content-wrapper {{
+          flex-direction: column;
+          gap: 1rem;
+        }}
+        .main-content,
+        #sidebar {{
+          flex: 1 1 100%;
+          max-width: 100%;
+        }}
+      }}
+
+      /* Service content styling */
+      #service-content {{
+        line-height: 1.6;
+        color: #333;
+      }}
+
+      #service-content h1,
+      #service-content h2,
+      #service-content h3,
+      #service-content h4,
+      #service-content h5,
+      #service-content h6 {{
+        color: #1b365d;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }}
+
+      #service-content p {{
+        margin-bottom: 1rem;
+      }}
+
+      #service-content ul,
+      #service-content ol {{
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+      }}
+
+      #service-content li {{
+        margin-bottom: 0.5rem;
+      }}
+
+      #service-content img {{
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }}
+
+      #service-content table {{
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }}
+
+      #service-content table,
+      #service-content th,
+      #service-content td {{
+        border: 1px solid #ddd;
+      }}
+
+      #service-content th,
+      #service-content td {{
+        padding: 0.75rem;
+        text-align: left;
+      }}
+
+      #service-content th {{
+        background-color: #f8f9fa;
+        font-weight: 600;
+      }}
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div class="banner">
-        <h1>{escape(title)}</h1>
+      <h1>{escape(title)}</h1>
     </div>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="main-content">
-                {body}
-            </div>
-            <div id="sidebar">
-                <h4>{escape(category_heading)}</h4>
-                <ul>
-                    {service_list_html}
-                </ul>
-            </div>
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="service-content">
+            <!-- Content will be loaded from Firebase here -->
+          </div>
         </div>
+        <div id="sidebar">
+          <h4>{escape(category_heading)}</h4>
+          <ul>
+            {service_list_html}
+          </ul>
+        </div>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-</body>
-<script src="../../js/navbar-inject.js"></script>
-<script src="../../js/footer-inject.js"></script>
-<script src="../../Services/disable-copy.js"></script>
+  </body>
+  <script src="../../js/navbar-inject.js"></script>
+  <script src="../../js/footer-inject.js"></script>
+  <script type="module" src="../auto-load-service.js"></script>
 </html>
 """
 

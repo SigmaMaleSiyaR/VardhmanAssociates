@@ -49,13 +49,33 @@
             <input type="text" id="serviceType" class="form-control" readonly />
           </div>
           <div class="col-md-5">
-            <label class="form-label">Service Title</label>
-            <input type="text" id="serviceTitle" class="form-control" readonly />
+            <label class="form-label"
+              >Service Title <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              id="serviceTitle"
+              class="form-control"
+              readonly
+            />
+            <div class="form-text text-muted">
+              Service title is required for saving content
+            </div>
           </div>
         </div>
         <div class="mb-3">
-          <label class="form-label" id="contentLabel" data-tippy-content="You can use tables, images, and formatting tools here!">Content <span style="cursor:help; color:#1b365d;" data-tippy-content="Rich text editing supported!">&#9432;</span></label>
-          <div id="quillEditor" style="height: 350px;"></div>
+          <label
+            class="form-label"
+            id="contentLabel"
+            data-tippy-content="You can use tables, images, and formatting tools here!"
+            >Content
+            <span
+              style="cursor: help; color: #1b365d"
+              data-tippy-content="Rich text editing supported!"
+              >&#9432;</span
+            ></label
+          >
+          <div id="quillEditor" style="height: 350px"></div>
           <input type="hidden" id="serviceContent" name="serviceContent" />
         </div>
         <button type="submit" class="btn btn-success">Save</button>
@@ -69,34 +89,34 @@
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script type="module" src="./edit-service.js"></script>
     <script>
-      tippy('[data-tippy-content]');
+      tippy("[data-tippy-content]");
       function addQuillTooltips() {
         const tooltips = [
-          { selector: '.ql-bold', text: 'Bold' },
-          { selector: '.ql-italic', text: 'Italic' },
-          { selector: '.ql-underline', text: 'Underline' },
-          { selector: '.ql-strike', text: 'Strikethrough' },
-          { selector: '.ql-color', text: 'Text Color' },
-          { selector: '.ql-background', text: 'Background Color' },
-          { selector: '.ql-list[value="ordered"]', text: 'Numbered List' },
-          { selector: '.ql-list[value="bullet"]', text: 'Bulleted List' },
-          { selector: '.ql-align', text: 'Align' },
-          { selector: '.ql-blockquote', text: 'Blockquote' },
-          { selector: '.ql-code-block', text: 'Code Block' },
-          { selector: '.ql-link', text: 'Insert Link' },
-          { selector: '.ql-image', text: 'Insert Image' },
-          { selector: '.ql-video', text: 'Insert Video' },
-          { selector: '.ql-clean', text: 'Remove Formatting' },
-          { selector: '.ql-better-table', text: 'Insert Table' }
+          { selector: ".ql-bold", text: "Bold" },
+          { selector: ".ql-italic", text: "Italic" },
+          { selector: ".ql-underline", text: "Underline" },
+          { selector: ".ql-strike", text: "Strikethrough" },
+          { selector: ".ql-color", text: "Text Color" },
+          { selector: ".ql-background", text: "Background Color" },
+          { selector: '.ql-list[value="ordered"]', text: "Numbered List" },
+          { selector: '.ql-list[value="bullet"]', text: "Bulleted List" },
+          { selector: ".ql-align", text: "Align" },
+          { selector: ".ql-blockquote", text: "Blockquote" },
+          { selector: ".ql-code-block", text: "Code Block" },
+          { selector: ".ql-link", text: "Insert Link" },
+          { selector: ".ql-image", text: "Insert Image" },
+          { selector: ".ql-video", text: "Insert Video" },
+          { selector: ".ql-clean", text: "Remove Formatting" },
+          { selector: ".ql-better-table", text: "Insert Table" },
         ];
         tooltips.forEach(({ selector, text }) => {
-          document.querySelectorAll(selector).forEach(el => {
-            el.setAttribute('data-tippy-content', text);
+          document.querySelectorAll(selector).forEach((el) => {
+            el.setAttribute("data-tippy-content", text);
           });
         });
-        tippy('.ql-toolbar [data-tippy-content]');
+        tippy(".ql-toolbar [data-tippy-content]");
       }
-      window.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener("DOMContentLoaded", () => {
         setTimeout(addQuillTooltips, 500);
       });
     </script>

@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Winding Up &amp; Disslution - CS Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-    body {
-        font-family: 'Open Sans', sans-serif;
+      body {
+        font-family: "Open Sans", sans-serif;
         font-size: 14px;
-    }
-    .banner {
+      }
+      .banner {
         height: 30vh;
-        background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
+        background: url("/img/ServicesHeader.jpg") center/cover no-repeat;
         position: relative;
-    }
-    .banner h1 {
+      }
+      .banner h1 {
         position: absolute;
         bottom: 10px;
         left: 30px;
         color: white;
         font-weight: 700;
-        /* background: rgba(0, 0, 0, 0.5); */
         padding: 10px 20px;
         border-radius: 5px;
-    }
-    .content-wrapper {
+      }
+      .content-wrapper {
         display: flex;
         flex-wrap: wrap;
         margin-top: 2rem;
         gap: 2%;
-    }
-    .main-content {
-        flex: 0 0 60%;
-    }
-    #sidebar {
-        height: fit-content;
+      }
+      .main-content {
+        flex: 0 0 65%;
+        max-width: 65%;
+      }
+      #sidebar {
         flex: 0 0 33%;
+        max-width: 33%;
+        height: fit-content;
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 5px;
@@ -51,638 +61,131 @@
         border-left: 1px solid #ddd;
         padding-left: 1.5rem;
         position: sticky;
-        top: 100px; /* adjust this based on your navbar height */
+        top: 100px;
         align-self: start;
-    }
-   #sidebar h4 {
+      }
+      #sidebar h4 {
         font-weight: 600;
         color: black;
         text-decoration: none;
         font-style: normal;
         font-size: x-large;
-    }
-    #sidebar ul {
+      }
+      #sidebar ul {
         padding: 1rem;
         list-style: disc;
-    }
-    #sidebar li {
+      }
+      #sidebar li {
         margin-bottom: 10px;
-    }
-    #sidebar a {
+      }
+      #sidebar a {
         text-decoration: none;
         color: #007bff;
-    }
-    #sidebar a:hover {
+      }
+      #sidebar a:hover {
         color: var(--primary) !important;
-    }
+      }
+      @media (max-width: 991px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      /* Service content styling */
+      #service-content {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      #service-content h1,
+      #service-content h2,
+      #service-content h3,
+      #service-content h4,
+      #service-content h5,
+      #service-content h6 {
+        color: #1b365d;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #service-content p {
+        margin-bottom: 1rem;
+      }
+
+      #service-content ul,
+      #service-content ol {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+      }
+
+      #service-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      #service-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      #service-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      #service-content table,
+      #service-content th,
+      #service-content td {
+        border: 1px solid #ddd;
+      }
+
+      #service-content th,
+      #service-content td {
+        padding: 0.75rem;
+        text-align: left;
+      }
+
+      #service-content th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+      }
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div class="banner">
-        <h1>Winding Up &amp; Disslution</h1>
+      <h1>Winding Up &amp; Disslution</h1>
     </div>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="main-content">
-                
-<div class="WordSection1">
-<p align="center" class="MsoNormal" style="text-align:center"><b style="mso-bidi-font-weight:
-normal"><span style="font-size:20.0pt;line-height:115%;font-variant:small-caps">Winding
-Up &amp; Dissolution Services<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><b style="mso-bidi-font-weight:
-normal"><span style="font-size:14.0pt;line-height:115%">Simplifying Closure
-with Professional Expertise</span></b><span style="font-size:14.0pt;line-height:
-115%"><o:p></o:p></span></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Closing a company is just as important as starting one � and it must
-be done the right way. Whether your business has achieved its objectives,
-become dormant, or is no longer viable, our <b style="mso-bidi-font-weight:
-normal">Winding Up &amp; Dissolution Services</b> ensure a smooth, compliant,
-and hassle-free closure. As experienced <b style="mso-bidi-font-weight:normal">Company
-Secretaries</b>, we provide end-to-end support so you can exit your business
-legally and confidently.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%">What is Winding Up &amp;
-Dissolution?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal">Winding up</b> is the legal
-process of closing a company by liquidating its assets, settling liabilities,
-and distributing the remaining funds among stakeholders. Once all formalities
-are completed, the company is <b style="mso-bidi-font-weight:normal">dissolved</b>,
-meaning it ceases to exist in the eyes of law.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">This process is crucial to avoid future liabilities, penalties, or
-legal complications with ROC, GST, or Income Tax departments.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:14.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>🛠</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
-12.0pt;line-height:115%"> Types of Winding Up<o:p></o:p></span></b></p>
-<ol start="1" style="margin-top:0cm" type="1">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo2"><b style="mso-bidi-font-weight:normal">Voluntary
-     Winding Up</b></li>
-<ul style="margin-top:0cm" type="circle">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l1 level2 lfo2">Initiated by the company
-      itself when it's solvent</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l1 level2 lfo2">Can be done by passing a
-      special resolution</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l1 level2 lfo2">Ideal for businesses that no
-      longer need to operate</li>
-</ul>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo2"><b style="mso-bidi-font-weight:normal">Compulsory
-     Winding Up (By Tribunal)</b></li>
-<ul style="margin-top:0cm" type="circle">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l1 level2 lfo2">Ordered by the NCLT (National
-      Company Law Tribunal)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l1 level2 lfo2">Initiated due to insolvency,
-      fraud, or non-compliance</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l1 level2 lfo2">Involves a detailed legal
-      process and court orders</li>
-</ul>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo2"><b style="mso-bidi-font-weight:normal">Fast
-     Track Exit (FTE) Scheme / Strike Off</b></li>
-<ul style="margin-top:0cm" type="circle">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l1 level2 lfo2">Simplified route under Section
-      248 of the Companies Act</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l1 level2 lfo2">For companies with no
-      liabilities and not operational for 2+ years</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l1 level2 lfo2">Quickest way to close a
-      dormant or non-functional company</li>
-</ul>
-</ol>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><span style='font-family:"Quattrocento Sans","sans-serif";mso-fareast-font-family:
-"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>🕒</span> <b style="mso-bidi-font-weight:normal">Estimated Timelines<o:p></o:p></b></p>
-<table border="1" cellpadding="0" cellspacing="0" class="GridTableLight" style="border-collapse:collapse;mso-table-layout-alt:fixed;border:none;
- mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:background1;
- mso-border-themeshade:191;mso-yfti-tbllook:1024;mso-padding-alt:0cm 5.4pt 0cm 5.4pt" width="614">
-<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
-<td style="width:239.4pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;mso-border-alt:
-  solid #BFBFBF .5pt;mso-border-themecolor:background1;mso-border-themeshade:
-  191;background:#365F91;mso-background-themecolor:accent1;mso-background-themeshade:
-  191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="399">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal"><b style="mso-bidi-font-weight:normal">Service
-  Type<o:p></o:p></b></p>
-</td>
-<td style="width:129.05pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-left:none;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#365F91;mso-background-themecolor:
-  accent1;mso-background-themeshade:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="215">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal"><b style="mso-bidi-font-weight:normal">Approximate
-  Timeline<o:p></o:p></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td style="width:239.4pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-top:none;
-  mso-border-top-alt:solid #BFBFBF .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="399">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Fast Track Exit (FTE)</p>
-</td>
-<td style="width:129.05pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="215">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">2�3 months</p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td style="width:239.4pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-top:none;
-  mso-border-top-alt:solid #BFBFBF .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="399">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Voluntary Winding Up</p>
-</td>
-<td style="width:129.05pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="215">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">6�12 months</p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes">
-<td style="width:239.4pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-top:none;
-  mso-border-top-alt:solid #BFBFBF .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="399">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Tribunal-based Winding Up</p>
-</td>
-<td style="width:129.05pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="215">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">12�24 months or more</p>
-</td>
-</tr>
-</table>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">(Timelines depend on ROC processing, document accuracy, and public
-notice period.)</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><o:p> </o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal">Levels of Service We Offer : <o:p></o:p></b></p>
-<table border="1" cellpadding="0" cellspacing="0" class="GridTableLight" style="border-collapse:collapse;mso-table-layout-alt:fixed;border:none;
- mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:background1;
- mso-border-themeshade:191;mso-yfti-tbllook:1024;mso-padding-alt:0cm 5.4pt 0cm 5.4pt" width="812">
-<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
-<td style="width:68.4pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;mso-border-alt:
-  solid #BFBFBF .5pt;mso-border-themecolor:background1;mso-border-themeshade:
-  191;background:#365F91;mso-background-themecolor:accent1;mso-background-themeshade:
-  191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="114">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal"><b style="mso-bidi-font-weight:normal">Level<o:p></o:p></b></p>
-</td>
-<td style="width:241.1pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-left:none;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#365F91;mso-background-themecolor:
-  accent1;mso-background-themeshade:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="402">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal"><b style="mso-bidi-font-weight:normal">Description<o:p></o:p></b></p>
-</td>
-<td style="width:177.4pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-left:none;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#365F91;mso-background-themecolor:
-  accent1;mso-background-themeshade:191;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="296">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal"><b style="mso-bidi-font-weight:normal">Ideal For<o:p></o:p></b></p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:1">
-<td style="width:68.4pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-top:none;
-  mso-border-top-alt:solid #BFBFBF .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="114">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal"><b style="mso-bidi-font-weight:normal">Basic</b></p>
-</td>
-<td style="width:241.1pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="402">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Strike-off filing, final ROC filings</p>
-</td>
-<td style="width:177.4pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="296">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Dormant or inactive companies</p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:2">
-<td style="width:68.4pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-top:none;
-  mso-border-top-alt:solid #BFBFBF .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="114">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal"><b style="mso-bidi-font-weight:normal">Standard</b></p>
-</td>
-<td style="width:241.1pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="402">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Voluntary winding up, board and shareholder
-  resolutions, declarations, filings</p>
-</td>
-<td style="width:177.4pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="296">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Active companies closing voluntarily</p>
-</td>
-</tr>
-<tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes">
-<td style="width:68.4pt;border:solid #BFBFBF 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:191;border-top:none;
-  mso-border-top-alt:solid #BFBFBF .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="114">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal"><b style="mso-bidi-font-weight:normal">Premium</b></p>
-</td>
-<td style="width:241.1pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="402">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">End-to-end support including legal
-  representation, NCLT coordination, creditor settlement</p>
-</td>
-<td style="width:177.4pt;border-top:none;border-left:
-  none;border-bottom:solid #BFBFBF 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:191;border-right:solid #BFBFBF 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:191;mso-border-top-alt:solid #BFBFBF .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:191;
-  mso-border-left-alt:solid #BFBFBF .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:191;mso-border-alt:solid #BFBFBF .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:191;background:#EEECE1;mso-background-themecolor:
-  background2;padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="296">
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-  justify;line-height:normal">Complex or tribunal-led closures</p>
-</td>
-</tr>
-</table>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>🧾</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;mso-bidi-font-size:
-12.0pt;line-height:115%"> Legal Provisions &amp; Governing Laws<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level1 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Companies Act, 2013</b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:72.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level2 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span style="mso-list:Ignore">o<span style='font:7.0pt "Times New Roman"'>  
-</span></span></span><?endif?>Section 248 � Strike off by Registrar</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:72.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level2 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span style="mso-list:Ignore">o<span style='font:7.0pt "Times New Roman"'>  
-</span></span></span><?endif?>Section 271 to 275 � Compulsory Winding Up by
-Tribunal</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:72.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level2 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span style="mso-list:Ignore">o<span style='font:7.0pt "Times New Roman"'>  
-</span></span></span><?endif?>Section 304 to 323 � Voluntary Winding Up</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level1 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Insolvency &amp; Bankruptcy Code (IBC),
-2016</b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:72.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level2 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span style="mso-list:Ignore">o<span style='font:7.0pt "Times New Roman"'>  
-</span></span></span><?endif?>Applicable in cases of insolvency for corporate
-persons</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level1 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Companies (Removal of Name of Companies
-from the Register of Companies) Rules, 2016</b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>🔍</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;mso-bidi-font-size:
-12.0pt;line-height:115%"> Key Services We Offer<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Evaluation
-of your company�s eligibility for winding up</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Preparation
-and filing of Board &amp; Shareholders� Resolutions</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Drafting
-of affidavits, indemnity bonds &amp; necessary declarations</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Filing
-of e-forms with MCA (like STK-2, MGT-14, etc.)</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Liaison
-with ROC and NCLT (if applicable)</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Guidance
-on settlement of liabilities and closure of bank accounts</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Finalization
-of books of accounts and statutory compliance</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Public
-notice filing and legal documentation</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>📋</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;mso-bidi-font-size:
-12.0pt;line-height:115%"> Documents Required<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo4"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Certificate
-of Incorporation</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo4"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>MOA
-&amp; AOA</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo4"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>PAN
-of the company</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo4"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Bank
-closure certificate</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo4"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Board
-and shareholder resolutions</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo4"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Statement
-of accounts</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo4"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Affidavit
-&amp; Indemnity bond (duly notarized)</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>⚖️</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;mso-bidi-font-size:
-12.0pt;line-height:115%"> Benefits of Proper Dissolution<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l3 level1 lfo5"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Avoid
-legal troubles and penalties</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l3 level1 lfo5"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Protect
-directors from future liabilities</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l3 level1 lfo5"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Ensure
-clean exit with ROC compliance</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l3 level1 lfo5"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Peace
-of mind with expert handling</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>✅</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;mso-bidi-font-size:
-12.0pt;line-height:115%"> <span style="mso-spacerun:yes">�</span>Why Do Clients
-Choose Winding Up Services?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l6 level1 lfo1"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>To
-avoid future penalties or legal issues from a non-functioning company</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l6 level1 lfo1"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>To
-comply with statutory requirements under Companies Act, 2013</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l6 level1 lfo1"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>To
-formally close a business that�s inactive or facing insolvency</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l6 level1 lfo1"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>To
-restructure business operations or shift to new ventures</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>👨</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;mso-bidi-font-size:
-12.0pt;line-height:115%">‍</span></b><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;mso-bidi-font-size:12.0pt;line-height:115%;font-family:
-"Quattrocento Sans","sans-serif";mso-fareast-font-family:"Quattrocento Sans";
-mso-bidi-font-family:"Quattrocento Sans"'> </span></b><b style="mso-bidi-font-weight:
-normal"><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:
-115%">Why Choose Us?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l2 level1 lfo6"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Experienced
-CS professionals with in-depth legal knowledge</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l2 level1 lfo6"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Transparent
-process and timely updates</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l2 level1 lfo6"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Tailored
-advice for your specific business case</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l2 level1 lfo6"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Affordable
-and compliant service delivery</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal">Let�s Close the Chapter with
-Clarity &amp; Confidence<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">If you're ready to move forward, or just need clarity on the best way
-to dissolve your company, <b style="mso-bidi-font-weight:normal">we're here to
-help</b>. Reach out today for a consultation and let our team take the burden
-off your shoulders.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-</div>
-
-            </div>
-            <div id="sidebar">
-                <h4>CS Services</h4>
-                <ul>
-                    <li><a href='../Cs/1. Annual Compliances.html' class='d-flex'><p>Annual Compliances</p></a></li>
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="service-content">
+            <!-- Content will be loaded from Firebase here -->
+          </div>
+        </div>
+        <div id="sidebar">
+          <h4>CS Services</h4>
+          <ul>
+            <li><a href='../Cs/1. Annual Compliances.html' class='d-flex'><p>Annual Compliances</p></a></li>
 <li><a href='../Cs/2. Corporate & Financial Restructuring.html' class='d-flex'><p>Corporate &amp; Financial Restructuring</p></a></li>
 <li><a href='../Cs/3. Due Diligence.html' class='d-flex'><p>Due Diligence</p></a></li>
 <li><a href='../Cs/4. Company Incorporation & Amendment.html' class='d-flex'><p>Company Incorporation &amp; Amendment</p></a></li>
@@ -698,13 +201,13 @@ justify"><o:p> </o:p></p>
 <li><a href='../Cs/14. XML Data Conversion.html' class='d-flex'><p>XML Data Conversion</p></a></li>
 <li><a href='../Cs/15. Share Certificate & Transfer.html' class='d-flex'><p>Share Certificate &amp; Transfer</p></a></li>
 
-                </ul>
-            </div>
+          </ul>
         </div>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-</body>
-<script src="../../js/navbar-inject.js"></script>
-<script src="../../js/footer-inject.js"></script>
-<script src="../../Services/disable-copy.js"></script>
+  </body>
+  <script src="../../js/navbar-inject.js"></script>
+  <script src="../../js/footer-inject.js"></script>
+  <script type="module" src="../auto-load-service.js"></script>
 </html>

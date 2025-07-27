@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Insolvency and Bankruptcy Matters - CS Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-    body {
-        font-family: 'Open Sans', sans-serif;
+      body {
+        font-family: "Open Sans", sans-serif;
         font-size: 14px;
-    }
-    .banner {
+      }
+      .banner {
         height: 30vh;
-        background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
+        background: url("/img/ServicesHeader.jpg") center/cover no-repeat;
         position: relative;
-    }
-    .banner h1 {
+      }
+      .banner h1 {
         position: absolute;
         bottom: 10px;
         left: 30px;
         color: white;
         font-weight: 700;
-        /* background: rgba(0, 0, 0, 0.5); */
         padding: 10px 20px;
         border-radius: 5px;
-    }
-    .content-wrapper {
+      }
+      .content-wrapper {
         display: flex;
         flex-wrap: wrap;
         margin-top: 2rem;
         gap: 2%;
-    }
-    .main-content {
-        flex: 0 0 60%;
-    }
-    #sidebar {
-        height: fit-content;
+      }
+      .main-content {
+        flex: 0 0 65%;
+        max-width: 65%;
+      }
+      #sidebar {
         flex: 0 0 33%;
+        max-width: 33%;
+        height: fit-content;
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 5px;
@@ -51,490 +61,131 @@
         border-left: 1px solid #ddd;
         padding-left: 1.5rem;
         position: sticky;
-        top: 100px; /* adjust this based on your navbar height */
+        top: 100px;
         align-self: start;
-    }
-   #sidebar h4 {
+      }
+      #sidebar h4 {
         font-weight: 600;
         color: black;
         text-decoration: none;
         font-style: normal;
         font-size: x-large;
-    }
-    #sidebar ul {
+      }
+      #sidebar ul {
         padding: 1rem;
         list-style: disc;
-    }
-    #sidebar li {
+      }
+      #sidebar li {
         margin-bottom: 10px;
-    }
-    #sidebar a {
+      }
+      #sidebar a {
         text-decoration: none;
         color: #007bff;
-    }
-    #sidebar a:hover {
+      }
+      #sidebar a:hover {
         color: var(--primary) !important;
-    }
+      }
+      @media (max-width: 991px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      /* Service content styling */
+      #service-content {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      #service-content h1,
+      #service-content h2,
+      #service-content h3,
+      #service-content h4,
+      #service-content h5,
+      #service-content h6 {
+        color: #1b365d;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #service-content p {
+        margin-bottom: 1rem;
+      }
+
+      #service-content ul,
+      #service-content ol {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+      }
+
+      #service-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      #service-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      #service-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      #service-content table,
+      #service-content th,
+      #service-content td {
+        border: 1px solid #ddd;
+      }
+
+      #service-content th,
+      #service-content td {
+        padding: 0.75rem;
+        text-align: left;
+      }
+
+      #service-content th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+      }
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div class="banner">
-        <h1>Insolvency and Bankruptcy Matters</h1>
+      <h1>Insolvency and Bankruptcy Matters</h1>
     </div>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="main-content">
-                
-<div class="WordSection1">
-<p align="center" class="MsoNormal" style="text-align:center"><b style="mso-bidi-font-weight:
-normal"><span style="font-size:20.0pt;line-height:115%;font-variant:small-caps">Insolvency
-&amp; Bankruptcy Matters<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><span style="font-size:14.0pt;
-line-height:115%">Efficient Solutions to Financial Distress with Expert Legal
-&amp; Compliance Support<o:p></o:p></span></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Are you facing financial instability, creditor pressure, or challenges
-in debt repayment? The Insolvency and Bankruptcy Code (IBC), 2016, offers a
-structured legal mechanism for resolving insolvency and restructuring
-businesses in a time-bound manner. As experienced CS professionals, we provide
-seamless assistance to corporates, financial creditors, and operational
-creditors under the IBC framework�ensuring smooth legal compliance,
-representation, and strategy execution at every stage of the process.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Whether you are a company in distress or a creditor seeking your dues,
-our tailored solutions help protect your interests while maintaining regulatory
-compliance and corporate governance standards.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-size:13.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%;font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>🔍</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;mso-bidi-font-size:
-12.0pt;line-height:115%"> What is Insolvency and Bankruptcy?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l8 level1 lfo5"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Insolvency</b> means a situation where an
-individual or company is unable to repay their debts on time.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l8 level1 lfo5"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Bankruptcy</b> is the legal declaration of
-this insolvency, followed by a structured process to either resolve or
-liquidate the entity�s assets under court supervision.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><o:p> </o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%">Our Key Services under Insolvency
-&amp; Bankruptcy Matters:<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal">1. Corporate Insolvency
-Resolution Process (CIRP):<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l13 level1 lfo1"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">For Corporate Debtors:</b> Assistance in
-filing insolvency under Section 10 of IBC.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l13 level1 lfo1"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">For Creditors:</b> Drafting and filing
-applications under Section 7 (Financial Creditor) and Section 9 (Operational
-Creditor).</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l13 level1 lfo1"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Coordination
-with Resolution Professionals (RPs), Committee of Creditors (CoC), and NCLT.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l13 level1 lfo1"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Documentation
-support and legal compliance for CIRP procedures.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal">2. Liquidation Process:<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l10 level1 lfo12"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Guidance
-during voluntary or compulsory liquidation.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l10 level1 lfo12"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Preparing
-Board and shareholders' resolutions.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l10 level1 lfo12"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Filing
-necessary forms and documents with ROC and IBBI.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l10 level1 lfo12"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>End-to-end
-compliance support throughout the liquidation lifecycle.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal">3. Individual &amp; Partnership
-Insolvency:<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l6 level1 lfo13"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Support
-under Part III of IBC for individuals, sole proprietors, and partnerships.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l6 level1 lfo13"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Assistance
-in filing for insolvency resolution or bankruptcy with DRT.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal">4. Representation &amp;
-Compliance:<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level1 lfo14"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Drafting
-and filing petitions with the NCLT and NCLAT.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level1 lfo14"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Legal
-coordination and representation during hearings.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level1 lfo14"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Compliance
-with IBBI guidelines and insolvency regulations.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l4 level1 lfo14"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Monitoring
-and reporting throughout the insolvency process.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>📘</span>
-Applicable Laws and Authorities:<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l9 level1 lfo6"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Insolvency and Bankruptcy Code (IBC), 2016</b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l9 level1 lfo6"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Insolvency and Bankruptcy Board of India
-(IBBI)</b> � regulatory authority</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l9 level1 lfo6"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">National Company Law Tribunal (NCLT)</b> �
-adjudicating authority for companies</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l9 level1 lfo6"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Debt Recovery Tribunal (DRT)</b> �
-adjudicating authority for individuals and partnerships</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l9 level1 lfo6"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">National Company Law Appellate Tribunal
-(NCLAT)</b> � appellate authority</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>🧾</span>
-Important Legal Documents Involved:<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Application
-for CIRP (Form 1, Form 5, Form 6 under IBC Rules)</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Demand
-Notice (Form 3/Form 4 under Rule 5)</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Board
-Resolution and Shareholders� Resolution (for voluntary insolvency)</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Proof
-of Claim forms for creditors (Form B/C/D/E)</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Public
-Announcement by IRP/RP</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l5 level1 lfo7"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Liquidation
-Reports and Asset Valuation</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>⏱</span>
-Timelines under IBC:<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l1 level1 lfo8"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">CIRP:</b> Must be completed within <b style="mso-bidi-font-weight:normal">180 days</b> (extendable to 270 days).</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l1 level1 lfo8"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Fast-track resolution:</b> Within <b style="mso-bidi-font-weight:normal">90 days</b> (for small companies/startups).</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l1 level1 lfo8"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Liquidation:</b> Generally completed within
-<b style="mso-bidi-font-weight:normal">1 year</b> from the Liquidation Order.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>📉</span>
-Consequences of Insolvency:<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l3 level1 lfo9"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Directors
-lose control over the company during CIRP.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l3 level1 lfo9"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Financial
-and operational decisions are taken by Insolvency Professionals.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l3 level1 lfo9"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Credit
-rating of the company drops.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l3 level1 lfo9"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Disqualification
-from holding directorship in other companies (in some cases).</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>🛡</span>
-Role of a CS in Insolvency Process:<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l12 level1 lfo10"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Drafting,
-vetting, and filing of legal documents.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l12 level1 lfo10"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Advising
-Board of Directors on resolution or liquidation strategy.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l12 level1 lfo10"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Liaison
-with insolvency professionals, NCLT, and IBBI.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l12 level1 lfo10"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Ensuring
-timely filing of compliance documents and forms.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l12 level1 lfo10"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Maintaining
-statutory registers and disclosures throughout the process.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style='font-family:"Quattrocento Sans","sans-serif";
-mso-fareast-font-family:"Quattrocento Sans";mso-bidi-font-family:"Quattrocento Sans"'>📌</span>
-Common Scenarios Where Clients Approach Us:<o:p></o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l7 level1 lfo11"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Company
-is unable to repay loans or dues and seeks voluntary resolution.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l7 level1 lfo11"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Creditors
-want to recover unpaid invoices or loans.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l7 level1 lfo11"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Businesses
-want to close down legally and peacefully through liquidation.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l7 level1 lfo11"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Startups
-need fast-track insolvency resolution.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l7 level1 lfo11"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Individual
-clients (proprietors) seek personal bankruptcy or debt resolution.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:18.0pt;margin-bottom:.0001pt;text-align:justify"><b style="mso-bidi-font-weight:normal"><o:p> </o:p></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:18.0pt;margin-bottom:.0001pt;text-align:justify"><b style="mso-bidi-font-weight:normal"><o:p> </o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%">Types of Clients We Serve:</span></b><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:115%"><o:p></o:p></span></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l11 level1 lfo2"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Corporate Debtors:</b> Looking for relief
-from unsustainable debt burdens.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l11 level1 lfo2"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Operational &amp; Financial Creditors:</b>
-Seeking recovery through legal proceedings.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l11 level1 lfo2"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Startups &amp; SMEs:</b> Needing early
-restructuring or fast-track resolution.</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l11 level1 lfo2"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Insolvency Professionals &amp; RPs:</b> For
-advisory and secretarial compliance.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%">Why Choose Us?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Expertise
-in IBC Compliance &amp; Legal Drafting</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Dedicated
-NCLT Support &amp; Documentation</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Timely
-Execution &amp; Confidential Handling</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l0 level1 lfo3"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?>Tailored
-Advisory Based on Your Financial Position</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><o:p> </o:p></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;
-mso-bidi-font-size:12.0pt;line-height:115%">Additional Information:<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l2 level1 lfo4"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Governing Law:</b> Insolvency and
-Bankruptcy Code, 2016</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l2 level1 lfo4"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Regulatory Authorities:</b> NCLT, IBBI, DRT
-(for individuals), and NCLAT</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-18.0pt;
-mso-list:l2 level1 lfo4"><?if !supportLists?><span style='font-size:10.0pt;
-line-height:115%;font-family:"Noto Sans Symbols";mso-fareast-font-family:"Noto Sans Symbols";
-mso-bidi-font-family:"Noto Sans Symbols"'><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>       </span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Timelines:</b> CIRP must be completed
-within 180�270 days; liquidation timelines vary.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Every financial challenge is unique. Whether you're seeking resolution
-or recovery, our specialized services as a CS professional ensure clarity,
-compliance, and confidence throughout the process.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><br style="mso-special-character:line-break"/>
-<?if !supportLineBreakNewLine?><br style="mso-special-character:line-break"/>
-<?endif?></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-</div>
-
-            </div>
-            <div id="sidebar">
-                <h4>CS Services</h4>
-                <ul>
-                    <li><a href='../Cs/1. Annual Compliances.html' class='d-flex'><p>Annual Compliances</p></a></li>
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="service-content">
+            <!-- Content will be loaded from Firebase here -->
+          </div>
+        </div>
+        <div id="sidebar">
+          <h4>CS Services</h4>
+          <ul>
+            <li><a href='../Cs/1. Annual Compliances.html' class='d-flex'><p>Annual Compliances</p></a></li>
 <li><a href='../Cs/2. Corporate & Financial Restructuring.html' class='d-flex'><p>Corporate &amp; Financial Restructuring</p></a></li>
 <li><a href='../Cs/3. Due Diligence.html' class='d-flex'><p>Due Diligence</p></a></li>
 <li><a href='../Cs/4. Company Incorporation & Amendment.html' class='d-flex'><p>Company Incorporation &amp; Amendment</p></a></li>
@@ -550,13 +201,13 @@ justify"><o:p> </o:p></p>
 <li><a href='../Cs/14. XML Data Conversion.html' class='d-flex'><p>XML Data Conversion</p></a></li>
 <li><a href='../Cs/15. Share Certificate & Transfer.html' class='d-flex'><p>Share Certificate &amp; Transfer</p></a></li>
 
-                </ul>
-            </div>
+          </ul>
         </div>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-</body>
-<script src="../../js/navbar-inject.js"></script>
-<script src="../../js/footer-inject.js"></script>
-<script src="../../Services/disable-copy.js"></script>
+  </body>
+  <script src="../../js/navbar-inject.js"></script>
+  <script src="../../js/footer-inject.js"></script>
+  <script type="module" src="../auto-load-service.js"></script>
 </html>

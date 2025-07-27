@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Loans &amp; Project Finance - CA Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-    body {
-        font-family: 'Open Sans', sans-serif;
+      body {
+        font-family: "Open Sans", sans-serif;
         font-size: 14px;
-    }
-    .banner {
+      }
+      .banner {
         height: 30vh;
-        background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
+        background: url("/img/ServicesHeader.jpg") center/cover no-repeat;
         position: relative;
-    }
-    .banner h1 {
+      }
+      .banner h1 {
         position: absolute;
         bottom: 10px;
         left: 30px;
         color: white;
         font-weight: 700;
-        /* background: rgba(0, 0, 0, 0.5); */
         padding: 10px 20px;
         border-radius: 5px;
-    }
-    .content-wrapper {
+      }
+      .content-wrapper {
         display: flex;
         flex-wrap: wrap;
         margin-top: 2rem;
         gap: 2%;
-    }
-    .main-content {
-        flex: 0 0 60%;
-    }
-    #sidebar {
-        height: fit-content;
+      }
+      .main-content {
+        flex: 0 0 65%;
+        max-width: 65%;
+      }
+      #sidebar {
         flex: 0 0 33%;
+        max-width: 33%;
+        height: fit-content;
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 5px;
@@ -51,307 +61,131 @@
         border-left: 1px solid #ddd;
         padding-left: 1.5rem;
         position: sticky;
-        top: 100px; /* adjust this based on your navbar height */
+        top: 100px;
         align-self: start;
-    }
-   #sidebar h4 {
+      }
+      #sidebar h4 {
         font-weight: 600;
         color: black;
         text-decoration: none;
         font-style: normal;
         font-size: x-large;
-    }
-    #sidebar ul {
+      }
+      #sidebar ul {
         padding: 1rem;
         list-style: disc;
-    }
-    #sidebar li {
+      }
+      #sidebar li {
         margin-bottom: 10px;
-    }
-    #sidebar a {
+      }
+      #sidebar a {
         text-decoration: none;
         color: #007bff;
-    }
-    #sidebar a:hover {
+      }
+      #sidebar a:hover {
         color: var(--primary) !important;
-    }
+      }
+      @media (max-width: 991px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      /* Service content styling */
+      #service-content {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      #service-content h1,
+      #service-content h2,
+      #service-content h3,
+      #service-content h4,
+      #service-content h5,
+      #service-content h6 {
+        color: #1b365d;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #service-content p {
+        margin-bottom: 1rem;
+      }
+
+      #service-content ul,
+      #service-content ol {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+      }
+
+      #service-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      #service-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      #service-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      #service-content table,
+      #service-content th,
+      #service-content td {
+        border: 1px solid #ddd;
+      }
+
+      #service-content th,
+      #service-content td {
+        padding: 0.75rem;
+        text-align: left;
+      }
+
+      #service-content th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+      }
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div class="banner">
-        <h1>Loans &amp; Project Finance</h1>
+      <h1>Loans &amp; Project Finance</h1>
     </div>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="main-content">
-                
-<div class="WordSection1">
-<p align="center" class="MsoNormal" style="text-align:center"><b><span style='font-size:18.0pt;mso-bidi-font-size:11.0pt;line-height:115%;font-family:
-"Segoe UI Emoji","sans-serif";mso-bidi-font-family:"Segoe UI Emoji"'>💰</span></b><b><span style="font-size:18.0pt;mso-bidi-font-size:11.0pt;line-height:115%"> Loan &amp;
-Project Finance Advisory<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><b><o:p> </o:p></b></p>
-<p class="MsoNormal" style="text-align:justify"><b>Fuel Your Growth with
-Strategic Loan &amp; Funding Solutions</b></p>
-<p class="MsoNormal" style="text-align:justify">Whether you're expanding
-operations, starting a new venture, or looking for working capital support, <b>structured
-financing</b> is key to your success. Our firm offers comprehensive <b>loan and
-project finance advisory</b>, helping businesses secure the most suitable
-financial products from banks, NBFCs, and government schemes.</p>
-<p class="MsoNormal" style="text-align:justify">We guide you through the entire
-funding lifecycle�from preparing detailed documentation and loan proposals to
-helping you choose the best financing options and negotiating favorable terms.
-With experience across industries and funding types (term loans, CC limits, OD,
-machinery finance, business loans), we ensure you get what you need - <b>without
-delays or roadblocks.</b></p>
-<p class="MsoNormal" style="text-align:justify">With our expertise by your side,
-you can make better borrowing decisions, reduce interest burden, and scale your
-business with confidence.<a name="_w2u23f2l2b6p"></a> As a business owner or
-entrepreneur, funding is the lifeline of your growth. Whether you need capital
-to start a new venture, expand operations, purchase machinery, or build
-infrastructure, <b style="mso-bidi-font-weight:normal">Loans &amp; Project
-Finance</b> solutions are crucial. We, as your <b style="mso-bidi-font-weight:
-normal">Chartered Accountant (CA) service partner</b>, help you <b style="mso-bidi-font-weight:normal">plan, prepare, and process the right
-financial solutions</b> tailored to your goals.</p>
-<h3 style="margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto"><a name="_cf4q77tjseei"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;line-height:115%;color:black">✅ <span style="mso-spacerun:yes">�</span>Types of Loans &amp; Project Finance<o:p></o:p></span></b></h3>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-12.0pt;margin-left:0cm">Here are the main types of loans and project finance
-services available for businesses and individuals:</p>
-<h4 style="margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
-0cm;mso-pagination:widow-orphan;page-break-after:auto"><a name="_kuexhti3ahzl"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:11.0pt;line-height:
-115%;color:black">1. Term Loans<o:p></o:p></span></b></h4>
-<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l12 level1 lfo7"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Purpose</b>: For
-purchasing fixed assets like machinery, equipment, or commercial property.</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l12 level1 lfo7"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Tenure</b>:
-Medium to long term (up to 10 years)</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l12 level1 lfo7"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Repayment</b>:
-Monthly/quarterly installments</p>
-<h4 style="margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
-0cm;mso-pagination:widow-orphan;page-break-after:auto"><a name="_4j2bw9ro7vxj"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:11.0pt;line-height:
-115%;color:black">2. Working Capital Loans<o:p></o:p></span></b></h4>
-<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l9 level1 lfo10"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Purpose</b>: To
-manage day-to-day operational costs (inventory, salaries, bills, etc.)</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l9 level1 lfo10"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Tenure</b>:
-Short term (up to 1 year, renewable)</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l9 level1 lfo10"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Types</b>:
-Overdraft, cash credit, bill discounting</p>
-<h4 style="margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
-0cm;mso-pagination:widow-orphan;page-break-after:auto"><a name="_q0e5iaw67zpr"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:11.0pt;line-height:
-115%;color:black">3. Project Loans<o:p></o:p></span></b></h4>
-<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l8 level1 lfo6"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Purpose</b>: To
-finance long-term infrastructure or industrial projects</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l8 level1 lfo6"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Clients</b>:
-MSMEs, startups, manufacturing units, real estate developers</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l8 level1 lfo6"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Includes</b>:
-Land, construction, plant &amp; machinery, labour, and pre-operative expenses</p>
-<h4 style="margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
-0cm;mso-pagination:widow-orphan;page-break-after:auto"><a name="_8o1brv3ppum"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:11.0pt;line-height:
-115%;color:black">4. Loan Against Property (LAP)<o:p></o:p></span></b></h4>
-<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l3 level1 lfo2"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Purpose</b>:
-Raise funds by pledging residential/commercial property</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo2"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Suitable For</b>:
-Business expansion, education, marriage, medical emergencies</p>
-<h4 style="margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
-0cm;mso-pagination:widow-orphan;page-break-after:auto"><a name="_eky5t8xx127i"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:11.0pt;line-height:
-115%;color:black">5. Business Loans (Unsecured)<o:p></o:p></span></b></h4>
-<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l6 level1 lfo4"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Purpose</b>: For
-business expansion, purchasing inventory, marketing, etc.</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo4"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">No Collateral
-Required</b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo4"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Ideal For</b>:
-MSMEs, startups, sole proprietors</p>
-<h4 style="margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
-0cm;mso-pagination:widow-orphan;page-break-after:auto"><a name="_xofme7i412sl"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:11.0pt;line-height:
-115%;color:black">6. Equipment &amp; Machinery Finance<o:p></o:p></span></b></h4>
-<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l10 level1 lfo1"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Purpose</b>: To
-purchase industrial, agricultural, or medical equipment</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l10 level1 lfo1"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Offered To</b>:
-Manufacturing units, hospitals, contractors, etc.</p>
-<h4 style="margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
-0cm;mso-pagination:widow-orphan;page-break-after:auto"><a name="_8n7z02fmvmxm"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:11.0pt;line-height:
-115%;color:black">7. Construction Finance<o:p></o:p></span></b></h4>
-<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l7 level1 lfo8"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Purpose</b>:
-Project-specific loans for real estate developers</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo8"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Includes</b>:
-Land purchase, building construction, marketing, and RERA compliance</p>
-<h4 style="margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
-0cm;mso-pagination:widow-orphan;page-break-after:auto"><a name="_n1jfm7qobfkl"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:11.0pt;line-height:
-115%;color:black">8. Home Loan &amp; Mortgage Loan Advisory<o:p></o:p></span></b></h4>
-<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l0 level1 lfo5"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">For Individual
-Clients</b></p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo5"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?><b style="mso-bidi-font-weight:normal">Includes</b>:
-Home purchase, construction, or renovation with best interest rate offers</p>
-<h3 style="margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto"><a name="_blnhpg364w6b"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;line-height:115%;color:black">📑 Loan
-Eligibility &amp; Requirements<o:p></o:p></span></b></h3>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-12.0pt;margin-left:0cm">Every loan requires proper documentation and financial
-planning. Here�s what you�ll typically need:</p>
-<h4 style="margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
-0cm;mso-pagination:widow-orphan;page-break-after:auto"><a name="_5888gz9nbznx"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:11.0pt;line-height:
-115%;color:black">➤ Basic Requirements<o:p></o:p></span></b></h4>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l4 level1 lfo9"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Business vintage (minimum 1�3 years for some loans)</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo9"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Healthy credit score (CIBIL 700+ preferred)</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo9"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Stable income or turnover</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo9"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Positive net worth or collateral (if secured loan)</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo9"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Clean banking and tax records</p>
-<h4 style="margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
-0cm;mso-pagination:widow-orphan;page-break-after:auto"><a name="_h7atzb496qei"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:11.0pt;line-height:
-115%;color:black">➤ Documents Required<o:p></o:p></span></b></h4>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l11 level1 lfo11"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>PAN Card, Aadhaar/Address Proof</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l11 level1 lfo11"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Business registration certificate (GST, MSME,
-Partnership Deed, etc.)</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l11 level1 lfo11"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>3 years of audited financials (Balance Sheet, P&amp;L,
-ITR)</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l11 level1 lfo11"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Current A/c Bank statements (12 months)</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l11 level1 lfo11"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Project Report or Business Plan (for term/project
-loans)</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l11 level1 lfo11"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Quotation or invoice for asset purchase (if applicable)</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l11 level1 lfo11"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Collateral documents (if applicable)</p>
-<h3 style="margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto"><a name="_u3vteohq0omu"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;line-height:115%;color:black">🧾 Project Report
-Assistance<o:p></o:p></span></b></h3>
-<p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
-margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt">A strong <b style="mso-bidi-font-weight:normal">Project Report</b> is a key to securing
-project loans. We help you with:</p>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Business Model &amp; Industry Analysis</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Financial Projections (P&amp;L, Balance Sheet, Cash
-Flow)</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Break-even Analysis</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Funding Requirement &amp; Utilization</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>Repayment Plan</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>SWOT Analysis &amp; Risk Assessment</p>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-12.0pt;margin-left:0cm"><b style="mso-bidi-font-weight:normal">Note</b>: Many
-banks reject loan applications due to poor or missing project reports � we
-ensure yours is professionally prepared and compliant with bank/NBFC norms.</p>
-<h3 style="margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto"><a name="_vt8g8nx9e5tz"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;line-height:115%;color:black"><o:p> </o:p></span></b></h3>
-<h3 style="margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;line-height:
-115%;color:black">💼 How Our CA Services Help You<o:p></o:p></span></b></h3>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-12.0pt;margin-left:0cm">As your trusted CA service provider, we offer
-end-to-end support for loans &amp; project finance:</p>
-<p class="MsoListParagraphCxSpFirst" style="margin-top:12.0pt;margin-right:0cm;
-margin-bottom:12.0pt;margin-left:36.0pt;mso-add-space:auto;text-indent:-18.0pt;
-mso-list:l2 level1 lfo13"><?if !supportLists?><span style="font-family:Symbol;
-mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Loan
-Eligibility Check &amp; Advisory<o:p></o:p></b></p>
-<p class="MsoListParagraphCxSpMiddle" style="margin-top:12.0pt;margin-right:0cm;
-margin-bottom:12.0pt;margin-left:36.0pt;mso-add-space:auto;text-indent:-18.0pt;
-mso-list:l2 level1 lfo13"><?if !supportLists?><span style="font-family:Symbol;
-mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Preparation
-of Financial Documents &amp; Projections<o:p></o:p></b></p>
-<p class="MsoListParagraphCxSpMiddle" style="margin-top:12.0pt;margin-right:0cm;
-margin-bottom:12.0pt;margin-left:36.0pt;mso-add-space:auto;text-indent:-18.0pt;
-mso-list:l2 level1 lfo13"><?if !supportLists?><span style="font-family:Symbol;
-mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Custom
-Project Report Preparation<o:p></o:p></b></p>
-<p class="MsoListParagraphCxSpMiddle" style="margin-top:12.0pt;margin-right:0cm;
-margin-bottom:12.0pt;margin-left:36.0pt;mso-add-space:auto;text-indent:-18.0pt;
-mso-list:l2 level1 lfo13"><?if !supportLists?><span style="font-family:Symbol;
-mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Coordination
-with Banks/NBFCs<o:p></o:p></b></p>
-<p class="MsoListParagraphCxSpMiddle" style="margin-top:12.0pt;margin-right:0cm;
-margin-bottom:12.0pt;margin-left:36.0pt;mso-add-space:auto;text-indent:-18.0pt;
-mso-list:l2 level1 lfo13"><?if !supportLists?><span style="font-family:Symbol;
-mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Tax &amp;
-Compliance Advisory Post-Funding<o:p></o:p></b></p>
-<p class="MsoListParagraphCxSpLast" style="margin-top:12.0pt;margin-right:0cm;
-margin-bottom:12.0pt;margin-left:36.0pt;mso-add-space:auto;text-indent:-18.0pt;
-mso-list:l2 level1 lfo13"><?if !supportLists?><span style="font-family:Symbol;
-mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>       
-</span></span></span><?endif?><b style="mso-bidi-font-weight:normal">Repayment
-Planning and Monitoring<o:p></o:p></b></p>
-<h3 style="margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto"><a name="_rvl05rygzulh"></a><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;line-height:115%;color:black">🎯 Why Choose Us?<o:p></o:p></span></b></h3>
-<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
-0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l5 level1 lfo12"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>✓ Tailored solutions based on your business
-model</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo12"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>✓ Expert support with banking norms, ratios
-&amp; compliance</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo12"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>✓ CA-certified documentation and financial
-analysis</p>
-<p class="MsoNormal" style="margin-left:36.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo12"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>✓ Transparent and result-oriented approach</p>
-<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
-margin-left:36.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo12"><?if !supportLists?><span style="mso-list:Ignore">●<span style='font:7.0pt "Times New Roman"'>      
-</span></span><?endif?>✓ Assistance for both startups and established
-businesses</p>
-<p class="MsoNormal"><o:p> </o:p></p>
-</div>
-
-            </div>
-            <div id="sidebar">
-                <h4>CA Services</h4>
-                <ul>
-                    <li><a href='../Ca/1. Start A Business.html' class='d-flex'><p>Start A Business</p></a></li>
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="service-content">
+            <!-- Content will be loaded from Firebase here -->
+          </div>
+        </div>
+        <div id="sidebar">
+          <h4>CA Services</h4>
+          <ul>
+            <li><a href='../Ca/1. Start A Business.html' class='d-flex'><p>Start A Business</p></a></li>
 <li><a href='../Ca/2. Business Registration & Licences.html' class='d-flex'><p>Business Registration &amp; Licence</p></a></li>
 <li><a href='../Ca/3. Income Tax.html' class='d-flex'><p>Income Tax</p></a></li>
 <li><a href='../Ca/4. GST Services.html' class='d-flex'><p>GST Services</p></a></li>
@@ -363,13 +197,13 @@ businesses</p>
 <li><a href='../Ca/10. CMA Data & Project Report.html' class='d-flex'><p>CMA Data &amp; Project Report</p></a></li>
 <li><a href='../Ca/11. Loans & Project Finance.html' class='d-flex'><p>Loans &amp; Project Finance</p></a></li>
 
-                </ul>
-            </div>
+          </ul>
         </div>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-</body>
-<script src="../../js/navbar-inject.js"></script>
-<script src="../../js/footer-inject.js"></script>
-<script src="../../Services/disable-copy.js"></script>
+  </body>
+  <script src="../../js/navbar-inject.js"></script>
+  <script src="../../js/footer-inject.js"></script>
+  <script type="module" src="../auto-load-service.js"></script>
 </html>

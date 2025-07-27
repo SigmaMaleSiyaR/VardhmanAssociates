@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Deed Making &amp; Drafting - Advocate Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-    body {
-        font-family: 'Open Sans', sans-serif;
+      body {
+        font-family: "Open Sans", sans-serif;
         font-size: 14px;
-    }
-    .banner {
+      }
+      .banner {
         height: 30vh;
-        background: url('/img/ServicesHeader.jpg') center/cover no-repeat;
+        background: url("/img/ServicesHeader.jpg") center/cover no-repeat;
         position: relative;
-    }
-    .banner h1 {
+      }
+      .banner h1 {
         position: absolute;
         bottom: 10px;
         left: 30px;
         color: white;
         font-weight: 700;
-        /* background: rgba(0, 0, 0, 0.5); */
         padding: 10px 20px;
         border-radius: 5px;
-    }
-    .content-wrapper {
+      }
+      .content-wrapper {
         display: flex;
         flex-wrap: wrap;
         margin-top: 2rem;
         gap: 2%;
-    }
-    .main-content {
-        flex: 0 0 60%;
-    }
-    #sidebar {
-        height: fit-content;
+      }
+      .main-content {
+        flex: 0 0 65%;
+        max-width: 65%;
+      }
+      #sidebar {
         flex: 0 0 33%;
+        max-width: 33%;
+        height: fit-content;
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 5px;
@@ -51,481 +61,131 @@
         border-left: 1px solid #ddd;
         padding-left: 1.5rem;
         position: sticky;
-        top: 100px; /* adjust this based on your navbar height */
+        top: 100px;
         align-self: start;
-    }
-   #sidebar h4 {
+      }
+      #sidebar h4 {
         font-weight: 600;
         color: black;
         text-decoration: none;
         font-style: normal;
         font-size: x-large;
-    }
-    #sidebar ul {
+      }
+      #sidebar ul {
         padding: 1rem;
         list-style: disc;
-    }
-    #sidebar li {
+      }
+      #sidebar li {
         margin-bottom: 10px;
-    }
-    #sidebar a {
+      }
+      #sidebar a {
         text-decoration: none;
         color: #007bff;
-    }
-    #sidebar a:hover {
+      }
+      #sidebar a:hover {
         color: var(--primary) !important;
-    }
+      }
+      @media (max-width: 991px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .main-content,
+        #sidebar {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+
+      /* Service content styling */
+      #service-content {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      #service-content h1,
+      #service-content h2,
+      #service-content h3,
+      #service-content h4,
+      #service-content h5,
+      #service-content h6 {
+        color: #1b365d;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #service-content p {
+        margin-bottom: 1rem;
+      }
+
+      #service-content ul,
+      #service-content ol {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+      }
+
+      #service-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      #service-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      #service-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      #service-content table,
+      #service-content th,
+      #service-content td {
+        border: 1px solid #ddd;
+      }
+
+      #service-content th,
+      #service-content td {
+        padding: 0.75rem;
+        text-align: left;
+      }
+
+      #service-content th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+      }
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div class="banner">
-        <h1>Deed Making &amp; Drafting</h1>
+      <h1>Deed Making &amp; Drafting</h1>
     </div>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="main-content">
-                
-<div class="WordSection1">
-<p align="center" class="MsoNormal" style="text-align:center"><b><span style="font-size:20.0pt;line-height:115%;font-variant:small-caps;color:black;
-mso-themecolor:text1">Deed Making &amp; Drafting<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
-line-height:115%">Strong Documentation. Stronger Legal Protection.<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify">Every legal transaction begins
-and ends with one critical factor � <b>documentation</b>. Whether it�s a
-business agreement, a property deal, or a personal commitment, a professionally
-drafted deed safeguards your rights and ensures that your intentions are
-lawfully protected.</p>
-<p class="MsoNormal" style="text-align:justify">As experienced legal
-professionals, we provide <b>expert deed drafting services</b> that are
-precise, enforceable, and fully compliant with Indian laws. Our goal is to eliminate
-ambiguity, reduce risk, and give you full confidence in every agreement you
-sign.</p>
-<p class="MsoNormal" style="text-align:justify"><b><span style='font-size:14.0pt;
-line-height:115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>✍️</span></b><b><span style="font-size:14.0pt;
-line-height:115%"> What Is a Deed?<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify">A <b>deed</b> is a written legal
-document that formalizes an agreement, right, or obligation between parties. It
-becomes a binding contract when it is properly drafted, executed, and (where
-applicable) registered.<b><span style="font-size:14.0pt;line-height:115%"><o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><b><span style='font-size:14.0pt;
-line-height:115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>📄</span></b><b><span style="font-size:14.0pt;
-line-height:115%"> Types of Deeds &amp; Legal Drafts We Prepare<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>🏢</span> Property &amp; Real
-Estate</b><b><span style="font-size:14.0pt;line-height:115%"><o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;line-height:normal;mso-list:l15 level1 lfo1;tab-stops:list 36.0pt">Sale
-     Deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;line-height:normal;mso-list:l15 level1 lfo1;tab-stops:list 36.0pt">Gift
-     Deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;line-height:normal;mso-list:l15 level1 lfo1;tab-stops:list 36.0pt">Lease
-     or Rental Agreement</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;line-height:normal;mso-list:l15 level1 lfo1;tab-stops:list 36.0pt">Mortgage
-     Deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;line-height:normal;mso-list:l15 level1 lfo1;tab-stops:list 36.0pt">Partition
-     Deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;line-height:normal;mso-list:l15 level1 lfo1;tab-stops:list 36.0pt">Power
-     of Attorney (General/Special)</li>
-</ul>
-<p class="MsoNormal" style="text-align:justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>👥</span> Business &amp;
-Commercial<o:p></o:p></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo2;tab-stops:list 36.0pt">Partnership Deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo2;tab-stops:list 36.0pt">Joint Venture
-     Agreement</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo2;tab-stops:list 36.0pt">Franchise Agreement</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo2;tab-stops:list 36.0pt">Business Transfer
-     Agreement</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo2;tab-stops:list 36.0pt">Share Purchase or
-     Transfer Deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l4 level1 lfo2;tab-stops:list 36.0pt">Memorandum of
-     Understanding (MoU)</li>
-</ul>
-<p class="MsoNormal" style="text-align:justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>🧾</span> Personal &amp; Family<o:p></o:p></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo3;tab-stops:list 36.0pt">Will &amp; Codicil</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo3;tab-stops:list 36.0pt">Trust Deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo3;tab-stops:list 36.0pt">Adoption Deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo3;tab-stops:list 36.0pt">Settlement Deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l9 level1 lfo3;tab-stops:list 36.0pt">Relinquishment Deed</li>
-</ul>
-<p class="MsoNormal" style="text-align:justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><b><span style='font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>📃</span> Corporate Legal
-Documents<o:p></o:p></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l10 level1 lfo4;tab-stops:list 36.0pt">Founders'
-     Agreement</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l10 level1 lfo4;tab-stops:list 36.0pt">Employment
-     Contracts</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l10 level1 lfo4;tab-stops:list 36.0pt">Non-Disclosure
-     Agreements (NDAs)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l10 level1 lfo4;tab-stops:list 36.0pt">Service Level
-     Agreements</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l10 level1 lfo4;tab-stops:list 36.0pt">Vendor Agreements</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l10 level1 lfo4;tab-stops:list 36.0pt">Arbitration
-     Agreements</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>📚</span></b><b><span style="font-size:14.0pt;line-height:115%"> Legal Importance of a Properly
-Drafted Deed<o:p></o:p></span></b></p>
-<p class="MsoListParagraph" style="margin-bottom:0cm;margin-bottom:.0001pt;
-mso-add-space:auto;text-align:justify;text-indent:-18.0pt;mso-list:l13 level1 lfo19"><?if !supportLists?><span style="font-size:14.0pt;line-height:115%;font-family:Symbol;mso-fareast-font-family:
-Symbol;mso-bidi-font-family:Symbol;mso-bidi-font-weight:bold"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?>A <b>legally valid deed</b> ensures your
-agreement holds up in court.<b><span style="font-size:14.0pt;line-height:115%"><o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l16 level1 lfo9;tab-stops:list 36.0pt">It prevents <b>disputes,
-     fraud, and misinterpretation</b>.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l16 level1 lfo9;tab-stops:list 36.0pt">It defines the <b>rights,
-     duties, and liabilities</b> of all parties clearly.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l16 level1 lfo9;tab-stops:list 36.0pt">Deeds are often
-     required for <b>banking, tax filings, property registration, and court matters</b>.</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>🛑</span></b><b><span style="font-size:14.0pt;line-height:115%"> Risks of Poor or Self-Drafted Deeds<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l11 level1 lfo10;tab-stops:list 36.0pt">Missing legal
-     clauses can make the deed <b>unenforceable</b>.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l11 level1 lfo10;tab-stops:list 36.0pt">Unclear language
-     can lead to <b>disputes or legal battles</b>.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l11 level1 lfo10;tab-stops:list 36.0pt">Use of incorrect
-     stamp paper, wrong jurisdiction, or unregistered documents can result in <b>penalties
-     or loss of rights</b>.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l11 level1 lfo10;tab-stops:list 36.0pt">DIY templates
-     often <b>fail to meet your specific legal needs</b>.</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>⚖️</span></b><b><span style="font-size:14.0pt;line-height:115%"> Stamp Duty &amp; Registration<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo11;tab-stops:list 36.0pt">Stamp duty differs
-     by <b>state and type of deed</b> (Sale, Lease, Gift, etc.).</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo11;tab-stops:list 36.0pt">Certain deeds like
-     <b>Sale Deeds, Lease Deeds over 11 months, Gift Deeds, etc.</b> require <b>compulsory
-     registration</b>.</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l8 level1 lfo11;tab-stops:list 36.0pt">We assist clients
-     with:</li>
-<ul style="margin-top:0cm" type="circle">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l8 level2 lfo11;tab-stops:list 72.0pt"><b>Stamp
-      duty calculation</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l8 level2 lfo11;tab-stops:list 72.0pt"><b>E-stamping
-      or physical stamp paper procurement</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
-      text-align:justify;mso-list:l8 level2 lfo11;tab-stops:list 72.0pt"><b>Registration
-      process at Sub-Registrar office</b></li>
-</ul>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>📎</span></b><b><span style="font-size:14.0pt;line-height:115%"> Common Situations Where Clients Need
-Our Drafting Services<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo12;tab-stops:list 36.0pt">Buying or leasing
-     property</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo12;tab-stops:list 36.0pt">Starting or
-     dissolving a partnership</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo12;tab-stops:list 36.0pt">Creating a will or
-     family settlement</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo12;tab-stops:list 36.0pt">Drafting business
-     agreements or MoUs</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo12;tab-stops:list 36.0pt">Assigning power of
-     attorney for parents or NRI purposes</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l0 level1 lfo12;tab-stops:list 36.0pt">Legal separation
-     or property division in family matters</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>🔧</span></b><b><span style="font-size:14.0pt;line-height:115%"> Customization Options Available<o:p></o:p></span></b></p>
-<p class="MsoListParagraph" style="margin-bottom:0cm;margin-bottom:.0001pt;
-mso-add-space:auto;text-align:justify;text-indent:-18.0pt;mso-list:l7 level1 lfo18"><?if !supportLists?><span style="font-size:14.0pt;line-height:115%;font-family:Symbol;mso-fareast-font-family:
-Symbol;mso-bidi-font-family:Symbol;mso-bidi-font-weight:bold"><span style="mso-list:Ignore">�<span style='font:7.0pt "Times New Roman"'>      
-</span></span></span><?endif?><b>Single-party or multi-party deeds</b><b><span style="font-size:14.0pt;line-height:115%"><o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l12 level1 lfo13;tab-stops:list 36.0pt"><b>Conditional or
-     irrevocable deeds</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l12 level1 lfo13;tab-stops:list 36.0pt"><b>Cross-border
-     agreement drafting</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l12 level1 lfo13;tab-stops:list 36.0pt"><b>Bilingual
-     drafts (Hindi, English, or other regional languages)</b></li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l12 level1 lfo13;tab-stops:list 36.0pt"><b>Digitally
-     signed deeds for corporate clients</b></li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>🔍</span></b><b><span style="font-size:14.0pt;line-height:115%"> Client Support After Drafting<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt"><b>Clause-by-clause
-     explanation</b> of the deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt"><b>Modification
-     support</b> for future use of the same deed</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt"><b>Court affidavit
-     or legal opinion</b> if required</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt"><b>Certified true
-     copy preparation</b> for official submissions</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l5 level1 lfo14;tab-stops:list 36.0pt"><b>Guidance on
-     next steps</b> � e.g., notarization, execution timeline, witnesses, etc.</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>📑</span></b><b><span style="font-size:14.0pt;line-height:115%"> Document Checklist for Deed Drafting<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">Depending on the type of deed, clients are usually required to submit:</p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l17 level1 lfo15;tab-stops:list 36.0pt">Identity &amp;
-     address proof of parties</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l17 level1 lfo15;tab-stops:list 36.0pt">Property
-     documents (if applicable)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l17 level1 lfo15;tab-stops:list 36.0pt">Relationship proof
-     (for family deeds)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l17 level1 lfo15;tab-stops:list 36.0pt">Partnership
-     firm/company documents (if applicable)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l17 level1 lfo15;tab-stops:list 36.0pt">Previous
-     agreements or drafts (for modification/review)</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>💼</span></b><b><span style="font-size:14.0pt;line-height:115%"> Who Can Avail These Services?<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo16;tab-stops:list 36.0pt"><b>Individuals</b>
-     � for property, family, and personal legal matters</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo16;tab-stops:list 36.0pt"><b>Startups and
-     Businesses</b> � for vendor, employment, service, and partnership
-     agreements</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo16;tab-stops:list 36.0pt"><b>Real estate
-     investors &amp; builders</b> � for lease/sale/transfer deeds</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo16;tab-stops:list 36.0pt"><b>NRIs</b> � for
-     POA, gift, or will deeds</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l2 level1 lfo16;tab-stops:list 36.0pt"><b>Senior citizens</b>
-     � for will, trust, or family arrangement deeds</li>
-</ul>
-<p class="MsoNormal" style="text-align:justify"><b><span style='font-size:14.0pt;
-line-height:115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="text-align:justify"><b><span style='font-size:14.0pt;
-line-height:115%;font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-"Segoe UI Emoji"'>⚙️</span></b><b><span style="font-size:14.0pt;
-line-height:115%"> Levels of Drafting Services We Offer<o:p></o:p></span></b></p>
-<ol start="1" style="margin-top:0cm" type="1">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l14 level1 lfo5;tab-stops:list 36.0pt"><b>Standard Drafts</b>
-     � Ready-to-use formats with minor customizations</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l14 level1 lfo5;tab-stops:list 36.0pt"><b>Tailored
-     Drafting</b> � Detailed drafts customized to your specific legal situation</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l14 level1 lfo5;tab-stops:list 36.0pt"><b>Complex
-     Drafting</b> � High-stake or multi-party transactions needing legal
-     scrutiny</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l14 level1 lfo5;tab-stops:list 36.0pt"><b>Review &amp;
-     Vetting</b> � Examination of existing deeds for legal validity and
-     improvements</li>
-</ol>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>✅</span></b><b><span style="font-size:14.0pt;line-height:115%"> Why Choose Our Legal Drafting
-Services?<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo6;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>✔️</span> <b>Legally Sound</b> � Drafted
-     in accordance with the latest laws and precedents</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo6;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>✔️</span> <b>Experienced Advocacy</b> �
-     Drafted and reviewed by qualified advocates</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo6;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>✔️</span> <b>Risk-Free Drafting</b> �
-     Includes all essential clauses to protect your interest</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo6;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>✔️</span> <b>Timely Delivery</b> � Fast
-     turnaround time with quality assurance</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l6 level1 lfo6;tab-stops:list 36.0pt"><span style='font-family:"Segoe UI Emoji","sans-serif";mso-bidi-font-family:
-     "Segoe UI Emoji"'>✔️</span> <b>Execution Support</b> � Help
-     with stamping, notarization, and registration</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>🔍</span></b><b><span style="font-size:14.0pt;line-height:115%"> Our Process</span></b></p>
-<ol start="1" style="margin-top:0cm" type="1">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo7;tab-stops:list 36.0pt"><b>Client Consultation</b>
-     � Understanding your purpose and legal concerns</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo7;tab-stops:list 36.0pt"><b>Initial Draft</b>
-     � Prepared by our legal team and shared for review</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo7;tab-stops:list 36.0pt"><b>Feedback &amp;
-     Revision</b> � Based on your input or third-party needs</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo7;tab-stops:list 36.0pt"><b>Finalization</b>
-     � Delivery of final document with optional legal opinion</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l1 level1 lfo7;tab-stops:list 36.0pt"><b>Execution
-     Assistance</b> � Notarization, stamping, and registration as required</li>
-</ol>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>🔐</span></b><b><span style="font-size:14.0pt;line-height:115%"> Legal Assurance &amp;
-Confidentiality<o:p></o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify">All documents and information shared are protected under <b>advocate-client
-privilege</b>, ensuring complete confidentiality and professional ethics.</p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'><o:p> </o:p></span></b></p>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><b><span style='font-size:14.0pt;line-height:115%;font-family:"Segoe UI Emoji","sans-serif";
-mso-bidi-font-family:"Segoe UI Emoji"'>📌</span></b><b><span style="font-size:14.0pt;line-height:115%"> Additional Support Available<o:p></o:p></span></b></p>
-<ul style="margin-top:0cm" type="disc">
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo8;tab-stops:list 36.0pt">Bilingual Drafting
-     (English + Regional Language)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo8;tab-stops:list 36.0pt">Stamp Duty Guidance</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo8;tab-stops:list 36.0pt">Document
-     Registration Support</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo8;tab-stops:list 36.0pt">Legal Notice
-     Drafting</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo8;tab-stops:list 36.0pt">Online Document
-     Execution (E-sign/E-stamping)</li>
-<li class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-     justify;mso-list:l3 level1 lfo8;tab-stops:list 36.0pt">Annual Review &amp;
-     Updating of Business Agreements</li>
-</ul>
-<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
-justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="text-align:justify"><b>�Don�t take chances with your
-legal documents � let a professional advocate draft them right the first time.�</b></p>
-<p class="MsoNormal" style="text-align:justify"><b>Contact us today</b> for
-expert deed drafting services that give you legal peace of mind.</p>
-<p class="MsoNormal" style="text-align:justify"><o:p> </o:p></p>
-<p class="MsoNormal" style="text-align:justify"><o:p> </o:p></p>
-</div>
-
-            </div>
-            <div id="sidebar">
-                <h4>Advocate Services</h4>
-                <ul>
-                    <li><a href='../Advocate/1. Civil Law.html' class='d-flex'><p>Civil Law</p></a></li>
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="service-content">
+            <!-- Content will be loaded from Firebase here -->
+          </div>
+        </div>
+        <div id="sidebar">
+          <h4>Advocate Services</h4>
+          <ul>
+            <li><a href='../Advocate/1. Civil Law.html' class='d-flex'><p>Civil Law</p></a></li>
 <li><a href='../Advocate/2. Banking & Finance Law.html' class='d-flex'><p>Banking &amp; Finance Law</p></a></li>
 <li><a href='../Advocate/3. Legal Advisory.html' class='d-flex'><p>Legal Advisory</p></a></li>
 <li><a href='../Advocate/4. Consumer Law & Protection.html' class='d-flex'><p>Consumer Law &amp; Protection</p></a></li>
@@ -540,13 +200,13 @@ expert deed drafting services that give you legal peace of mind.</p>
 <li><a href='../Advocate/13. Appeal.html' class='d-flex'><p>Appeal</p></a></li>
 <li><a href='../Advocate/14. SARFAESI Law.html' class='d-flex'><p>SARFAESI Law</p></a></li>
 
-                </ul>
-            </div>
+          </ul>
         </div>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-</body>
-<script src="../../js/navbar-inject.js"></script>
-<script src="../../js/footer-inject.js"></script>
-<script src="../../Services/disable-copy.js"></script>
+  </body>
+  <script src="../../js/navbar-inject.js"></script>
+  <script src="../../js/footer-inject.js"></script>
+  <script type="module" src="../auto-load-service.js"></script>
 </html>
