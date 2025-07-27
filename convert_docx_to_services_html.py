@@ -411,6 +411,7 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
   </body>
   <script src="../../js/navbar-inject.js"></script>
   <script src="../../js/footer-inject.js"></script>
+  <script src="../disable-copy.js"></script>
   <script type="module" src="../auto-load-service.js"></script>
 </html>
 """
