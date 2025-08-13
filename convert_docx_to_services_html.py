@@ -207,9 +207,30 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
 
     service_list_html = ""
     for service in sidebar_items:
-        match = next((f for f in all_html_files if service in f and f.endswith(".html")), None)
-        if match:
-            href = f"../{category.capitalize()}/{match}"
+        # Find the best matching file for this service
+        best_match = None
+        for f in all_html_files:
+            if f.endswith(".html"):
+                # Check if service name is contained in filename
+                if service in f:
+                    # Prefer files with correct spelling
+                    if "Dissolution" in service and "Dissolution" in f:
+                        best_match = f
+                        break
+                    elif "Licence" in service and "Licence" in f and "Licences" not in f:
+                        best_match = f
+                        break
+                    elif service in f:
+                        best_match = f
+        
+        if best_match:
+            # Use correct directory casing based on actual folder names
+            if category == "CA":
+                href = f"../Ca/{best_match}"
+            elif category == "CS":
+                href = f"../Cs/{best_match}"
+            else:
+                href = f"../{category}/{best_match}"
         else:
             href = "#"
         service_list_html += f"<li><a href='{href}' class='d-flex'><p>{escape(service)}</p></a></li>\n"
@@ -220,7 +241,7 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
   <head>
     <meta charset="utf-8" />
     <title>{escape(title)} - {category} Services</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -242,6 +263,7 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
       body {{
         font-family: "Open Sans", sans-serif;
         font-size: 14px;
+        overflow-x: hidden;
       }}
       .banner {{
         height: 30vh;
@@ -302,6 +324,26 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
       #sidebar a:hover {{
         color: var(--primary) !important;
       }}
+      
+      /* Touch-friendly improvements for mobile */
+      #sidebar a {{
+        padding: 8px 0;
+        display: block;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+      }}
+      
+      /* Better spacing for mobile */
+      .content-wrapper {{
+        gap: 1.5rem;
+      }}
+      
+      @media (max-width: 768px) {{
+        .content-wrapper {{
+          gap: 1rem;
+        }}
+      }}
       @media (max-width: 991px) {{
         .content-wrapper {{
           flex-direction: column;
@@ -312,16 +354,85 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
           flex: 1 1 100%;
           max-width: 100%;
         }}
+        #sidebar {{
+          position: static;
+          margin-top: 1rem;
+        }}
+        /* Mobile sidebar styling */
+        #sidebar.collapse:not(.show) {{
+          display: none !important;
+        }}
+        #sidebar.collapsing {{
+          height: 0;
+          overflow: hidden;
+          transition: height 0.35s ease;
+        }}
+        #sidebar.collapse.show {{
+          display: block !important;
+        }}
       }}
+      
       @media (max-width: 768px) {{
+        .banner {{
+          height: 25vh;
+        }}
+        .banner h1 {{
+          font-size: 1.5rem;
+          left: 15px;
+          bottom: 15px;
+          padding: 8px 15px;
+        }}
         .content-wrapper {{
           flex-direction: column;
           gap: 1rem;
+          margin-top: 1rem;
         }}
         .main-content,
         #sidebar {{
           flex: 1 1 100%;
           max-width: 100%;
+        }}
+        #sidebar {{
+          position: static;
+          margin-top: 1rem;
+          padding: 1rem;
+        }}
+        #sidebar h4 {{
+          font-size: 1.25rem;
+        }}
+        #sidebar ul {{
+          padding: 0.5rem;
+        }}
+        .container {{
+          padding-left: 15px;
+          padding-right: 15px;
+        }}
+      }}
+      
+      @media (max-width: 576px) {{
+        .banner {{
+          height: 20vh;
+        }}
+        .banner h1 {{
+          font-size: 1.25rem;
+          left: 10px;
+          bottom: 10px;
+          padding: 6px 12px;
+        }}
+        #sidebar {{
+          padding: 0.75rem;
+        }}
+        #sidebar h4 {{
+          font-size: 1.1rem;
+        }}
+        #sidebar ul {{
+          padding: 0.25rem;
+        }}
+        #sidebar li {{
+          margin-bottom: 8px;
+        }}
+        .main-content {{
+          padding: 0;
         }}
       }}
 
@@ -329,6 +440,24 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
       #service-content {{
         line-height: 1.6;
         color: #333;
+      }}
+      
+      /* Mobile content improvements */
+      @media (max-width: 768px) {{
+        #service-content {{
+          font-size: 16px;
+          line-height: 1.7;
+        }}
+        #service-content h1,
+        #service-content h2,
+        #service-content h3 {{
+          font-size: 1.5rem;
+        }}
+        #service-content h4,
+        #service-content h5,
+        #service-content h6 {{
+          font-size: 1.25rem;
+        }}
       }}
 
       #service-content h1,
@@ -393,13 +522,20 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
       <h1>{escape(title)}</h1>
     </div>
     <div class="container">
+      <!-- Mobile Sidebar Toggle Button -->
+      <div class="d-lg-none text-center mb-3">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
+          <i class="fas fa-bars me-2"></i>Show Services Menu
+        </button>
+      </div>
+      
       <div class="content-wrapper">
         <div class="main-content">
           <div id="service-content">
             <!-- Content will be loaded from Firebase here -->
           </div>
         </div>
-        <div id="sidebar">
+        <div id="sidebar" class="collapse d-lg-block">
           <h4>{escape(category_heading)}</h4>
           <ul>
             {service_list_html}
@@ -413,6 +549,7 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
   <script src="../../js/footer-inject.js"></script>
   <script src="../disable-copy.js"></script>
   <script type="module" src="../auto-load-service.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>
 """
 
