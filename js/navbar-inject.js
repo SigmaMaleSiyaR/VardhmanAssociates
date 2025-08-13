@@ -49,3 +49,37 @@ fetch("/Component/navbar.html")
       }
     }
   });
+
+// Inject 100vh sidebar behavior for all Services pages
+try {
+  const path = window.location.pathname.toLowerCase();
+  if (
+    path.includes("/services/ca/") ||
+    path.includes("/services/cs/") ||
+    path.includes("/services/advocate/")
+  ) {
+    const style = document.createElement("style");
+    style.textContent = `
+        @media (min-width: 992px) {
+          #sidebar {
+            max-height: calc(100vh - 100px);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+          }
+          #sidebar ul {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            margin: 0;
+            padding-left: 1rem;
+          }
+          #sidebar li { margin-bottom: 6px; }
+          #sidebar a { padding: 6px 0; min-height: 36px; }
+          #sidebar a p { margin: 0; }
+        }
+      `;
+    document.head.appendChild(style);
+  }
+} catch (e) {
+  console.warn("Sidebar 100vh style injection failed:", e);
+}
