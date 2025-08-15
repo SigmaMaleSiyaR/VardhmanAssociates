@@ -78,6 +78,33 @@
         position: absolute;
         left: 0;
       }
+
+      /* Fix for button clickability on large screens */
+      .btn-primary {
+        position: relative;
+        z-index: 10;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+      }
+
+      .career-card .btn-primary {
+        position: relative;
+        z-index: 15;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+      }
+
+      /* Ensure no overlapping elements block the button */
+      .career-card {
+        position: relative;
+        z-index: 5;
+      }
+
+      /* Fix for any potential spinner issues */
+      #spinner:not(.show) {
+        pointer-events: none !important;
+        z-index: -1 !important;
+      }
     </style>
   </head>
 
@@ -165,7 +192,7 @@
                   <li>Growth-oriented environment</li>
                 </ul>
                 <a
-                  href="mailto:vardhman.assoiates8@gmail.com"
+                  href="https://wa.me/919928857684"
                   class="btn btn-primary mt-3"
                   >Apply Now</a
                 >
@@ -197,7 +224,7 @@
                   <li>Professional networking opportunities</li>
                 </ul>
                 <a
-                  href="mailto:vardhman.assoiates8@gmail.com"
+                  href="https://wa.me/919928857684"
                   class="btn btn-primary mt-3"
                   >Apply for Internship</a
                 >
@@ -284,5 +311,35 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Additional fix for button clickability -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ensure spinner is hidden
+        const spinner = document.getElementById("spinner");
+        if (spinner) {
+          spinner.classList.remove("show");
+          spinner.style.pointerEvents = "none";
+          spinner.style.zIndex = "-1";
+        }
+
+        // Ensure all buttons are clickable
+        const buttons = document.querySelectorAll(".btn-primary");
+        buttons.forEach((button) => {
+          button.style.position = "relative";
+          button.style.zIndex = "10";
+          button.style.pointerEvents = "auto";
+          button.style.cursor = "pointer";
+        });
+
+        // Fix for career card buttons specifically
+        const careerButtons = document.querySelectorAll(
+          ".career-card .btn-primary"
+        );
+        careerButtons.forEach((button) => {
+          button.style.zIndex = "15";
+        });
+      });
+    </script>
   </body>
 </html>
