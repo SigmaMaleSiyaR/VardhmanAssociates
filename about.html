@@ -37,6 +37,48 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <style>
+      /* Team modal: make image fill modal height and prevent text overlap */
+      .team-modal .modal-body {
+        max-height: 70vh;
+        overflow: hidden;
+      }
+      .team-modal .modal-body .row {
+        display: flex;
+        align-items: stretch;
+      }
+      .team-modal .modal-body .col-md-4,
+      .team-modal .modal-body .col-md-8 {
+        display: flex;
+        flex-direction: column;
+      }
+      .team-modal .profile-image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .team-modal .profile-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .team-modal .text-content {
+        overflow-y: auto;
+      }
+      @media (max-width: 767.98px) {
+        .team-modal .modal-body {
+          max-height: 80vh;
+        }
+        .team-modal .modal-body .row {
+          display: block;
+        }
+        .team-modal .profile-image-wrapper {
+          height: 240px;
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -518,7 +560,7 @@
     <!-- Team Member Modals -->
     <!-- CS Manish Jain Modal -->
     <div
-      class="modal fade"
+      class="modal fade team-modal"
       id="manishModal"
       tabindex="-1"
       aria-labelledby="manishModalLabel"
@@ -537,13 +579,11 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-4">
-                <img
-                  src="img/team/manish.png"
-                  class="rounded"
-                  alt="CS Manish Jain"
-                />
+                <div class="profile-image-wrapper rounded">
+                  <img src="img/team/manish.png" alt="CS Manish Jain" />
+                </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 text-content">
                 <h3 class="mb-3">CS Manish Jain</h3>
                 <p class="text-primary mb-2">Founder</p>
                 <p class="text-muted mb-4">CS, LLB, M.Com</p>
@@ -581,7 +621,7 @@
 
     <!-- CS Parv Tholia Modal -->
     <div
-      class="modal fade"
+      class="modal fade team-modal"
       id="parvModal"
       tabindex="-1"
       aria-labelledby="parvModalLabel"
@@ -600,13 +640,11 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-4">
-                <img
-                  src="img/team/parv.png"
-                  class="rounded"
-                  alt="CS Parv Tholia"
-                />
+                <div class="profile-image-wrapper rounded">
+                  <img src="img/team/parv.png" alt="CS Parv Tholia" />
+                </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 text-content">
                 <h3 class="mb-3">CS Parv Tholia</h3>
                 <p class="text-primary mb-2">Executive</p>
                 <p class="text-muted mb-4">CS, LLB, M.Com</p>
@@ -637,7 +675,7 @@
 
     <!-- CS Raj Saini Modal -->
     <div
-      class="modal fade"
+      class="modal fade team-modal"
       id="rajModal"
       tabindex="-1"
       aria-labelledby="rajModalLabel"
@@ -656,13 +694,11 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-4">
-                <img
-                  src="img/team/raj.png"
-                  class="rounded"
-                  alt="CS Raj Saini"
-                />
+                <div class="profile-image-wrapper rounded">
+                  <img src="img/team/raj.png" alt="CS Raj Saini" />
+                </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 text-content">
                 <h3 class="mb-3">CS Raj Saini</h3>
                 <p class="text-primary mb-2">Executive</p>
                 <p class="text-muted mb-4">CS, LLB, M.Com, BBA</p>
@@ -693,7 +729,7 @@
 
     <!-- Advocate Taruna Jain Modal -->
     <div
-      class="modal fade"
+      class="modal fade team-modal"
       id="tarunaModal"
       tabindex="-1"
       aria-labelledby="tarunaModalLabel"
@@ -712,13 +748,11 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-4">
-                <img
-                  src="img/team/taruna.png"
-                  class="rounded"
-                  alt="Advocate Taruna Jain"
-                />
+                <div class="profile-image-wrapper rounded">
+                  <img src="img/team/taruna.png" alt="Advocate Taruna Jain" />
+                </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 text-content">
                 <h3 class="mb-3">Advocate Taruna Jain</h3>
                 <p class="text-primary mb-2">Co-Founder</p>
                 <p class="text-muted mb-4">LLB, M.Com, B.A.</p>
@@ -756,7 +790,7 @@
 
     <!-- Pooja Kanwar Modal -->
     <div
-      class="modal fade"
+      class="modal fade team-modal"
       id="poojaModal"
       tabindex="-1"
       aria-labelledby="poojaModalLabel"
@@ -775,13 +809,11 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-4">
-                <img
-                  src="img/team/user.png"
-                  class="rounded"
-                  alt="Pooja Kanwar"
-                />
+                <div class="profile-image-wrapper rounded">
+                  <img src="img/team/Pooja.jpg" alt="Pooja Kanwar" />
+                </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 text-content">
                 <h3 class="mb-3">Pooja Kanwar</h3>
                 <p class="text-primary mb-2">Executive</p>
                 <p class="text-muted mb-4">BA, LLB, LLM</p>
@@ -814,7 +846,7 @@
 
     <!-- Pallavi Khan Modal -->
     <div
-      class="modal fade"
+      class="modal fade team-modal"
       id="pallaviModal"
       tabindex="-1"
       aria-labelledby="pallaviModalLabel"
@@ -833,13 +865,11 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-4">
-                <img
-                  src="img/team/user.png"
-                  class="rounded"
-                  alt="Pallavi Khan"
-                />
+                <div class="profile-image-wrapper rounded">
+                  <img src="img/team/Pallavi.jpg" alt="Pallavi Khan" />
+                </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 text-content">
                 <h3 class="mb-3">Pallavi Khan</h3>
                 <p class="text-primary mb-2">Executive</p>
                 <p class="text-muted mb-4">BA, LLB, LLM</p>
@@ -872,7 +902,7 @@
 
     <!-- CA Manu Jain Modal -->
     <div
-      class="modal fade"
+      class="modal fade team-modal"
       id="manuModal"
       tabindex="-1"
       aria-labelledby="manuModalLabel"
@@ -891,13 +921,11 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-4">
-                <img
-                  src="img/team/manu.png"
-                  class="rounded"
-                  alt="CA Manu Jain"
-                />
+                <div class="profile-image-wrapper rounded">
+                  <img src="img/team/manu.png" alt="CA Manu Jain" />
+                </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 text-content">
                 <h3 class="mb-3">CA Manu Jain</h3>
                 <p class="text-primary mb-2">Executive</p>
                 <p class="text-muted mb-4">CA, B.Com</p>
@@ -932,7 +960,7 @@
 
     <!-- CA Abhishek Jain Modal -->
     <div
-      class="modal fade"
+      class="modal fade team-modal"
       id="abhishekModal"
       tabindex="-1"
       aria-labelledby="abhishekModalLabel"
@@ -951,13 +979,11 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-4">
-                <img
-                  src="img/team/abhishek.jpg"
-                  class="rounded"
-                  alt="CA Abhishek Jain"
-                />
+                <div class="profile-image-wrapper rounded">
+                  <img src="img/team/abhishek.jpg" alt="CA Abhishek Jain" />
+                </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 text-content">
                 <h3 class="mb-3">CA Abhishek Jain</h3>
                 <p class="text-primary mb-2">Executive</p>
                 <p class="text-muted mb-4">FCA, LLB, M.Com, B.Com</p>
@@ -991,7 +1017,7 @@
 
     <!-- CA Arun Sharma Modal -->
     <div
-      class="modal fade"
+      class="modal fade team-modal"
       id="arunModal"
       tabindex="-1"
       aria-labelledby="arunModalLabel"
@@ -1010,13 +1036,11 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-4">
-                <img
-                  src="img/team/arun.png"
-                  class="rounded"
-                  alt="CA Arun Sharma"
-                />
+                <div class="profile-image-wrapper rounded">
+                  <img src="img/team/arun.png" alt="CA Arun Sharma" />
+                </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 text-content">
                 <h3 class="mb-3">CA Arun Sharma</h3>
                 <p class="text-primary mb-2">Executive</p>
                 <p class="text-muted mb-4">CA, B.Com</p>
