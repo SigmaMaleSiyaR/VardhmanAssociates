@@ -458,7 +458,7 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
           font-size: 1.5rem;
         }}
         #sidebar ul {{
-          padding: 1.5rem;
+          padding: 0 1.5rem 1.5rem 1.5rem;
         }}
         #sidebar li {{
           margin-bottom: 15px;
