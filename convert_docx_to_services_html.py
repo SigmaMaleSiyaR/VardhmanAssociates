@@ -456,7 +456,6 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
         }}
         #sidebar h4 {{
           font-size: 1.5rem;
-          margin-bottom: 1.5rem;
         }}
         #sidebar ul {{
           padding: 1.5rem;
