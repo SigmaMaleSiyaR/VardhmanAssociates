@@ -299,7 +299,7 @@ def wrap_with_bootstrap(title, body, category, sidebar_items):
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px var(--primary); /* Added shadow */
         border-left: 1px solid #ddd;
         padding-left: 1.5rem;
         position: sticky;
