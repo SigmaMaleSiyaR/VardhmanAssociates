@@ -15,6 +15,22 @@ fetch("/Component/navbar.html")
         document.querySelectorAll(".dropdown-toggle")
       );
       dropdowns.map((el) => new bootstrap.Dropdown(el));
+
+      // ✅ Re-initialize Bootstrap collapse for hamburger menu
+      const collapseElement = document.querySelector("#navbarCollapse");
+      if (collapseElement) {
+        const bsCollapse = new bootstrap.Collapse(collapseElement, {
+          toggle: false,
+        });
+
+        // Add click event listener to hamburger button
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        if (navbarToggler) {
+          navbarToggler.addEventListener("click", function () {
+            bsCollapse.toggle();
+          });
+        }
+      }
     }
 
     // ✅ Activate link via global variable (like contact, about, etc.)
