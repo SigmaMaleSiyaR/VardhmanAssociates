@@ -62,7 +62,7 @@ SIDEBAR_SERVICES = {
         "Deed Making & Drafting",
         "Debt Recovery & Suit",
         "Labour & Employment Law",
-        "NIA Matter",
+        "NI Matter",
         "Property Valuation Services",
         "Real Estate & Regulatory Act (RERA)",
         "Appeal",
